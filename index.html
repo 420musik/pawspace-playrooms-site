@@ -30,14 +30,16 @@
               teal: '#288b89',
               tealDark: '#1a5f5e',
               tealLight: '#3ba3a1',
-              mint: '#d5f0ee',
-              mintSoft: '#eaf7f6',
-              tan: '#c89b6c',
-              tanLight: '#e4caa8',
-              charcoal: '#22333b',
-              muted: '#62727b',
-              cream: '#faf8f5',
-              surface: '#ffffff'
+              mint: '#1b3b3a',
+              mintSoft: '#13282c',
+              tan: '#d4a373',
+              tanLight: '#faedcd',
+              charcoal: '#f1f5f9',
+              muted: '#94a3b8',
+              cream: '#0d1316',
+              surface: '#141d21',
+              card: '#182429',
+              dark: '#0b1114'
             }
           },
           fontFamily: {
@@ -45,9 +47,9 @@
             sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
           },
           boxShadow: {
-            'soft': '0 8px 30px rgba(40, 139, 137, 0.08)',
-            'float': '0 12px 36px rgba(34, 51, 59, 0.12)',
-            'bar': '0 -8px 24px rgba(34, 51, 59, 0.08)'
+            'soft': '0 8px 30px rgba(0, 0, 0, 0.35)',
+            'float': '0 12px 36px rgba(0, 0, 0, 0.5)',
+            'bar': '0 -8px 24px rgba(0, 0, 0, 0.4)'
           }
         }
       }
@@ -57,8 +59,8 @@
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #faf8f5;
-      color: #22333b;
+      background-color: #0b1114;
+      color: #e2e8f0;
       -webkit-tap-highlight-color: transparent;
     }
     .font-brand {
@@ -69,10 +71,10 @@
       height: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #f1f5f5;
+      background: #10171a;
     }
     ::-webkit-scrollbar-thumb {
-      background: #b6dad8;
+      background: #288b89;
       border-radius: 999px;
     }
   </style>
@@ -98,7 +100,7 @@
   </div>
 
   <!-- TOP APP BAR (Compact & Calm) -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-paw-teal/15 px-4 py-2.5 shadow-soft">
+  <header class="sticky top-0 z-40 bg-[#0f171b]/95 backdrop-blur-md border-b border-paw-teal/20 px-4 py-2.5 shadow-soft">
     <div class="max-w-3xl mx-auto flex items-center justify-between">
       
       <!-- Brand & Mascot Logo -->
@@ -124,7 +126,7 @@
       <!-- Quick Actions -->
       <div class="flex items-center gap-2">
         <!-- Avatar Profile & Loyalty Pill -->
-        <button id="headerAvatarBtn" onclick="openAvatarStudio()" class="px-2.5 py-1.5 rounded-xl bg-paw-mintSoft hover:bg-paw-mint text-paw-charcoal font-bold text-xs flex items-center gap-1.5 transition border border-paw-teal/20" title="Customise Avatars & View Loyalty">
+        <button id="headerAvatarBtn" onclick="openAvatarStudio()" class="px-2.5 py-1.5 rounded-xl bg-paw-mintSoft hover:bg-paw-mint text-paw-charcoal font-bold text-xs flex items-center gap-1.5 transition border border-paw-teal/20" title="My Profile & Loyalty">
           <div id="headerAvatarIcon" class="w-6 h-6 rounded-full overflow-hidden flex items-center justify-center bg-white border border-paw-teal/30 shadow-xs"></div>
           <span id="headerAvatarName" class="hidden sm:inline font-bold">Anthony &amp; Milo</span>
           <span id="headerLoyaltyPill" class="bg-amber-500 text-white rounded-full text-[9px] px-1.5 font-bold" title="Completed bookings / 6 toward 30% off">🐾 4/6</span>
@@ -138,8 +140,8 @@
           </button>
 
           <!-- Socials Flyout Card -->
-          <div id="socialsDropdownMenu" class="hidden absolute right-0 mt-2 w-64 bg-white rounded-2xl shadow-float border border-slate-100 p-3 z-50 animate-fadeIn">
-            <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+          <div id="socialsDropdownMenu" class="hidden absolute right-0 mt-2 w-64 bg-[#141d22] border border-paw-teal/30 rounded-2xl shadow-float text-white border border-paw-teal/15 p-3 z-50 animate-fadeIn">
+            <div class="flex items-center justify-between pb-2 mb-2 border-b border-paw-teal/15">
               <span class="text-[11px] font-extrabold uppercase tracking-wider text-paw-muted flex items-center gap-1.5">
                 <i data-lucide="share-2" class="w-3 h-3 text-paw-teal"></i> Socials
               </span>
@@ -159,7 +161,7 @@
               </div>
             </a>
             
-            <div class="mt-2.5 pt-2 border-t border-slate-100">
+            <div class="mt-2.5 pt-2 border-t border-paw-teal/15">
               <a href="https://www.instagram.com/pawspaceplayroom/" target="_blank" rel="noopener noreferrer" id="socialsClickToGoBtn" class="w-full py-1.5 px-3 rounded-xl bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 text-white text-center font-bold text-[11px] flex items-center justify-center gap-1.5 transition shadow-xs">
                 <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                 <span>Open Instagram</span>
@@ -169,13 +171,13 @@
           </div>
         </div>
 
-        <button onclick="toggleMyBookingsModal()" class="px-2.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-paw-charcoal font-bold text-xs flex items-center gap-1.5 transition">
+        <button onclick="toggleMyBookingsModal()" class="px-2.5 py-1.5 rounded-xl bg-[#162227] hover:bg-[#1d2d34] text-white border border-paw-teal/20 font-bold text-xs flex items-center gap-1.5 transition">
           <i data-lucide="calendar" class="w-3.5 h-3.5 text-paw-teal"></i>
           <span class="hidden sm:inline">My Key</span>
           <span id="bookingCountBadge" class="bg-paw-teal text-white rounded-full text-[9px] px-1.5 font-bold">1</span>
         </button>
 
-        <button onclick="toggleAdminModal()" class="p-1.5 rounded-xl text-paw-muted hover:text-paw-charcoal hover:bg-slate-100 transition" title="Settings / Admin">
+        <button onclick="toggleAdminModal()" class="p-1.5 rounded-xl text-paw-muted hover:text-paw-charcoal hover:bg-[#162227] transition" title="Settings / Admin">
           <i data-lucide="settings" class="w-4 h-4"></i>
         </button>
 
@@ -195,7 +197,7 @@
     <!-- ========================================================================= -->
     <section id="onboardingStep-1" class="space-y-4">
       <!-- Mint Hero Card -->
-      <div class="bg-gradient-to-br from-[#eaf7f6] via-[#dff2f0] to-[#eaf7f6] rounded-3xl border border-paw-teal/20 p-5 sm:p-6 shadow-soft space-y-4 relative overflow-hidden">
+      <div class="bg-gradient-to-br from-[#122428] via-[#101b20] to-[#0c1417] rounded-3xl border border-paw-teal/30 p-5 sm:p-6 shadow-soft space-y-4 relative overflow-hidden">
         <div class="space-y-1">
           <span class="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-paw-teal">
             <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
@@ -209,15 +211,28 @@
           </p>
         </div>
 
-        <!-- Pixar 3D Hero Mascot Stage (Image 2) -->
-        <div class="relative w-full h-56 sm:h-64 rounded-2xl bg-gradient-to-b from-sky-100 via-emerald-50 to-amber-50/50 border border-paw-teal/15 overflow-hidden flex items-center justify-center shadow-inner">
-          <div class="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-200 via-emerald-100 to-transparent"></div>
-          <div class="relative z-10 flex items-end justify-center w-full h-full pb-2">
-            <div id="welcomeHeroStage" class="w-full max-w-xs h-52 flex items-center justify-center"></div>
+                <!-- Official PawSpace Logo Hero Stage -->
+        <div class="relative w-full h-56 sm:h-64 rounded-2xl bg-gradient-to-b from-[#162327] via-[#121c20] to-[#0c1417] border border-paw-teal/30 overflow-hidden flex items-center justify-center shadow-inner">
+          <div class="absolute inset-0 opacity-25 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-paw-teal via-emerald-950 to-transparent"></div>
+          <div class="relative z-10 flex items-center justify-center w-full h-full p-4">
+            <div id="welcomeHeroStage" class="w-full max-w-xs flex flex-col items-center justify-center text-center">
+              <div class="relative mb-3 group">
+                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-gradient-to-br from-[#1a282d] to-[#10191c] border-2 border-paw-teal/40 p-2 shadow-float flex items-center justify-center overflow-hidden">
+                  <img src="logo.png" alt="PawSpace Logo" class="w-full h-full object-contain filter drop-shadow">
+                </div>
+                <div class="absolute -bottom-1 -right-1 bg-paw-teal text-white rounded-full p-1 shadow border-2 border-[#121c20]">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><circle cx="7" cy="8.5" r="2"/><circle cx="17" cy="8.5" r="2"/><circle cx="10" cy="4" r="2"/><circle cx="14" cy="4" r="2"/><path d="M12 10.5c-3 0-5.5 2-5.5 5 0 2 2 3.5 5.5 3.5s5.5-1.5 5.5-3.5c0-3-2.5-5-5-5z"/></svg>
+                </div>
+              </div>
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-paw-teal/15 border border-paw-teal/30 text-xs font-bold text-paw-tealLight shadow-xs">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Private Solo Dog Sanctuary</span>
+              </div>
+            </div>
           </div>
-          <div class="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm border border-paw-teal/20 text-[10px] font-bold text-paw-teal shadow-xs">
-            <i data-lucide="shield-check" class="w-3 h-3 text-emerald-600"></i>
-            <span>100% Private</span>
+          <div class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#162327]/90 backdrop-blur-sm border border-paw-teal/30 text-[10px] font-bold text-paw-tealLight shadow-xs">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span>100% Solo Play</span>
           </div>
         </div>
 
@@ -228,7 +243,7 @@
             <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
           </button>
           <p class="text-center text-xs font-semibold text-paw-tealDark/70">
-            Create your characters or skip straight to booking
+            Book your private sanctuary session in seconds
           </p>
         </div>
       </div>
@@ -236,7 +251,7 @@
       <!-- 2 Quick Action Cards (Image 2) -->
       <div class="grid grid-cols-2 gap-3">
         <!-- Card 1: Dog Profile -->
-        <button onclick="goToJourneyStep(3)" class="bg-white hover:bg-paw-mintSoft/30 active:scale-[0.99] p-4 rounded-2xl border border-slate-200 hover:border-paw-teal/30 shadow-xs flex flex-col items-start gap-1 text-left transition cursor-pointer">
+        <button onclick="goToJourneyStep(3)" class="bg-[#141d22] hover:bg-[#1a262d] active:scale-[0.99] p-4 rounded-2xl border border-slate-200 hover:border-paw-teal/30 shadow-xs flex flex-col items-start gap-1 text-left transition cursor-pointer">
           <div class="w-9 h-9 rounded-xl bg-paw-mint flex items-center justify-center text-paw-teal mb-1">
             <i data-lucide="user" class="w-4 h-4"></i>
           </div>
@@ -245,7 +260,7 @@
         </button>
 
         <!-- Card 2: Book a session -->
-        <button id="quickBookBtn" onclick="skipToBooking()" class="bg-white hover:bg-amber-50/40 active:scale-[0.99] p-4 rounded-2xl border border-slate-200 hover:border-amber-300 shadow-xs flex flex-col items-start gap-1 text-left transition cursor-pointer">
+        <button id="quickBookBtn" onclick="skipToBooking()" class="bg-[#141d22] hover:bg-[#1a262d] active:scale-[0.99] p-4 rounded-2xl border border-slate-200 hover:border-amber-300 shadow-xs flex flex-col items-start gap-1 text-left transition cursor-pointer">
           <div class="w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center text-amber-700 mb-1">
             <i data-lucide="calendar" class="w-4 h-4"></i>
           </div>
@@ -255,7 +270,7 @@
       </div>
 
       <!-- Active Pass Compact Card (if active PIN exists) -->
-      <div id="welcomePassCard" class="bg-white rounded-2xl border-2 border-paw-teal/30 p-3.5 shadow-xs flex items-center justify-between">
+      <div id="welcomePassCard" class="bg-[#141d22] rounded-2xl border-2 border-paw-teal/30 p-3.5 shadow-xs flex items-center justify-between">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-paw-mint flex items-center justify-center text-paw-teal">
             <i data-lucide="key" class="w-5 h-5"></i>
@@ -273,7 +288,7 @@
       </div>
 
       <!-- PawSpace Rewards Strip (Image 2) -->
-      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs space-y-2">
+      <div class="bg-[#141d22] rounded-2xl border border-paw-teal/20 p-4 shadow-xs space-y-2">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
             <span class="text-base">🐾</span>
@@ -283,7 +298,7 @@
             🐾 5/6 Bookings
           </span>
         </div>
-        <div class="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden">
+        <div class="w-full bg-[#162227] rounded-full h-2.5 overflow-hidden">
           <div id="welcomeLoyaltyBar" class="bg-gradient-to-r from-amber-400 to-amber-500 h-2.5 rounded-full transition-all duration-500" style="width: 83%"></div>
         </div>
         <p class="text-[11px] text-paw-muted">
@@ -292,7 +307,7 @@
       </div>
 
       <!-- Click-to-Go Socials & Instagram Card -->
-      <a href="https://www.instagram.com/pawspaceplayroom/" target="_blank" rel="noopener noreferrer" id="welcomeInstagramCard" class="group bg-gradient-to-r from-[#fdf2f8] via-[#f5f3ff] to-[#fffbeb] hover:from-[#fce7f3] hover:via-[#ede9fe] hover:to-[#fef3c7] rounded-2xl border border-pink-300/40 p-3.5 shadow-xs flex items-center justify-between transition cursor-pointer">
+      <a href="https://www.instagram.com/pawspaceplayroom/" target="_blank" rel="noopener noreferrer" id="welcomeInstagramCard" class="group bg-gradient-to-r from-[#1c1826] via-[#191924] to-[#1f191b] hover:from-[#fce7f3] hover:via-[#ede9fe] hover:to-[#fef3c7] rounded-2xl border border-pink-300/40 p-3.5 shadow-xs flex items-center justify-between transition cursor-pointer">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-400 via-rose-500 to-purple-600 flex items-center justify-center text-white shadow-xs group-hover:scale-105 transition-transform flex-shrink-0">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
@@ -315,169 +330,14 @@
       </a>
     </section>
 
-        <!-- ========================================================================= -->
-    <!-- SCREEN 2: PICK YOUR AVATAR (Pick a Person & Pick a Dog) -->
-    <!-- ========================================================================= -->
-    <section id="onboardingStep-2" class="space-y-4 hidden">
-      <!-- Top Navigation & Progress -->
-      <div class="flex items-center justify-between pb-2 border-b border-slate-100">
-        <button onclick="goToJourneyStep(1)" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-paw-charcoal transition" title="Back to Welcome">
-          <i data-lucide="chevron-left" class="w-4 h-4"></i>
-        </button>
-        <div class="text-center">
-          <span class="text-[10px] font-extrabold uppercase tracking-widest text-paw-teal">Step 2 of 4</span>
-          <h2 class="font-brand text-lg font-bold text-paw-charcoal">Pick your avatar</h2>
-        </div>
-        <button onclick="skipAvatarToDetails()" class="text-xs font-bold text-paw-teal hover:underline px-2 py-1">
-          Skip
-        </button>
-      </div>
-
-      <!-- Duo Stage Live Preview Box -->
-      <div class="bg-gradient-to-b from-paw-mintSoft via-white to-paw-mintSoft/30 rounded-3xl border border-paw-teal/20 p-4 flex flex-col items-center justify-center relative overflow-hidden shadow-xs">
-        <div id="avatarPickStageContainer" class="w-full flex items-center justify-center py-2"></div>
-        <div class="flex items-center gap-2 mt-1">
-          <span id="avatarPickDuoLabel" class="text-sm font-bold text-paw-charcoal font-brand">Anthony &amp; Barnaby</span>
-          <span class="text-[10px] font-semibold text-paw-teal bg-paw-mint px-2 py-0.5 rounded-full">Duo Preview</span>
-        </div>
-      </div>
-
-      <!-- Segmented Tabs: Dogs vs Person -->
-      <div class="grid grid-cols-2 p-1 bg-slate-100 rounded-2xl">
-        <button type="button" id="tabBtnDog" onclick="switchAvatarTab('dog')" class="py-2.5 text-xs font-bold rounded-xl transition bg-white text-paw-teal shadow-xs flex items-center justify-center gap-1.5 cursor-pointer">
-          <span>🐕 Pick Your Dog</span>
-        </button>
-        <button type="button" id="tabBtnHuman" onclick="switchAvatarTab('human')" class="py-2.5 text-xs font-bold rounded-xl transition text-paw-muted hover:text-paw-charcoal flex items-center justify-center gap-1.5 cursor-pointer">
-          <span>👤 Pick Your Person</span>
-        </button>
-      </div>
-
-      <!-- 1. DOG AVATAR PICKER (3x3 High-Res Pixar Grid) -->
-      <div id="avatarViewDog" class="space-y-4">
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-bold text-paw-charcoal">Choose your dog companion:</span>
-          <span class="text-[10px] text-paw-muted">11 Pixar Breeds Available</span>
-        </div>
-
-                <div class="grid grid-cols-3 gap-2.5" id="dogAvatarGrid">
-          <!-- 1. Bernese -->
-          <button type="button" onclick="selectDogBreedPreset('bernese')" data-breed="bernese" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-slate-50 overflow-hidden mb-1 flex items-center justify-center" id="thumb-bernese"></div>
-            <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Bernese</span>
-          </button>
-          <!-- 2. Golden -->
-          <button type="button" onclick="selectDogBreedPreset('golden')" data-breed="golden" class="dog-avatar-card p-2 rounded-2xl border-2 border-paw-teal bg-paw-mintSoft/40 flex flex-col items-center text-center transition cursor-pointer relative group">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-slate-50 overflow-hidden mb-1 flex items-center justify-center" id="thumb-golden"></div>
-            <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Golden</span>
-          </button>
-          <!-- 3. Greyhound -->
-          <button type="button" onclick="selectDogBreedPreset('greyhound')" data-breed="greyhound" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-slate-50 overflow-hidden mb-1 flex items-center justify-center" id="thumb-greyhound"></div>
-            <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Greyhound</span>
-          </button>
-          <!-- 4. Bully -->
-          <button type="button" onclick="selectDogBreedPreset('bully')" data-breed="bully" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-slate-50 overflow-hidden mb-1 flex items-center justify-center" id="thumb-bully"></div>
-            <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Bully / Staffy</span>
-          </button>
-          <!-- 5. Cockapoo -->
-          <button type="button" onclick="selectDogBreedPreset('cockapoo')" data-breed="cockapoo" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-slate-50 overflow-hidden mb-1 flex items-center justify-center" id="thumb-cockapoo"></div>
-            <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Cockapoo</span>
-          </button>
-          <!-- 6. Terrier -->
-          <button type="button" onclick="selectDogBreedPreset('terrier')" data-breed="terrier" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-slate-50 overflow-hidden mb-1 flex items-center justify-center" id="thumb-terrier"></div>
-            <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Terrier</span>
-          </button>
-          <!-- 7. Frenchie -->
-          <button type="button" onclick="selectDogBreedPreset('frenchie')" data-breed="frenchie" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-slate-50 overflow-hidden mb-1 flex items-center justify-center" id="thumb-frenchie"></div>
-            <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Frenchie</span>
-          </button>
-          <!-- 8. Cocker -->
-          <button type="button" onclick="selectDogBreedPreset('cocker')" data-breed="cocker" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-slate-50 overflow-hidden mb-1 flex items-center justify-center" id="thumb-cocker"></div>
-            <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Spaniel</span>
-          </button>
-          <!-- 9. Mixed -->
-          <button type="button" onclick="selectDogBreedPreset('mixed')" data-breed="mixed" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-slate-50 overflow-hidden mb-1 flex items-center justify-center" id="thumb-mixed"></div>
-            <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Mixed 🐾</span>
-          </button>
-          <!-- 10. German Shepherd -->
-          <button type="button" onclick="selectDogBreedPreset('shepherd')" data-breed="shepherd" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-slate-50 overflow-hidden mb-1 flex items-center justify-center" id="thumb-shepherd"></div>
-            <span class="text-[10px] font-bold text-paw-charcoal leading-tight">G. Shepherd</span>
-          </button>
-          <!-- 11. Dachshund -->
-          <button type="button" onclick="selectDogBreedPreset('dachshund')" data-breed="dachshund" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
-            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-slate-50 overflow-hidden mb-1 flex items-center justify-center" id="thumb-dachshund"></div>
-            <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Dachshund</span>
-          </button>
-        </div>
-            </button>
-            <button type="button" onclick="selectDogBreedPreset('dachshund')" data-breed="dachshund" class="p-2.5 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex items-center gap-2.5 text-left transition cursor-pointer">
-              <div class="w-10 h-10 rounded-xl bg-slate-50 overflow-hidden flex-shrink-0" id="thumb-dachshund"></div>
-              <div>
-                <div class="text-xs font-bold text-paw-charcoal">Dachshund</div>
-                <div class="text-[9px] text-paw-muted">Sausage Dog</div>
-              </div>
-            </button>
-          </div>
-        </div>
-
-        <!-- Generic Dog Size Selector -->
-        <div class="space-y-1.5 pt-1">
-          <label class="text-xs font-bold text-paw-charcoal">Generic Dog Size</label>
-          <div class="grid grid-cols-3 gap-2">
-            <button type="button" onclick="selectDogGenericSize('small')" id="sizeBtn-small" class="dog-size-btn p-2.5 rounded-xl border-2 border-slate-200 bg-white text-center transition cursor-pointer">
-              <div class="text-xs font-bold text-paw-charcoal">Small</div>
-              <div class="text-[10px] text-paw-muted">&lt; 10kg</div>
-            </button>
-            <button type="button" onclick="selectDogGenericSize('medium')" id="sizeBtn-medium" class="dog-size-btn p-2.5 rounded-xl border-2 border-paw-teal bg-paw-mint text-center transition cursor-pointer">
-              <div class="text-xs font-bold text-paw-tealDark">Medium</div>
-              <div class="text-[10px] text-paw-muted">10–25kg</div>
-            </button>
-            <button type="button" onclick="selectDogGenericSize('large')" id="sizeBtn-large" class="dog-size-btn p-2.5 rounded-xl border-2 border-slate-200 bg-white text-center transition cursor-pointer">
-              <div class="text-xs font-bold text-paw-charcoal">Large</div>
-              <div class="text-[10px] text-paw-muted">25kg+</div>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2. HUMAN AVATAR PICKER (Real 3D Pixar Characters Grid) -->
-      <div id="avatarViewHuman" class="space-y-4 hidden">
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-bold text-paw-charcoal">Choose your person avatar:</span>
-          <span class="text-[10px] text-paw-muted">47 Pixar Guardians Available</span>
-        </div>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5" id="humanAvatarGrid">
-          <!-- Populated by populateHumanThumbnails() -->
-        </div>
-      </div>
-
-      <!-- Bottom Navigation Buttons -->
-      <div class="pt-2 flex flex-col gap-2">
-        <button type="button" id="btnSaveAvatars" onclick="saveAvatarAndGoToDetails()" class="w-full py-3.5 rounded-2xl bg-paw-charcoal hover:bg-paw-teal text-white font-brand text-sm font-bold shadow-float transition flex items-center justify-center gap-2 cursor-pointer">
-          <span>Save Avatars &amp; Continue</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </button>
-
-        <button type="button" onclick="skipAvatarToDetails()" class="text-xs text-paw-muted hover:text-paw-charcoal text-center font-bold py-1">
-          Skip for now (never blocks booking)
-        </button>
-      </div>
-    </section>
+    <div id="onboardingStep-2" class="hidden"></div>
 
     <!-- ========================================================================= -->
     <!-- SCREEN 3: QUICK CUSTOMER AND DOG DETAILS -->
     <!-- ========================================================================= -->
     <section id="onboardingStep-3" class="space-y-4 hidden">
-      <div class="flex items-center justify-between pb-2 border-b border-slate-100">
-        <button onclick="goToJourneyStep(1)" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-paw-charcoal transition" title="Back to Welcome">
+      <div class="flex items-center justify-between pb-2 border-b border-paw-teal/15">
+        <button onclick="goToJourneyStep(1)" class="w-8 h-8 rounded-full bg-[#162227] hover:bg-slate-200 flex items-center justify-center text-paw-charcoal transition" title="Back to Welcome">
           <i data-lucide="chevron-left" class="w-4 h-4"></i>
         </button>
         <div class="text-center">
@@ -488,7 +348,7 @@
       </div>
 
       <!-- Reassuring Notice Box (Exact prompt requirement) -->
-      <div class="bg-gradient-to-r from-paw-mintSoft via-[#e2f5f4] to-paw-mintSoft p-4 rounded-2xl border-2 border-paw-teal/30 shadow-xs flex items-start gap-3">
+      <div class="bg-gradient-to-r from-[#122428] via-[#101e22] to-[#122428] p-4 rounded-2xl border-2 border-paw-teal/30 shadow-xs flex items-start gap-3 text-white">
         <div class="text-2xl shrink-0 mt-0.5">🐾</div>
         <div class="text-xs sm:text-sm font-semibold text-paw-charcoal leading-snug">
           Don't worry! We'll take you straight to booking next. We just need a few quick details about you and your dog first. 🐾
@@ -496,15 +356,15 @@
       </div>
 
       <!-- Quick Details Form (Large, tactile, mobile-game styled) -->
-      <div class="space-y-3.5 bg-white p-5 rounded-3xl border border-slate-200 shadow-soft">
+      <div class="space-y-3.5 bg-[#141d22] p-5 rounded-3xl border border-paw-teal/20 shadow-soft">
         <div>
           <label class="text-xs font-bold text-paw-charcoal block mb-1">Your Name</label>
-          <input type="text" id="inputGuestName" value="Anthony" placeholder="e.g. Sarah Jenkins" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-paw-teal focus:bg-white rounded-2xl p-3.5 text-sm font-semibold text-paw-charcoal outline-none transition">
+          <input type="text" id="inputGuestName" value="Anthony" placeholder="e.g. Sarah Jenkins" class="w-full bg-[#0c1215] border-2 border-[#22353c] text-white focus:border-paw-teal focus:bg-[#10171b] rounded-2xl p-3.5 text-sm font-semibold text-paw-charcoal outline-none transition">
         </div>
 
         <div>
           <label class="text-xs font-bold text-paw-charcoal block mb-1">Dog's Name</label>
-          <input type="text" id="inputDogName" value="Barnaby" placeholder="e.g. Milo" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-paw-teal focus:bg-white rounded-2xl p-3.5 text-sm font-semibold text-paw-charcoal outline-none transition">
+          <input type="text" id="inputDogName" value="Barnaby" placeholder="e.g. Milo" class="w-full bg-[#0c1215] border-2 border-[#22353c] text-white focus:border-paw-teal focus:bg-[#10171b] rounded-2xl p-3.5 text-sm font-semibold text-paw-charcoal outline-none transition">
         </div>
 
         <div>
@@ -520,7 +380,7 @@
           
           <!-- Large Breed Dropdown Selector -->
           <div class="relative">
-            <select id="selectDogBreed" onchange="handleBreedSelectChange(this.value)" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-paw-teal focus:bg-white rounded-2xl p-3.5 pr-10 text-sm font-semibold text-paw-charcoal outline-none transition appearance-none cursor-pointer">
+            <select id="selectDogBreed" onchange="handleBreedSelectChange(this.value)" class="w-full bg-[#0c1215] border-2 border-[#22353c] text-white focus:border-paw-teal focus:bg-[#10171b] rounded-2xl p-3.5 pr-10 text-sm font-semibold text-paw-charcoal outline-none transition appearance-none cursor-pointer">
               <option value="" disabled>-- Select Dog Breed --</option>
               <optgroup label="🌟 Most Popular Breeds">
                 <option value="Golden Retriever" selected>Golden Retriever</option>
@@ -708,17 +568,17 @@
         <div>
           <label class="text-xs font-bold text-paw-charcoal block mb-1.5">Dog Age</label>
           <div class="grid grid-cols-4 gap-1.5" id="dogAgeChips">
-            <button type="button" onclick="selectDogAge('puppy')" class="dog-age-btn p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-center text-xs font-bold text-paw-charcoal transition">Puppy<br><span class="text-[9px] text-paw-muted font-normal">&lt;1 yr</span></button>
+            <button type="button" onclick="selectDogAge('puppy')" class="dog-age-btn p-2.5 rounded-xl border-2 border-slate-200 bg-[#0c1215] text-center text-xs font-bold text-paw-charcoal transition">Puppy<br><span class="text-[9px] text-paw-muted font-normal">&lt;1 yr</span></button>
             <button type="button" onclick="selectDogAge('young')" class="dog-age-btn p-2.5 rounded-xl border-2 border-paw-teal bg-paw-mint text-center text-xs font-bold text-paw-tealDark transition">Young<br><span class="text-[9px] text-paw-muted font-normal">1–3 yrs</span></button>
-            <button type="button" onclick="selectDogAge('adult')" class="dog-age-btn p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-center text-xs font-bold text-paw-charcoal transition">Adult<br><span class="text-[9px] text-paw-muted font-normal">4–7 yrs</span></button>
-            <button type="button" onclick="selectDogAge('senior')" class="dog-age-btn p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-center text-xs font-bold text-paw-charcoal transition">Senior<br><span class="text-[9px] text-paw-muted font-normal">8+ yrs</span></button>
+            <button type="button" onclick="selectDogAge('adult')" class="dog-age-btn p-2.5 rounded-xl border-2 border-slate-200 bg-[#0c1215] text-center text-xs font-bold text-paw-charcoal transition">Adult<br><span class="text-[9px] text-paw-muted font-normal">4–7 yrs</span></button>
+            <button type="button" onclick="selectDogAge('senior')" class="dog-age-btn p-2.5 rounded-xl border-2 border-slate-200 bg-[#0c1215] text-center text-xs font-bold text-paw-charcoal transition">Senior<br><span class="text-[9px] text-paw-muted font-normal">8+ yrs</span></button>
           </div>
         </div>
 
         <div>
           <label class="text-xs font-bold text-paw-charcoal block mb-1.5">Dog Size</label>
           <div class="grid grid-cols-3 gap-2" id="detailsSizeCards">
-            <button type="button" onclick="selectDetailsDogSize('small')" id="detSize-small" class="p-3 rounded-2xl border-2 border-slate-200 bg-slate-50 hover:border-paw-teal/40 text-center transition">
+            <button type="button" onclick="selectDetailsDogSize('small')" id="detSize-small" class="p-3 rounded-2xl border-2 border-[#22353c] bg-[#0c1215] text-white hover:border-paw-teal/40 text-center transition">
               <div class="text-xs font-bold text-paw-charcoal">Small</div>
               <div class="text-[10px] text-paw-muted">&lt; 10kg</div>
             </button>
@@ -726,7 +586,7 @@
               <div class="text-xs font-bold text-paw-tealDark">Medium</div>
               <div class="text-[10px] text-paw-muted">10–25kg</div>
             </button>
-            <button type="button" onclick="selectDetailsDogSize('large')" id="detSize-large" class="p-3 rounded-2xl border-2 border-slate-200 bg-slate-50 hover:border-paw-teal/40 text-center transition">
+            <button type="button" onclick="selectDetailsDogSize('large')" id="detSize-large" class="p-3 rounded-2xl border-2 border-[#22353c] bg-[#0c1215] text-white hover:border-paw-teal/40 text-center transition">
               <div class="text-xs font-bold text-paw-charcoal">Large</div>
               <div class="text-[10px] text-paw-muted">25kg+</div>
             </button>
@@ -735,8 +595,8 @@
 
               </div>
 
-      <div class="pt-2 flex items-center justify-between gap-3 border-t border-slate-100">
-        <button onclick="goToJourneyStep(1)" class="w-12 h-12 rounded-full border border-slate-200 hover:bg-slate-50 flex items-center justify-center text-paw-charcoal transition shrink-0" title="Back">
+      <div class="pt-2 flex items-center justify-between gap-3 border-t border-paw-teal/15">
+        <button onclick="goToJourneyStep(1)" class="w-12 h-12 rounded-full border border-slate-200 hover:bg-[#0c1215] flex items-center justify-center text-paw-charcoal transition shrink-0" title="Back">
           <i data-lucide="chevron-left" class="w-5 h-5"></i>
         </button>
         <button type="button" onclick="saveDetailsAndGoToBooking()" class="flex-1 bg-paw-teal hover:bg-paw-tealDark text-white font-brand text-base font-bold py-4 px-6 rounded-2xl shadow-float transition flex items-center justify-center gap-2">
@@ -750,23 +610,23 @@
     <!-- SCREEN 4: BOOKING ENGINE & GATE PASS (Step 4 of 4) -->
     <!-- ========================================================================= -->
     <section id="onboardingStep-4" class="space-y-4 hidden">
-      <div class="flex items-center justify-between pb-2 border-b border-slate-100">
-        <button onclick="goToJourneyStep(3)" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-paw-charcoal transition" title="Back to Details">
+      <div class="flex items-center justify-between pb-2 border-b border-paw-teal/15">
+        <button onclick="goToJourneyStep(3)" class="w-8 h-8 rounded-full bg-[#162227] hover:bg-slate-200 flex items-center justify-center text-paw-charcoal transition" title="Back to Details">
           <i data-lucide="chevron-left" class="w-4 h-4"></i>
         </button>
         <div class="text-center">
           <span class="text-[10px] font-extrabold uppercase tracking-widest text-paw-teal">Step 4 of 4: Booking</span>
           <h2 class="font-brand text-lg font-bold text-paw-charcoal">When are you visiting?</h2>
         </div>
-        <button onclick="goToJourneyStep(1)" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-paw-charcoal transition" title="Home">
+        <button onclick="goToJourneyStep(1)" class="w-8 h-8 rounded-full bg-[#162227] hover:bg-slate-200 flex items-center justify-center text-paw-charcoal transition" title="Home">
           <i data-lucide="home" class="w-4 h-4"></i>
         </button>
       </div>
 
       <!-- Dynamic Duo Greeting Card -->
-      <div class="bg-gradient-to-r from-paw-mintSoft via-white to-paw-mintSoft p-3.5 rounded-2xl border border-paw-teal/20 flex items-center justify-between gap-3 shadow-xs">
+      <div class="bg-gradient-to-r from-[#13282c] via-[#141d22] to-[#13282c] p-3.5 rounded-2xl border border-paw-teal/20 flex items-center justify-between gap-3 shadow-xs">
         <div class="flex items-center gap-3">
-          <div id="bookingDuoAvatarContainer" class="w-16 h-12 rounded-xl bg-white border border-paw-teal/20 overflow-hidden flex items-center justify-center shrink-0 shadow-xs cursor-pointer" onclick="goToJourneyStep(2)" title="Edit Avatars"></div>
+          <div id="bookingDuoAvatarContainer" class="w-16 h-12 rounded-xl bg-white border border-paw-teal/20 overflow-hidden flex items-center justify-center shrink-0 shadow-xs cursor-pointer" onclick="goToJourneyStep(2)" title="Pup Profile"></div>
           <div>
             <div class="text-[10px] font-extrabold uppercase text-paw-teal tracking-wider">Booking Sanctuary For</div>
             <div id="bookingDuoNameTitle" class="text-sm font-bold text-paw-charcoal font-brand">Anthony & Barnaby</div>
@@ -812,17 +672,17 @@
         </div>
 
         <!-- Timer & Bay -->
-        <div class="bg-paw-mintSoft rounded-2xl p-4 border border-paw-teal/20 text-center sm:text-left space-y-1">
+        <div class="bg-[#10171a] rounded-2xl p-4 border border-paw-teal/20 text-center sm:text-left space-y-1">
           <span class="text-[10px] font-bold uppercase text-paw-teal block">Remaining Time</span>
           <div class="text-xl font-bold font-mono text-paw-tealDark" id="countdownTimer">42m 18s</div>
           <div class="text-xs font-semibold text-paw-charcoal font-mono" id="passBayBadge">Bay 02 (East Gate)</div>
         </div>
       </div>
 
-      <!-- Live Avatar Duo & Loyalty Ribbon -->
-      <div class="pt-3 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <!-- Confirmed Guest & Loyalty Ribbon -->
+      <div class="pt-3 border-t border-paw-teal/15 flex flex-col sm:flex-row items-center justify-between gap-3">
         <div class="flex items-center gap-3 w-full sm:w-auto">
-          <div id="passAvatarSceneContainer" class="w-32 h-20 rounded-2xl bg-gradient-to-b from-paw-mintSoft/60 to-white border border-paw-teal/20 overflow-hidden flex items-center justify-center shrink-0 cursor-pointer shadow-xs" onclick="openAvatarStudio()" title="Customise Pack Avatars">
+          <div id="passAvatarSceneContainer" class="w-32 h-20 rounded-2xl bg-gradient-to-b from-paw-mintSoft/60 to-white border border-paw-teal/20 overflow-hidden flex items-center justify-center shrink-0 cursor-pointer shadow-xs" onclick="openAvatarStudio()" title="Sanctuary Pass">
             <!-- Rendered Duo SVG -->
           </div>
           <div>
@@ -835,7 +695,7 @@
         </div>
         
         <!-- Loyalty Progress Bar in Active Pass -->
-        <div class="w-full sm:w-56 bg-slate-50 border border-slate-200 rounded-2xl p-2.5 text-left">
+        <div class="w-full sm:w-56 bg-[#0c1215] border border-slate-200 rounded-2xl p-2.5 text-left">
           <div class="flex items-center justify-between text-[10px] font-bold">
             <span class="text-paw-teal flex items-center gap-1"><i data-lucide="award" class="w-3.5 h-3.5 text-amber-500"></i> Loyalty Rewards</span>
             <span id="passLoyaltyText" class="text-paw-charcoal font-semibold">4 of 6 Bookings Completed</span>
@@ -854,7 +714,7 @@
       <section class="bg-white rounded-3xl border border-slate-200 p-5 sm:p-7 shadow-soft space-y-5">
       
       <!-- STEP INDICATOR BAR -->
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+      <div class="flex items-center justify-between pb-3 border-b border-paw-teal/15">
         <div>
           <span class="text-[10px] font-extrabold uppercase tracking-widest text-paw-teal" id="stepSuperTitle">Step 1 of 3</span>
           <h3 class="font-brand text-xl font-bold text-paw-charcoal mt-0.5" id="stepMainTitle">When are you visiting?</h3>
@@ -864,9 +724,9 @@
         <div class="flex items-center gap-2">
           <div id="stepDot-1" class="w-7 h-7 rounded-full bg-paw-teal text-white flex items-center justify-center font-bold text-xs transition">1</div>
           <div class="w-6 h-0.5 bg-slate-200" id="stepLine-1"></div>
-          <div id="stepDot-2" class="w-7 h-7 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center font-bold text-xs transition">2</div>
+          <div id="stepDot-2" class="w-7 h-7 rounded-full bg-[#162227] text-slate-400 flex items-center justify-center font-bold text-xs transition">2</div>
           <div class="w-6 h-0.5 bg-slate-200" id="stepLine-2"></div>
-          <div id="stepDot-3" class="w-7 h-7 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center font-bold text-xs transition">3</div>
+          <div id="stepDot-3" class="w-7 h-7 rounded-full bg-[#162227] text-slate-400 flex items-center justify-center font-bold text-xs transition">3</div>
         </div>
       </div>
 
@@ -880,15 +740,15 @@
             <span>Session Length</span>
           </label>
           <div class="grid grid-cols-3 gap-2.5">
-            <button type="button" onclick="selectDuration(60, 28)" id="dur-60" class="dur-btn p-3 rounded-2xl border-2 border-paw-teal bg-paw-mint text-paw-tealDark font-bold text-center transition">
+            <button type="button" onclick="selectDuration(60, 28)" id="dur-60" class="dur-btn p-3 rounded-2xl border-2 border-paw-teal bg-paw-teal/25 text-paw-tealLight font-bold text-center transition shadow-xs">
               <div class="text-sm font-brand">60 Mins</div>
               <div class="text-xs font-mono font-semibold">£28</div>
             </button>
-            <button type="button" onclick="selectDuration(90, 38)" id="dur-90" class="dur-btn p-3 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/40 bg-white text-paw-charcoal font-bold text-center transition">
+            <button type="button" onclick="selectDuration(90, 38)" id="dur-90" class="dur-btn p-3 rounded-2xl border-2 border-[#22353c] hover:border-paw-teal/40 bg-[#141d22] text-white font-bold text-center transition">
               <div class="text-sm font-brand">90 Mins</div>
               <div class="text-xs font-mono text-paw-muted">£38</div>
             </button>
-            <button type="button" onclick="selectDuration(120, 48)" id="dur-120" class="dur-btn p-3 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/40 bg-white text-paw-charcoal font-bold text-center transition">
+            <button type="button" onclick="selectDuration(120, 48)" id="dur-120" class="dur-btn p-3 rounded-2xl border-2 border-[#22353c] hover:border-paw-teal/40 bg-[#141d22] text-white font-bold text-center transition">
               <div class="text-sm font-brand">120 Mins</div>
               <div class="text-xs font-mono text-paw-muted">£48</div>
             </button>
@@ -931,11 +791,11 @@
         </p>
 
         <!-- Interactive Avatar Duo Card in Step 2 -->
-        <div class="bg-gradient-to-r from-paw-mintSoft via-white to-paw-mintSoft/40 p-3.5 rounded-2xl border border-paw-teal/20 flex items-center justify-between gap-3 shadow-xs">
+        <div class="bg-gradient-to-r from-[#13282c] via-[#141d22] to-[#13282c]/40 p-3.5 rounded-2xl border border-paw-teal/20 flex items-center justify-between gap-3 shadow-xs">
           <div class="flex items-center gap-3">
-            <div id="step2AvatarSceneContainer" class="w-24 h-16 rounded-xl bg-white border border-paw-teal/20 overflow-hidden flex items-center justify-center shrink-0 shadow-xs cursor-pointer" onclick="openAvatarStudio()" title="Customise Avatars"></div>
+            <div id="step2AvatarSceneContainer" class="w-24 h-16 rounded-xl bg-white border border-paw-teal/20 overflow-hidden flex items-center justify-center shrink-0 shadow-xs cursor-pointer" onclick="openAvatarStudio()" title="Sanctuary Booking"></div>
             <div>
-              <div class="text-[10px] font-bold uppercase text-paw-teal tracking-wider">Custom Avatars</div>
+              <div class="text-[10px] font-bold uppercase text-paw-teal tracking-wider">Sanctuary Booking</div>
               <div id="step2AvatarNameTitle" class="text-xs font-bold text-paw-charcoal">Anthony &amp; Milo</div>
               <div class="text-[10px] text-paw-muted">Animated pack duo for gate pass</div>
             </div>
@@ -949,27 +809,27 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
           <div>
             <label class="text-paw-muted block mb-1 font-semibold">Your Name</label>
-            <input type="text" id="inputGuestName" value="Anthony" placeholder="Your Full Name" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-paw-charcoal font-semibold focus:outline-none focus:border-paw-teal focus:bg-white transition">
+            <input type="text" id="inputGuestName" value="Anthony" placeholder="Your Full Name" class="w-full bg-[#0c1215] border border-[#22353c] rounded-xl p-3 text-white font-semibold focus:outline-none focus:border-paw-teal focus:bg-[#10171b] transition">
           </div>
 
           <div>
             <label class="text-paw-muted block mb-1 font-semibold">Mobile (For Gate PIN SMS)</label>
-            <input type="tel" id="inputGuestPhone" value="+44 7700 900123" placeholder="+44 7..." class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-paw-charcoal font-semibold focus:outline-none focus:border-paw-teal focus:bg-white transition">
+            <input type="tel" id="inputGuestPhone" value="+44 7700 900123" placeholder="+44 7..." class="w-full bg-[#0c1215] border border-[#22353c] rounded-xl p-3 text-white font-semibold focus:outline-none focus:border-paw-teal focus:bg-[#10171b] transition">
           </div>
 
           <div>
             <label class="text-paw-muted block mb-1 font-semibold">Dog Name &amp; Breed</label>
-            <input type="text" id="inputDogName" value="Milo (Cockapoo)" placeholder="e.g. Milo (Friendly)" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-paw-charcoal font-semibold focus:outline-none focus:border-paw-teal focus:bg-white transition">
+            <input type="text" id="inputDogName" value="Milo (Cockapoo)" placeholder="e.g. Milo (Friendly)" class="w-full bg-[#0c1215] border border-[#22353c] rounded-xl p-3 text-white font-semibold focus:outline-none focus:border-paw-teal focus:bg-[#10171b] transition">
           </div>
 
           <div>
             <label class="text-paw-muted block mb-1 font-semibold">Vehicle Reg (Automatic Barrier)</label>
-            <input type="text" id="inputVehicleReg" value="PAW 24 SP" placeholder="e.g. AB21 CDE" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-paw-charcoal font-mono uppercase font-bold focus:outline-none focus:border-paw-teal focus:bg-white transition">
+            <input type="text" id="inputVehicleReg" value="PAW 24 SP" placeholder="e.g. AB21 CDE" class="w-full bg-[#0c1215] border border-slate-200 rounded-xl p-3 text-paw-charcoal font-mono uppercase font-bold focus:outline-none focus:border-paw-teal focus:bg-white transition">
           </div>
         </div>
 
         <div class="flex gap-2.5 pt-2">
-          <button type="button" onclick="goToStep(1)" class="w-1/3 bg-slate-100 hover:bg-slate-200 text-paw-charcoal font-brand text-sm font-bold py-3.5 rounded-2xl transition">
+          <button type="button" onclick="goToStep(1)" class="w-1/3 bg-[#162227] hover:bg-[#1d2d34] text-white border border-paw-teal/20 font-brand text-sm font-bold py-3.5 rounded-2xl transition">
             Back
           </button>
           <button type="button" onclick="goToStep(3)" class="w-2/3 bg-paw-teal hover:bg-paw-tealDark text-white font-brand text-base font-bold py-3.5 rounded-2xl shadow-float transition flex items-center justify-center gap-2">
@@ -984,7 +844,7 @@
       <div id="wizardStep-3" class="space-y-4 hidden">
         
         <!-- Booking Snapshot Box -->
-        <div class="bg-paw-mintSoft rounded-2xl p-4 border border-paw-teal/30 space-y-2 text-xs">
+        <div class="bg-[#10171a] rounded-2xl p-4 border border-paw-teal/30 space-y-2 text-xs">
           <div class="flex items-center justify-between pb-2 border-b border-paw-teal/20">
             <span class="font-bold text-paw-tealDark uppercase tracking-wider text-[10px]">Session Summary</span>
             <button onclick="goToStep(1)" class="text-paw-teal hover:underline font-bold text-[11px]">Edit Slot</button>
@@ -997,12 +857,12 @@
           </div>
           <div class="flex items-center gap-2 pt-2 border-t border-paw-teal/20">
             <div id="reviewAvatarIcon" class="w-6 h-6 rounded-full bg-white border border-paw-teal/30 overflow-hidden shrink-0 flex items-center justify-center shadow-xs"></div>
-            <div class="text-[11px]"><b class="text-paw-charcoal">Pack Member:</b> <span id="reviewAvatarDuoText">Anthony &amp; Milo</span></div>
+            <div class="text-[11px]"><b class="text-paw-charcoal">Guest & Pup:</b> <span id="reviewAvatarDuoText">Anthony &amp; Milo</span></div>
           </div>
         </div>
 
         <!-- Clean Promo Box -->
-        <div class="flex items-center justify-between gap-2 bg-slate-50 p-3 rounded-2xl border border-slate-200">
+        <div class="flex items-center justify-between gap-2 bg-[#10171a] p-3 rounded-2xl border border-paw-teal/20 text-white">
           <div class="flex items-center gap-2">
             <i data-lucide="tag" class="w-4 h-4 text-paw-teal"></i>
             <input type="text" id="inputPromo" value="PAWSPACE" placeholder="Promo code" class="bg-white border border-slate-300 rounded-lg px-2.5 py-1 text-xs font-mono uppercase font-bold w-28">
@@ -1012,7 +872,7 @@
         </div>
 
         <!-- Sanctuary Loyalty Rewards Card (Milestone: 6 bookings = 30% OFF) -->
-        <div id="loyaltyRewardsCard" class="bg-gradient-to-br from-amber-50/80 via-white to-amber-50/50 rounded-2xl p-4 border border-amber-200/80 space-y-3">
+        <div id="loyaltyRewardsCard" class="bg-gradient-to-br from-[#1c1a16] via-[#141d22] to-[#1c1a16] rounded-2xl p-4 border border-amber-500/30 space-y-3">
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
               <span class="p-1 rounded-lg bg-amber-100 text-amber-800"><i data-lucide="award" class="w-4 h-4"></i></span>
@@ -1030,7 +890,7 @@
             <div class="stamp-box p-1.5 rounded-xl text-center border-2 border-emerald-500 bg-emerald-50 text-emerald-700 font-bold text-[11px]">🐾<div class="text-[7.5px]">#2 Paid</div></div>
             <div class="stamp-box p-1.5 rounded-xl text-center border-2 border-emerald-500 bg-emerald-50 text-emerald-700 font-bold text-[11px]">🐾<div class="text-[7.5px]">#3 Paid</div></div>
             <div class="stamp-box p-1.5 rounded-xl text-center border-2 border-emerald-500 bg-emerald-50 text-emerald-700 font-bold text-[11px]">🐾<div class="text-[7.5px]">#4 Paid</div></div>
-            <div id="loyaltyStamp5" class="stamp-box p-1.5 rounded-xl text-center border border-dashed border-slate-300 bg-slate-50 text-slate-400 font-bold text-[11px]">🐾<div class="text-[7.5px]">#5 Next</div></div>
+            <div id="loyaltyStamp5" class="stamp-box p-1.5 rounded-xl text-center border border-dashed border-slate-300 bg-[#0c1215] text-slate-500 font-bold text-[11px]">🐾<div class="text-[7.5px]">#5 Next</div></div>
             <div id="loyaltyStamp6" class="stamp-box p-1.5 rounded-xl text-center border border-dashed border-amber-300 bg-amber-50/50 text-amber-600 font-bold text-[11px]">🏆<div class="text-[7.5px]">30% OFF</div></div>
           </div>
 
@@ -1049,7 +909,7 @@
 
         <!-- Single Streamlined Trust Badge & Accordion -->
         <div class="border border-slate-200 rounded-2xl overflow-hidden text-xs">
-          <div class="p-3 bg-slate-50 flex items-center justify-between cursor-pointer" onclick="toggleLegalAccordion()">
+          <div class="p-3 bg-[#10171a] flex items-center justify-between text-white cursor-pointer" onclick="toggleLegalAccordion()">
             <label class="flex items-center gap-2 cursor-pointer pointer-events-none">
               <input type="checkbox" id="chkAllCompliance" checked class="rounded text-paw-teal pointer-events-auto">
               <span class="font-bold text-paw-charcoal text-[11px]">
@@ -1067,7 +927,7 @@
         </div>
 
         <!-- PAYMENT METHOD SELECTION (Monzo Free Bank Transfer & Stripe Card) -->
-        <div class="border border-slate-200 rounded-2xl p-4 bg-slate-50/80 space-y-3 text-xs">
+        <div class="border border-slate-200 rounded-2xl p-4 bg-[#0c1215]/80 space-y-3 text-xs">
           <div class="flex items-center justify-between">
             <span class="font-bold text-paw-charcoal text-[11px] uppercase tracking-wider flex items-center gap-1.5">
               <i data-lucide="credit-card" class="w-3.5 h-3.5 text-paw-teal"></i>
@@ -1146,7 +1006,7 @@
 
         <!-- Confirm & Pay -->
         <div class="flex gap-2.5 pt-1">
-          <button type="button" onclick="goToStep(2)" class="w-1/3 bg-slate-100 hover:bg-slate-200 text-paw-charcoal font-brand text-sm font-bold py-3.5 rounded-2xl transition">
+          <button type="button" onclick="goToStep(2)" class="w-1/3 bg-[#162227] hover:bg-[#1d2d34] text-white border border-paw-teal/20 font-brand text-sm font-bold py-3.5 rounded-2xl transition">
             Back
           </button>
           <button type="button" onclick="confirmBooking()" class="w-2/3 bg-paw-teal hover:bg-paw-tealDark text-white font-brand text-base font-bold py-3.5 rounded-2xl shadow-float transition flex items-center justify-center gap-2">
@@ -1241,14 +1101,14 @@
       </div>
 
       <!-- VIEW 1: TEXT CHAT STREAM -->
-      <div id="aiChatView" class="flex-1 flex flex-col overflow-hidden bg-slate-50">
+      <div id="aiChatView" class="flex-1 flex flex-col overflow-hidden bg-[#0c1215]">
         
         <!-- Messages Area -->
         <div id="aiMessagesContainer" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs">
           <!-- Initial Assistant Greeting -->
           <div class="flex items-start gap-2.5 max-w-[85%]">
             <div class="w-7 h-7 rounded-full bg-paw-mint flex-shrink-0 flex items-center justify-center border border-paw-teal text-xs">🐾</div>
-            <div class="bg-white p-3 rounded-2xl rounded-tl-sm border border-slate-200 shadow-sm space-y-1.5 text-paw-charcoal leading-relaxed">
+            <div class="bg-[#141d22] p-3 rounded-2xl rounded-tl-sm border border-paw-teal/20 shadow-sm space-y-1.5 text-white leading-relaxed">
               <p><b>Hello! Welcome to PawSpace.</b></p>
               <p>I'm your 24/7 AI Receptionist. I can answer questions about gate keypad codes, XL Bully / safety rules, session prices, or automatically reserve your time slot for you.</p>
               <p class="text-[10px] text-paw-muted font-medium">💡 You can type below or tap <b>Voice Call</b> above to speak with me directly!</p>
@@ -1257,20 +1117,20 @@
         </div>
 
         <!-- Quick Prompt Chips -->
-        <div class="px-3 py-2 bg-white border-t border-slate-200 flex items-center gap-1.5 overflow-x-auto text-[11px] whitespace-nowrap scrollbar-none">
-          <button onclick="sendQuickPrompt('What are your session prices and duration?')" class="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-paw-mintSoft hover:text-paw-teal border border-slate-200 font-medium transition">💰 Prices &amp; Promo</button>
-          <button onclick="sendQuickPrompt('How does the electronic gate code work?')" class="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-paw-mintSoft hover:text-paw-teal border border-slate-200 font-medium transition">🔑 Gate PIN</button>
-          <button onclick="sendQuickPrompt('Are XL Bullies and exemption dogs allowed?')" class="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-paw-mintSoft hover:text-paw-teal border border-slate-200 font-medium transition">🛡️ XL Bully Policy</button>
-          <button onclick="sendQuickPrompt('How do I pay with Monzo bank transfer?')" class="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-paw-mintSoft hover:text-paw-teal border border-slate-200 font-medium transition">💳 Monzo &amp; Stripe</button>
+        <div class="px-3 py-2 bg-[#10171a] border-t border-paw-teal/20 flex items-center gap-1.5 overflow-x-auto text-[11px] whitespace-nowrap scrollbar-none">
+          <button onclick="sendQuickPrompt('What are your session prices and duration?')" class="px-2.5 py-1 rounded-full bg-[#162227] hover:bg-paw-teal/20 hover:text-paw-tealLight border border-paw-teal/20 text-slate-200 font-medium transition">💰 Prices &amp; Promo</button>
+          <button onclick="sendQuickPrompt('How does the electronic gate code work?')" class="px-2.5 py-1 rounded-full bg-[#162227] hover:bg-paw-teal/20 hover:text-paw-tealLight border border-paw-teal/20 text-slate-200 font-medium transition">🔑 Gate PIN</button>
+          <button onclick="sendQuickPrompt('Are XL Bullies and exemption dogs allowed?')" class="px-2.5 py-1 rounded-full bg-[#162227] hover:bg-paw-teal/20 hover:text-paw-tealLight border border-paw-teal/20 text-slate-200 font-medium transition">🛡️ XL Bully Policy</button>
+          <button onclick="sendQuickPrompt('How do I pay with Monzo bank transfer?')" class="px-2.5 py-1 rounded-full bg-[#162227] hover:bg-paw-teal/20 hover:text-paw-tealLight border border-paw-teal/20 text-slate-200 font-medium transition">💳 Monzo &amp; Stripe</button>
         </div>
 
         <!-- Input Bar -->
-        <form onsubmit="handleAiChatSubmit(event)" class="p-3 bg-white border-t border-slate-200 flex items-center gap-2">
+        <form onsubmit="handleAiChatSubmit(event)" class="p-3 bg-[#10171a] border-t border-paw-teal/20 flex items-center gap-2">
           <!-- Mic push-to-type -->
-          <button type="button" onclick="startSpeechToText()" id="chatMicBtn" class="p-2.5 rounded-xl bg-slate-100 hover:bg-paw-mint text-paw-charcoal hover:text-paw-teal transition" title="Dictate with voice">
+          <button type="button" onclick="startSpeechToText()" id="chatMicBtn" class="p-2.5 rounded-xl bg-[#162227] hover:bg-paw-teal/20 text-slate-200 hover:text-paw-tealLight border border-paw-teal/20 transition" title="Dictate with voice">
             <i data-lucide="mic" class="w-4 h-4"></i>
           </button>
-          <input type="text" id="aiChatInput" placeholder="Ask anything or say 'Book 2pm tomorrow'..." class="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-paw-charcoal focus:bg-white focus:outline-none focus:border-paw-teal transition">
+          <input type="text" id="aiChatInput" placeholder="Ask anything or say 'Book 2pm tomorrow'..." class="flex-1 bg-[#0c1215] border border-[#22353c] rounded-xl px-3.5 py-2.5 text-xs text-white focus:bg-[#141d22] focus:outline-none focus:border-paw-teal transition">
           <button type="submit" id="aiSendBtn" class="p-2.5 rounded-xl bg-paw-teal hover:bg-paw-tealDark text-white transition shadow-sm">
             <i data-lucide="send" class="w-4 h-4"></i>
           </button>
@@ -1327,8 +1187,8 @@
 
   <!-- ZONE DETAILS MODAL (Pop-up sheet for the 3 zones) -->
   <div id="zoneModal" class="fixed inset-0 z-50 bg-paw-charcoal/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-md w-full p-6 space-y-4 shadow-float animate-fadeIn">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+    <div class="bg-[#141d22] border border-paw-teal/30 rounded-3xl max-w-md w-full text-white p-6 space-y-4 shadow-float animate-fadeIn">
+      <div class="flex items-center justify-between pb-3 border-b border-paw-teal/15">
         <div class="flex items-center gap-2" id="zoneModalHeader"></div>
         <button onclick="closeZoneModal()" class="p-1 rounded-lg text-slate-400 hover:text-paw-charcoal">
           <i data-lucide="x" class="w-5 h-5"></i>
@@ -1343,8 +1203,8 @@
 
   <!-- MY BOOKINGS MODAL -->
   <div id="myBookingsModal" class="fixed inset-0 z-50 bg-paw-charcoal/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-float max-h-[85vh] flex flex-col">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+    <div class="bg-[#141d22] border border-paw-teal/30 rounded-3xl max-w-lg w-full text-white p-6 space-y-4 shadow-float max-h-[85vh] flex flex-col">
+      <div class="flex items-center justify-between pb-3 border-b border-paw-teal/15">
         <div class="flex items-center gap-2">
           <i data-lucide="calendar-check" class="w-5 h-5 text-paw-teal"></i>
           <div>
@@ -1375,7 +1235,7 @@
         </span>
       </a>
 
-      <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+      <div class="pt-2 border-t border-paw-teal/15 flex items-center justify-between">
         <button onclick="clearPastBookings()" class="text-xs text-red-500 hover:text-red-700 font-semibold">
           Reset Demo Bookings
         </button>
@@ -1389,7 +1249,7 @@
   <!-- ADMIN & DOMAIN CONNECTOR MODAL -->
   <div id="adminModal" class="fixed inset-0 z-50 bg-paw-charcoal/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-2xl w-full p-6 space-y-4 shadow-float max-h-[90vh] overflow-y-auto">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+      <div class="flex items-center justify-between pb-3 border-b border-paw-teal/15">
         <div class="flex items-center gap-2">
           <i data-lucide="globe" class="w-5 h-5 text-paw-teal"></i>
           <div>
@@ -1405,7 +1265,7 @@
       <div class="space-y-4 text-xs">
         
         <!-- Domain Instructions -->
-        <div class="p-4 bg-paw-mintSoft rounded-2xl border border-paw-teal/30 space-y-2">
+        <div class="p-4 bg-[#10171a] rounded-2xl border border-paw-teal/30 space-y-2">
           <span class="font-bold text-paw-tealDark uppercase tracking-wider block">How to Link Your Paid Web Domain:</span>
           <p class="text-paw-muted text-[11px] leading-relaxed">
             1. Rename this file to <b>index.html</b>.<br>
@@ -1416,7 +1276,7 @@
         </div>
 
         <!-- Payment Links Configuration (Monzo & Stripe) -->
-        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-3">
+        <div class="p-4 bg-[#0c1215] rounded-2xl border border-slate-200 space-y-3">
           <div class="flex items-center justify-between">
             <span class="font-bold text-paw-charcoal uppercase tracking-wider block">Payment Links &amp; QR Settings</span>
             <span class="text-[10px] text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">£0 Setup Fee</span>
@@ -1445,7 +1305,7 @@
         </div>
 
         <!-- Webhook Configuration -->
-        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+        <div class="p-4 bg-[#0c1215] rounded-2xl border border-slate-200 space-y-2">
           <span class="font-bold text-paw-charcoal uppercase tracking-wider block">Webhook Dispatch (Twilio / n8n / Make)</span>
           <div class="flex gap-2">
             <input type="url" id="webhookUrlInput" value="https://webhook.site/test-pawspace-endpoint" placeholder="https://..." class="flex-1 bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs font-mono">
@@ -1458,7 +1318,7 @@
 
       </div>
 
-      <div class="pt-2 border-t border-slate-100 flex justify-end">
+      <div class="pt-2 border-t border-paw-teal/15 flex justify-end">
         <button onclick="toggleAdminModal()" class="px-5 py-2.5 rounded-xl bg-paw-charcoal text-white text-xs font-bold">
           Close Settings
         </button>
@@ -1468,8 +1328,8 @@
 
   <!-- PWA INSTALLATION MODAL -->
   <div id="installModal" class="fixed inset-0 z-50 bg-paw-charcoal/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-md w-full p-6 space-y-4 shadow-float animate-fadeIn">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+    <div class="bg-[#141d22] border border-paw-teal/30 rounded-3xl max-w-md w-full text-white p-6 space-y-4 shadow-float animate-fadeIn">
+      <div class="flex items-center justify-between pb-3 border-b border-paw-teal/15">
         <div class="flex items-center gap-2.5">
           <img src="data:image/webp;base64,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" class="w-10 h-10 rounded-full border border-paw-teal p-0.5 bg-paw-mint object-contain">
           <div>
@@ -1491,7 +1351,7 @@
             Tap <b>Share</b> (square with arrow) &gt; Scroll down &gt; Tap <b>"Add to Home Screen"</b>.
           </p>
         </div>
-        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
+        <div class="p-3 bg-[#0c1215] rounded-xl border border-slate-200 space-y-1">
           <span class="font-bold text-paw-charcoal flex items-center gap-1.5">
             <i data-lucide="smartphone" class="w-4 h-4"></i> Android (Chrome):
           </span>
@@ -1509,8 +1369,8 @@
 
     <!-- CLEAN PUP & OWNER PROFILE MODAL -->
   <div id="avatarStudioModal" class="fixed inset-0 z-50 bg-paw-charcoal/70 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
-    <div class="bg-white rounded-3xl max-w-md w-full p-5 space-y-4 shadow-float animate-fadeIn">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+    <div class="bg-[#141d22] border border-paw-teal/30 rounded-3xl max-w-md w-full text-white p-5 space-y-4 shadow-float animate-fadeIn">
+      <div class="flex items-center justify-between pb-3 border-b border-paw-teal/15">
         <div class="flex items-center gap-2">
           <div class="p-2 bg-paw-mint rounded-xl text-paw-teal font-bold">🐾</div>
           <div>
@@ -1518,7 +1378,7 @@
             <p class="text-[11px] text-paw-muted">Manage your sanctuary pack details</p>
           </div>
         </div>
-        <button onclick="AvatarUI.closeAvatarStudio()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-paw-charcoal">
+        <button onclick="AvatarUI.closeAvatarStudio()" class="w-8 h-8 rounded-full bg-[#162227] hover:bg-slate-200 flex items-center justify-center text-paw-charcoal">
           <i data-lucide="x" class="w-4 h-4"></i>
         </button>
       </div>
@@ -1561,190 +1421,14 @@
         <div id="dogChipsContainer" class="flex flex-wrap gap-1.5">
           <button type="button" class="px-2.5 py-1 rounded-xl bg-paw-mint text-paw-tealDark font-bold text-xs border border-paw-teal/30">Barnaby</button>
         </div>
-        <input type="text" id="inputDogStudioName" placeholder="Active Dog Name" oninput="AvatarUI.onDogNameChange(this.value)" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs font-semibold text-paw-charcoal focus:outline-none focus:border-paw-teal">
+        <input type="text" id="inputDogStudioName" placeholder="Active Dog Name" oninput="AvatarUI.onDogNameChange(this.value)" class="w-full bg-[#0c1215] border border-slate-200 rounded-xl p-2.5 text-xs font-semibold text-paw-charcoal focus:outline-none focus:border-paw-teal">
       </div>
 
-      <div class="pt-2 flex items-center justify-end gap-2 border-t border-slate-100">
+      <div class="pt-2 flex items-center justify-end gap-2 border-t border-paw-teal/15">
         <button type="button" onclick="AvatarUI.saveStudioAvatars()" class="w-full bg-paw-teal hover:bg-paw-tealDark text-white font-brand text-sm font-bold py-3 rounded-2xl shadow-float transition">
-          Save Avatars &amp; Sync
+          Save Profile &amp; Sync
         </button>
       </div>
-    </div>
-  </div>
-
-<!-- Studio Navigation Tabs (Human / Dog / Duo & Loyalty) -->
-      <div class="flex items-center border-b border-slate-200 text-xs">
-        <button type="button" onclick="window.AvatarUI.switchStudioTab('human')" data-tab="human" class="studio-nav-btn flex-1 py-2 text-center border-b-2 font-bold text-paw-tealDark border-paw-teal bg-paw-mintSoft transition">
-          👤 Human
-        </button>
-        <button type="button" onclick="window.AvatarUI.switchStudioTab('dog')" data-tab="dog" class="studio-nav-btn flex-1 py-2 text-center border-b-2 border-transparent text-slate-400 hover:text-paw-charcoal transition">
-          🐕 Dog
-        </button>
-        <button type="button" onclick="window.AvatarUI.switchStudioTab('duo')" data-tab="duo" class="studio-nav-btn flex-1 py-2 text-center border-b-2 border-transparent text-slate-400 hover:text-paw-charcoal transition">
-          🏆 Duo &amp; Loyalty
-        </button>
-      </div>
-
-      <!-- Studio Tab Contents (Scrollable) -->
-      <div class="flex-1 overflow-y-auto space-y-4 pr-1 text-xs">
-        
-        <!-- TAB 1: HUMAN CUSTOMISATION -->
-        <div id="studioTabHuman" class="space-y-3.5">
-          <!-- Skin Tone -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Skin Tone</label>
-            <div id="swatchSkinContainer" class="flex items-center gap-2 flex-wrap"></div>
-          </div>
-
-          <!-- Head Shape -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Head &amp; Face Shape</label>
-            <div id="selectHeadShapeContainer" class="grid grid-cols-4 gap-1.5"></div>
-          </div>
-
-          <!-- Body Shape -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Body Proportion &amp; Presentation</label>
-            <div id="selectBodyShapeContainer" class="grid grid-cols-4 gap-1.5"></div>
-          </div>
-
-          <!-- Hairstyle -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Hairstyle</label>
-            <div id="selectHairStyleContainer" class="grid grid-cols-4 gap-1.5"></div>
-          </div>
-
-          <!-- Hair Color -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Hair Color</label>
-            <div id="swatchHairColorContainer" class="flex items-center gap-2 flex-wrap"></div>
-          </div>
-
-          <!-- Eye Color -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Eye Color</label>
-            <div id="swatchEyeColorContainer" class="flex items-center gap-2 flex-wrap"></div>
-          </div>
-
-          <!-- Outfit -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Outfit &amp; Style</label>
-            <div id="selectOutfitContainer" class="grid grid-cols-3 sm:grid-cols-5 gap-1.5"></div>
-          </div>
-
-          <!-- Accessory -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Accessories</label>
-            <div id="selectAccessoryContainer" class="grid grid-cols-3 sm:grid-cols-5 gap-1.5"></div>
-          </div>
-        </div>
-
-        <!-- TAB 2: DOG CUSTOMISATION -->
-        <div id="studioTabDog" class="space-y-3.5 hidden">
-          <!-- Multi-Dog Switcher & Add Dog -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Your Dogs (Multi-Dog Management)</label>
-            <div id="dogChipsContainer" class="flex items-center gap-1.5 flex-wrap"></div>
-          </div>
-
-          <!-- Dog Name -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1">Dog Name</label>
-            <input type="text" id="inputDogStudioName" oninput="window.AvatarUI.onDogNameChange(this.value)" placeholder="Dog's Name" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 font-semibold text-paw-charcoal focus:outline-none focus:border-paw-teal">
-          </div>
-
-          <!-- Breed Preset -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Breed Preset (UK XL Bully / Boxer compliant morphology)</label>
-            <div id="selectBreedContainer" class="grid grid-cols-2 sm:grid-cols-4 gap-1.5"></div>
-          </div>
-
-          <!-- Dog Size -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Body Size</label>
-            <div id="selectDogSizeContainer" class="grid grid-cols-3 gap-1.5"></div>
-          </div>
-
-          <!-- Coat Color -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Coat Color</label>
-            <div id="swatchCoatColorContainer" class="flex items-center gap-2 flex-wrap"></div>
-          </div>
-
-          <!-- Coat Pattern -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Coat Pattern</label>
-            <div id="selectPatternContainer" class="grid grid-cols-3 sm:grid-cols-5 gap-1.5"></div>
-          </div>
-
-          <!-- Ear Shape -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Ear Type</label>
-            <div id="selectEarContainer" class="grid grid-cols-4 gap-1.5"></div>
-          </div>
-
-          <!-- Muzzle Shape -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Muzzle Type</label>
-            <div id="selectMuzzleContainer" class="grid grid-cols-4 gap-1.5"></div>
-          </div>
-
-          <!-- Tail Shape -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Tail Type</label>
-            <div id="selectTailContainer" class="grid grid-cols-4 gap-1.5"></div>
-          </div>
-
-          <!-- Dog Accessory -->
-          <div>
-            <label class="font-bold text-paw-charcoal block mb-1.5">Collar &amp; Accessories</label>
-            <div id="selectDogAccContainer" class="grid grid-cols-3 sm:grid-cols-5 gap-1.5"></div>
-          </div>
-        </div>
-
-        <!-- TAB 3: DUO & LOYALTY -->
-        <div id="studioTabDuo" class="space-y-3.5 hidden">
-          <div class="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-4 border border-amber-200 space-y-3">
-            <div class="flex items-center justify-between">
-              <div>
-                <h4 class="font-bold text-paw-charcoal">Loyalty Rewards Milestone</h4>
-                <p class="text-[11px] text-paw-muted">6 completed bookings unlock 30% off your next booking</p>
-              </div>
-              <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">4 / 6 Bookings</span>
-            </div>
-
-            <!-- Stamps 1 through 6 -->
-            <div class="grid grid-cols-6 gap-2 text-center">
-              <div class="stamp-box p-2 rounded-xl text-center border-2 border-emerald-500 bg-emerald-50 text-emerald-700 font-bold text-xs">🐾<div class="text-[8px]">#1 Paid</div></div>
-              <div class="stamp-box p-2 rounded-xl text-center border-2 border-emerald-500 bg-emerald-50 text-emerald-700 font-bold text-xs">🐾<div class="text-[8px]">#2 Paid</div></div>
-              <div class="stamp-box p-2 rounded-xl text-center border-2 border-emerald-500 bg-emerald-50 text-emerald-700 font-bold text-xs">🐾<div class="text-[8px]">#3 Paid</div></div>
-              <div class="stamp-box p-2 rounded-xl text-center border-2 border-emerald-500 bg-emerald-50 text-emerald-700 font-bold text-xs">🐾<div class="text-[8px]">#4 Paid</div></div>
-              <div class="stamp-box p-2 rounded-xl text-center border border-dashed border-slate-300 bg-slate-50 text-slate-400 font-bold text-xs">🐾<div class="text-[8px]">#5 Next</div></div>
-              <div class="stamp-box p-2 rounded-xl text-center border border-dashed border-amber-300 bg-amber-50/50 text-amber-600 font-bold text-xs">🏆<div class="text-[8px]">30% OFF</div></div>
-            </div>
-
-            <div class="pt-2 flex justify-end">
-              <button type="button" onclick="window.AvatarUI.unlockLoyaltyRewardAction()" class="px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm transition">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-                <span>Simulate 6th Booking &amp; Celebrate!</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2.5">
-        <button type="button" onclick="closeAvatarStudio()" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-paw-charcoal font-bold text-xs transition">
-          Cancel
-        </button>
-        <button type="button" onclick="window.AvatarUI.saveStudioAvatars()" class="px-5 py-2.5 rounded-xl bg-paw-teal hover:bg-paw-tealDark text-white font-bold text-xs transition flex items-center gap-1.5 shadow-sm">
-          <i data-lucide="check" class="w-4 h-4"></i>
-          <span>Save Avatars &amp; Sync</span>
-        </button>
-      </div>
-
     </div>
   </div>
 
@@ -1826,13 +1510,18 @@
     },
     renderHeroSceneSvg: function(cfg) {
       return `
-        <div class="flex flex-col items-center justify-center p-2 text-center animate-fadeIn">
-          <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl overflow-hidden border-4 border-white shadow-float mb-2.5 bg-paw-mint flex items-center justify-center">
-            <img src="assets/dogs/golden_retriever.jpg" alt="PawSpace Dog" class="w-full h-full object-cover">
+        <div class="w-full max-w-xs flex flex-col items-center justify-center text-center animate-fadeIn">
+          <div class="relative mb-3 group">
+            <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-gradient-to-br from-[#1a282d] to-[#10191c] border-2 border-paw-teal/40 p-2 shadow-float flex items-center justify-center overflow-hidden">
+              <img src="logo.png" alt="PawSpace Logo" class="w-full h-full object-contain filter drop-shadow">
+            </div>
+            <div class="absolute -bottom-1 -right-1 bg-paw-teal text-white rounded-full p-1 shadow border-2 border-[#121c20]">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><circle cx="7" cy="8.5" r="2"/><circle cx="17" cy="8.5" r="2"/><circle cx="10" cy="4" r="2"/><circle cx="14" cy="4" r="2"/><path d="M12 10.5c-3 0-5.5 2-5.5 5 0 2 2 3.5 5.5 3.5s5.5-1.5 5.5-3.5c0-3-2.5-5-5-5z"/></svg>
+            </div>
           </div>
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 border border-paw-teal/30 text-[11px] font-bold text-paw-charcoal shadow-xs">
-            <svg class="w-3.5 h-3.5 text-paw-teal" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.5c-3 0-5.5 2-5.5 5 0 2 2 3.5 5.5 3.5s5.5-1.5 5.5-3.5c0-3-2.5-5-5-5z"/></svg>
-            <span>100% Solo Sanctuary</span>
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-paw-teal/15 border border-paw-teal/30 text-xs font-bold text-paw-tealLight shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Private Solo Dog Sanctuary</span>
           </div>
         </div>
       `;
@@ -1950,7 +1639,7 @@
       if (!container || !activeStudioConfig) return;
       container.innerHTML = activeStudioConfig.dogs.map(dog => {
         const isActive = dog.id === activeStudioConfig.activeDogId;
-        const cls = isActive ? 'bg-paw-mint text-paw-tealDark border-paw-teal font-bold' : 'bg-slate-100 text-paw-charcoal border-slate-200';
+        const cls = isActive ? 'bg-paw-mint text-paw-tealDark border-paw-teal font-bold' : 'bg-[#162227] text-paw-charcoal border-slate-200';
         return `<button type="button" onclick="AvatarUI.selectDog('${dog.id}')" class="px-2.5 py-1 rounded-xl text-xs border ${cls}">${dog.name}</button>`;
       }).join('');
       const nameInput = document.getElementById('inputDogStudioName');
@@ -2072,7 +1761,7 @@
           dot.className = 'w-7 h-7 rounded-full bg-paw-teal text-white flex items-center justify-center font-bold text-xs transition';
           dot.innerHTML = `${i}`;
         } else {
-          dot.className = 'w-7 h-7 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center font-bold text-xs transition';
+          dot.className = 'w-7 h-7 rounded-full bg-[#162227] text-slate-400 flex items-center justify-center font-bold text-xs transition';
           dot.innerHTML = `${i}`;
         }
       }
@@ -2304,14 +1993,14 @@
       basePrice = price;
 
       document.querySelectorAll('.dur-btn').forEach(btn => {
-        btn.classList.remove('border-paw-teal', 'bg-paw-mint', 'text-paw-tealDark');
-        btn.classList.add('border-slate-200', 'bg-white', 'text-paw-charcoal');
+        btn.classList.remove('border-paw-teal', 'bg-paw-teal/25', 'text-paw-tealLight');
+        btn.classList.add('border-[#22353c]', 'bg-[#141d22]', 'text-white');
       });
 
       const active = document.getElementById(`dur-${mins}`);
       if (active) {
-        active.classList.add('border-paw-teal', 'bg-paw-mint', 'text-paw-tealDark');
-        active.classList.remove('border-slate-200', 'bg-white', 'text-paw-charcoal');
+        active.classList.add('border-paw-teal', 'bg-paw-teal/25', 'text-paw-tealLight');
+        active.classList.remove('border-[#22353c]', 'bg-[#141d22]', 'text-white');
       }
 
       updatePrice();
@@ -2342,7 +2031,7 @@
         btn.className = `date-tab flex-shrink-0 px-3.5 py-2 rounded-2xl border text-center transition ${
           i === 0 
             ? 'border-paw-teal bg-paw-teal text-white font-bold shadow-sm' 
-            : 'border-slate-200 bg-white text-paw-charcoal hover:border-paw-teal/40'
+            : 'border-[#22353c] bg-[#141d22] text-white hover:border-paw-teal/50'
         }`;
         btn.onclick = () => selectDate(btn, fullDateStr);
         btn.innerHTML = `
@@ -2357,7 +2046,7 @@
 
     function selectDate(btn, dateStr) {
       document.querySelectorAll('.date-tab').forEach(b => {
-        b.className = 'date-tab flex-shrink-0 px-3.5 py-2 rounded-2xl border border-slate-200 bg-white text-paw-charcoal hover:border-paw-teal/40 text-center transition';
+        b.className = 'date-tab flex-shrink-0 px-3.5 py-2 rounded-2xl border border-[#22353c] bg-[#141d22] text-white hover:border-paw-teal/50 text-center transition';
       });
       btn.className = 'date-tab flex-shrink-0 px-3.5 py-2 rounded-2xl border border-paw-teal bg-paw-teal text-white font-bold shadow-sm text-center transition';
       selectedDate = dateStr;
@@ -2376,15 +2065,15 @@
 
         if (booked) {
           btn.disabled = true;
-          btn.className = 'slot-btn p-2.5 rounded-xl border border-slate-200 bg-slate-100 text-slate-400 cursor-not-allowed text-center text-xs line-through opacity-70';
+          btn.className = 'slot-btn p-2.5 rounded-xl border border-[#1a252a] bg-[#0c1215] text-slate-500 cursor-not-allowed text-center text-xs line-through opacity-60';
           btn.innerHTML = `<span>${slot}</span><div class="text-[9px] font-bold text-red-400 no-underline">Booked</div>`;
         } else {
           if (!firstAvailable) firstAvailable = slot;
           const isSelected = slot === selectedSlot;
           btn.className = `slot-btn p-2.5 rounded-xl border text-center text-xs font-semibold transition ${
             isSelected 
-              ? 'border-paw-teal bg-paw-mint text-paw-tealDark font-bold' 
-              : 'border-slate-200 bg-white text-paw-charcoal hover:border-paw-teal/40'
+              ? 'border-paw-teal bg-paw-teal/25 text-paw-tealLight font-bold shadow-xs' 
+              : 'border-[#22353c] bg-[#141d22] text-white hover:border-paw-teal/50'
           }`;
           btn.onclick = () => selectSlot(btn, slot);
           btn.innerHTML = `<span>${slot}</span><div class="text-[9px] font-bold text-emerald-600">Available</div>`;
@@ -2398,7 +2087,7 @@
           const btns = container.querySelectorAll('.slot-btn');
           btns.forEach(b => {
             if (b.innerText.includes(firstAvailable)) {
-              b.className = 'slot-btn p-2.5 rounded-xl border border-paw-teal bg-paw-mint text-paw-tealDark font-bold text-center text-xs transition';
+              b.className = 'slot-btn p-2.5 rounded-xl border border-paw-teal bg-paw-teal/25 text-paw-tealLight font-bold text-center text-xs transition shadow-xs';
             }
           });
         }
@@ -2408,9 +2097,9 @@
 
     function selectSlot(btn, slot) {
       document.querySelectorAll('.slot-btn').forEach(b => {
-        if (!b.disabled) b.className = 'slot-btn p-2.5 rounded-xl border border-slate-200 bg-white text-paw-charcoal hover:border-paw-teal/40 text-center text-xs font-semibold transition';
+        if (!b.disabled) b.className = 'slot-btn p-2.5 rounded-xl border border-[#22353c] bg-[#141d22] text-white hover:border-paw-teal/50 text-center text-xs font-semibold transition';
       });
-      btn.className = 'slot-btn p-2.5 rounded-xl border border-paw-teal bg-paw-mint text-paw-tealDark font-bold text-center text-xs transition';
+      btn.className = 'slot-btn p-2.5 rounded-xl border border-paw-teal bg-paw-teal/25 text-paw-tealLight font-bold text-center text-xs transition shadow-xs';
       selectedSlot = slot;
       updateBottomBarInfo();
     }
@@ -3016,7 +2705,7 @@
       } else {
         row.innerHTML = `
           <div class="w-7 h-7 rounded-full bg-paw-mint flex-shrink-0 flex items-center justify-center border border-paw-teal text-xs">🐾</div>
-          <div class="bg-white p-3 rounded-2xl rounded-tl-sm border border-slate-200 shadow-sm space-y-1.5 text-paw-charcoal leading-relaxed">
+          <div class="bg-[#141d22] p-3 rounded-2xl rounded-tl-sm border border-paw-teal/20 shadow-sm space-y-1.5 text-white leading-relaxed">
             ${text}
           </div>
         `;
@@ -3178,12 +2867,9 @@
     // ==============================================================================
     var activeStudioConfig = null;
     let currentJourneyStep = 1;
-    let activeAvatarTab = 'dog';
-    let activeDogSubMode = 'quick';
 
     function goToJourneyStep(step) {
       currentJourneyStep = step;
-
       const s1 = document.getElementById('onboardingStep-1');
       const s2 = document.getElementById('onboardingStep-2');
       const s3 = document.getElementById('onboardingStep-3');
@@ -3199,25 +2885,17 @@
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      lucide.createIcons();
-    }
-
-    function skipAvatarToDetails() {
-      goToJourneyStep(3);
-    }
-
-    function saveAvatarAndGoToDetails() {
-      if (window.PawSpaceAvatarEngine && activeStudioConfig) {
-        PawSpaceAvatarEngine.saveConfig(activeStudioConfig);
-      }
-      goToJourneyStep(3);
+      if (window.lucide) lucide.createIcons();
     }
 
     function saveDetailsAndGoToBooking() {
-      const guestName = document.getElementById('inputGuestName').value.trim() || 'Anthony';
-      const dogName = document.getElementById('inputDogName').value.trim() || 'Barnaby';
-      const breed = document.getElementById('inputDogBreed') ? document.getElementById('inputDogBreed').value.trim() : 'Golden Retriever';
+      const guestName = (document.getElementById('inputGuestName') ? document.getElementById('inputGuestName').value.trim() : '') || 'Anthony';
+      const dogName = (document.getElementById('inputDogName') ? document.getElementById('inputDogName').value.trim() : '') || 'Barnaby';
+      const breed = (document.getElementById('inputDogBreed') ? document.getElementById('inputDogBreed').value.trim() : '') || 'Golden Retriever';
 
+      if (!activeStudioConfig && window.PawSpaceAvatarEngine) {
+        activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
+      }
       if (activeStudioConfig) {
         activeStudioConfig.human.name = guestName;
         const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
@@ -3236,155 +2914,38 @@
       goToJourneyStep(4);
     }
 
-    function switchAvatarTab(tab) {
-      activeAvatarTab = tab;
-      const tabDog = document.getElementById('tabBtnDog');
-      const tabHuman = document.getElementById('tabBtnHuman');
-      const viewDog = document.getElementById('avatarViewDog');
-      const viewHuman = document.getElementById('avatarViewHuman');
-
-      if (tab === 'dog') {
-        if (tabDog) tabDog.className = 'py-2.5 text-xs font-bold rounded-xl transition bg-white text-paw-teal shadow-xs flex items-center justify-center gap-1.5';
-        if (tabHuman) tabHuman.className = 'py-2.5 text-xs font-bold rounded-xl transition text-paw-muted hover:text-paw-charcoal flex items-center justify-center gap-1.5';
-        if (viewDog) viewDog.classList.remove('hidden');
-        if (viewHuman) viewHuman.classList.add('hidden');
-        populateDogThumbnails();
-      } else {
-        if (tabHuman) tabHuman.className = 'py-2.5 text-xs font-bold rounded-xl transition bg-white text-paw-teal shadow-xs flex items-center justify-center gap-1.5';
-        if (tabDog) tabDog.className = 'py-2.5 text-xs font-bold rounded-xl transition text-paw-muted hover:text-paw-charcoal flex items-center justify-center gap-1.5';
-        if (viewHuman) viewHuman.classList.remove('hidden');
-        if (viewDog) viewDog.classList.add('hidden');
-        populateHumanThumbnails();
+    function selectDetailsDogSize(size) {
+      if (!activeStudioConfig && window.PawSpaceAvatarEngine) {
+        activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
       }
-      lucide.createIcons();
-    }
-
-    function switchDogMode(mode) {
-      activeDogSubMode = mode;
-      const modeQuick = document.getElementById('dogModeQuick');
-      const modeCreate = document.getElementById('dogModeCreate');
-      const btnQuick = document.getElementById('btnDogModeQuick');
-      const btnCreate = document.getElementById('btnDogModeCreate');
-
-      if (mode === 'quick') {
-        if (modeQuick) modeQuick.classList.remove('hidden');
-        if (modeCreate) modeCreate.classList.add('hidden');
-        if (btnQuick) btnQuick.className = 'flex-1 py-1.5 rounded-xl text-xs font-bold transition bg-paw-teal text-white shadow-xs text-center';
-        if (btnCreate) btnCreate.className = 'flex-1 py-1.5 rounded-xl text-xs font-bold transition bg-slate-100 text-paw-charcoal hover:bg-slate-200 text-center';
-      } else {
-        if (modeCreate) modeCreate.classList.remove('hidden');
-        if (modeQuick) modeQuick.classList.add('hidden');
-        if (btnCreate) btnCreate.className = 'flex-1 py-1.5 rounded-xl text-xs font-bold transition bg-paw-teal text-white shadow-xs text-center';
-        if (btnQuick) btnQuick.className = 'flex-1 py-1.5 rounded-xl text-xs font-bold transition bg-slate-100 text-paw-charcoal hover:bg-slate-200 text-center';
+      if (activeStudioConfig) {
+        const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
+        d.size = size;
+        PawSpaceAvatarEngine.saveConfig(activeStudioConfig);
       }
-    }
-
-    function selectDogBreedPreset(breedId, keepInputValue) {
-      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
-      const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
-      const preset = PawSpaceAvatarEngine.CATALOG.dog.breeds.find(b => b.id === breedId);
-      if (preset) {
-        d.breed = preset.id;
-        d.headBreed = preset.head || preset.id;
-        d.bodyShape = preset.body || 'athletic';
-        d.earType = preset.ear || 'floppy';
-        d.muzzleType = preset.muzzle || 'medium';
-        d.tailType = preset.tail || 'saber';
-        d.size = preset.size || 'medium';
-
-        const breedInput = document.getElementById('inputDogBreed');
-        if (breedInput && !keepInputValue) breedInput.value = preset.label.split('(')[0].trim();
-
-        const breedSelect = document.getElementById('selectDogBreed');
-        if (breedSelect && breedSelect.value !== 'OTHER') {
-          const matchOpt = Array.from(breedSelect.options).find(opt => opt.value.toLowerCase().includes(preset.id.toLowerCase()));
-          if (matchOpt && breedId !== 'mixed') {
-            breedSelect.value = matchOpt.value;
-            const otherCont = document.getElementById('otherBreedContainer');
-            if (otherCont) otherCont.classList.add('hidden');
-          }
-        }
-      }
-
-      document.querySelectorAll('.dog-avatar-card').forEach(c => {
-        if (c.getAttribute('data-breed') === breedId) {
-          c.className = 'dog-avatar-card p-2 rounded-2xl border-2 border-paw-teal bg-paw-mintSoft/40 flex flex-col items-center text-center transition cursor-pointer relative group';
-        } else {
-          c.className = 'dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group';
-        }
-      });
-
-      selectDogGenericSize(d.size || 'medium');
-      renderPickAvatarStage();
-    }
-
-    function setDogHead(headBreed) {
-      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
-      const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
-      d.headBreed = headBreed;
-      renderPickAvatarStage();
-    }
-
-    function setDogBody(bodyShape) {
-      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
-      const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
-      d.bodyShape = bodyShape;
-      renderPickAvatarStage();
-    }
-
-    function setDogEar(ear) {
-      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
-      const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
-      d.earType = ear;
-      renderPickAvatarStage();
-    }
-
-    function setDogTail(tail) {
-      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
-      const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
-      d.tailType = tail;
-      renderPickAvatarStage();
-    }
-
-    function selectDogGenericSize(size) {
-      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
-      const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
-      d.size = size;
-
       ['small', 'medium', 'large'].forEach(s => {
-        const btn = document.getElementById(`sizeBtn-${s}`);
+        const btn = document.getElementById();
         if (btn) {
           if (s === size) {
-            btn.className = 'dog-size-btn p-2.5 rounded-xl border-2 border-paw-teal bg-paw-mint text-center transition';
+            btn.className = 'p-3 rounded-2xl border-2 border-paw-teal bg-paw-teal/25 text-center transition';
+            const title = btn.querySelector('.font-bold');
+            if (title) title.className = 'text-xs font-bold text-paw-tealLight';
           } else {
-            btn.className = 'dog-size-btn p-2.5 rounded-xl border-2 border-slate-200 bg-white text-center transition';
-          }
-        }
-        const detBtn = document.getElementById(`detSize-${s}`);
-        if (detBtn) {
-          if (s === size) {
-            detBtn.className = 'p-3 rounded-2xl border-2 border-paw-teal bg-paw-mint text-center transition';
-          } else {
-            detBtn.className = 'p-3 rounded-2xl border-2 border-slate-200 bg-slate-50 hover:border-paw-teal/40 text-center transition';
+            btn.className = 'p-3 rounded-2xl border-2 border-[#22353c] bg-[#0c1215] hover:border-paw-teal/40 text-center transition';
+            const title = btn.querySelector('.font-bold');
+            if (title) title.className = 'text-xs font-bold text-white';
           }
         }
       });
-
-      renderPickAvatarStage();
-    }
-
-    function selectDetailsDogSize(size) {
-      selectDogGenericSize(size);
     }
 
     function selectDogAge(age) {
       document.querySelectorAll('.dog-age-btn').forEach(btn => {
-        if (btn.innerText.toLowerCase().includes(age)) {
-          btn.className = 'dog-age-btn p-2.5 rounded-xl border-2 border-paw-teal bg-paw-mint text-center text-xs font-bold text-paw-tealDark transition';
-        } else {
-          btn.className = 'dog-age-btn p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-center text-xs font-bold text-paw-charcoal transition';
-        }
+        btn.className = 'dog-age-btn p-2.5 rounded-xl border-2 border-[#22353c] bg-[#0c1215] text-center text-xs font-bold text-white transition';
       });
+      if (event && event.currentTarget) {
+        event.currentTarget.className = 'dog-age-btn p-2.5 rounded-xl border-2 border-paw-teal bg-paw-teal/25 text-center text-xs font-bold text-paw-tealLight transition';
+      }
     }
 
     function handleBreedSelectChange(val) {
@@ -3392,29 +2953,22 @@
       const inputHidden = document.getElementById('inputDogBreed');
       const otherInput = document.getElementById('inputDogBreedOther');
 
-      if (val === 'OTHER') {
+      if (val === 'OTHER' || val.includes('Mixed Breed')) {
         if (otherContainer) otherContainer.classList.remove('hidden');
-        if (otherInput) {
-          otherInput.focus();
-          const customVal = otherInput.value.trim();
-          if (inputHidden) inputHidden.value = customVal || 'Custom Breed';
-        }
+        if (otherInput) otherInput.focus();
+        if (inputHidden) inputHidden.value = otherInput && otherInput.value ? otherInput.value : val;
       } else {
         if (otherContainer) otherContainer.classList.add('hidden');
         if (inputHidden) inputHidden.value = val;
       }
-
-      mapBreedToAvatarPreset(val === 'OTHER' ? (otherInput ? otherInput.value : 'mixed') : val, true);
-      if (window.lucide) lucide.createIcons();
     }
 
     function handleOtherBreedInput(val) {
       const inputHidden = document.getElementById('inputDogBreed');
-      if (inputHidden) {
-        inputHidden.value = val.trim() || 'Custom Breed';
-      }
+      if (inputHidden) inputHidden.value = val.trim() || 'Custom Breed';
     }
 
+    function selectDogBreedPreset(preset, keepVal) {}
     function mapBreedToAvatarPreset(breedName, keepInputValue) {
       const lower = (breedName || '').toLowerCase();
       if (lower.includes('bernese')) selectDogBreedPreset('bernese', keepInputValue);
@@ -3450,358 +3004,6 @@
     }
 
     
-    const HUMAN_AVATARS_LIST = [
-  {
-    "id": "human_c1_0_0",
-    "name": "Dev",
-    "style": "Elder Scholar (Kurta & Glasses)"
-  },
-  {
-    "id": "human_c1_0_1",
-    "name": "Yuki",
-    "style": "Indigo Bob (Denim Jacket)"
-  },
-  {
-    "id": "human_c1_0_2",
-    "name": "Kofi",
-    "style": "Sunny Smile (Locs & Hoodie)"
-  },
-  {
-    "id": "human_c1_0_3",
-    "name": "Tara",
-    "style": "Auburn Curls (Floral Silk)"
-  },
-  {
-    "id": "human_c1_1_0",
-    "name": "Zahra",
-    "style": "Terracotta Hijab (Field Jacket)"
-  },
-  {
-    "id": "human_c1_1_1",
-    "name": "Clara",
-    "style": "Silver Wave (Forest Cardigan)"
-  },
-  {
-    "id": "human_c1_1_2",
-    "name": "Gurpreet",
-    "style": "Royal Blue Turban (Bearded)"
-  },
-  {
-    "id": "human_c1_1_3",
-    "name": "Nia",
-    "style": "Afro Coils (Sunburst Robe)"
-  },
-  {
-    "id": "human_c1_2_0",
-    "name": "Liam",
-    "style": "Red Flannel (Beanie Lumberjack)"
-  },
-  {
-    "id": "human_c1_2_1",
-    "name": "Hokolesqua",
-    "style": "Braided Wisdom (Heritage Vest)"
-  },
-  {
-    "id": "human_c1_2_2",
-    "name": "Zoey",
-    "style": "Pastel Hoodie (Bionic Sound)"
-  },
-  {
-    "id": "human_c1_2_3",
-    "name": "Jin",
-    "style": "Silver Sleek (Navy Knit)"
-  },
-  {
-    "id": "human_c2_0_0",
-    "name": "Leo",
-    "style": "Tousled Waves (Bomber Jacket)"
-  },
-  {
-    "id": "human_c2_0_1",
-    "name": "Arjun",
-    "style": "Brocade Sherwani (Gentle Gaze)"
-  },
-  {
-    "id": "human_c2_0_2",
-    "name": "Ren",
-    "style": "Azure Streak (Urban Streetwear)"
-  },
-  {
-    "id": "human_c2_0_3",
-    "name": "Kai",
-    "style": "Twin Braids (Aztec Fleece)"
-  },
-  {
-    "id": "human_c2_1_0",
-    "name": "Malik",
-    "style": "Clean Fade (Olive Field Shirt)"
-  },
-  {
-    "id": "human_c2_1_1",
-    "name": "Mateo",
-    "style": "Wavy Shag (Denim & Scarf)"
-  },
-  {
-    "id": "human_c2_1_2",
-    "name": "Toby",
-    "style": "Backwards Cap (Sand Hoodie)"
-  },
-  {
-    "id": "human_c2_1_3",
-    "name": "Bao",
-    "style": "Textured Spikes (Patterned Knit)"
-  },
-  {
-    "id": "human_c2_2_0",
-    "name": "Dario",
-    "style": "Goatee Groomed (Leather Bomber)"
-  },
-  {
-    "id": "human_c2_2_1",
-    "name": "Kwame",
-    "style": "Twist Locks (Varsity Jacket)"
-  },
-  {
-    "id": "human_c2_2_2",
-    "name": "Zayn",
-    "style": "Warm Toque (Mustard Overshirt)"
-  },
-  {
-    "id": "human_c2_2_3",
-    "name": "Min-ho",
-    "style": "Layered Bob (Indigo Denim)"
-  },
-  {
-    "id": "human_c3_0_0",
-    "name": "Kira",
-    "style": "Double Buns (Emerald Hoodie)"
-  },
-  {
-    "id": "human_c3_0_1",
-    "name": "Aanya",
-    "style": "Midnight Waves (Embroidered Bomber)"
-  },
-  {
-    "id": "human_c3_0_2",
-    "name": "Lila",
-    "style": "Cotton Candy Bun (Denim Vest)"
-  },
-  {
-    "id": "human_c3_0_3",
-    "name": "Hana",
-    "style": "Classic Bob (Autumn Turtle)"
-  },
-  {
-    "id": "human_c3_1_0",
-    "name": "Fatima",
-    "style": "Patterned Hijab (Khaki Jacket)"
-  },
-  {
-    "id": "human_c3_1_1",
-    "name": "Aiyana",
-    "style": "Twin Braids (Fleece Pullover)"
-  },
-  {
-    "id": "human_c3_1_2",
-    "name": "Camila",
-    "style": "Chestnut Ringlets (Coral Blouse)"
-  },
-  {
-    "id": "human_c3_1_3",
-    "name": "Freya",
-    "style": "Ginger High-Pony (Striped Hoodie)"
-  },
-  {
-    "id": "human_c3_2_0",
-    "name": "Sofia",
-    "style": "Short Corkscrews (Ochre Knit)"
-  },
-  {
-    "id": "human_c3_2_1",
-    "name": "Roxie",
-    "style": "Asymmetric Undercut (Moto Leather)"
-  },
-  {
-    "id": "human_c3_2_2",
-    "name": "Imani",
-    "style": "Cornrow Braids (DJ Studio Headphones)"
-  },
-  {
-    "id": "human_c3_2_3",
-    "name": "Astrid",
-    "style": "Blonde Waves (Charcoal Beanie)"
-  },
-  {
-    "id": "human_c4_r0_0",
-    "name": "Arthur",
-    "style": "Wise Grandfather (Plaid & Spectacles)"
-  },
-  {
-    "id": "human_c4_r0_1",
-    "name": "Priya",
-    "style": "Radiant Waves (Tangerine Tunic)"
-  },
-  {
-    "id": "human_c4_r0_2",
-    "name": "Marcus",
-    "style": "Curly & Glasses (Colorblock Hoodie)"
-  },
-  {
-    "id": "human_c4_r1_0",
-    "name": "Chloe",
-    "style": "Auburn Curls (Denim Jacket)"
-  },
-  {
-    "id": "human_c4_r1_1",
-    "name": "Kenji",
-    "style": "Clean Cut (Midnight Navy)"
-  },
-  {
-    "id": "human_c4_r1_2",
-    "name": "Amira",
-    "style": "Teal Hijab (Sanctuary Guardian)"
-  },
-  {
-    "id": "human_c4_r2_0",
-    "name": "Finn",
-    "style": "Playful Redhead (Hero Graphic Tee)"
-  },
-  {
-    "id": "human_c4_r2_1",
-    "name": "Chaske",
-    "style": "Heritage Braids (Chambray Shirt)"
-  },
-  {
-    "id": "human_c4_r2_2",
-    "name": "Eleanor",
-    "style": "Silver Crop (Sunburst Crew)"
-  },
-  {
-    "id": "human_c4_r2_3",
-    "name": "Noah",
-    "style": "Soft Brunette (Sage Crew)"
-  },
-  {
-    "id": "human_alex_blonde",
-    "name": "Alex",
-    "style": "Blonde Scout (Blue & Orange Tee)"
-  }
-];
-
-    function getHumanPhotoAvatars() {
-      return (window.PawSpaceAvatarEngine && window.PawSpaceAvatarEngine.HUMAN_PHOTO_AVATARS) || {};
-    }
-
-    function getDogPhotoAvatars() {
-      return (window.PawSpaceAvatarEngine && window.PawSpaceAvatarEngine.DOG_PHOTO_AVATARS) || {};
-    }
-
-    function selectHumanAvatarPreset(humanId) {
-      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
-      activeStudioConfig.human.avatarId = humanId;
-      const person = HUMAN_AVATARS_LIST.find(p => p.id === humanId);
-      if (person) {
-        activeStudioConfig.human.name = person.name;
-        const guestInput = document.getElementById('inputGuestName');
-        if (guestInput && (!guestInput.value || guestInput.value === 'Anthony')) {
-          guestInput.value = person.name;
-        }
-      }
-      document.querySelectorAll('.human-avatar-card').forEach(c => {
-        if (c.getAttribute('data-human') === humanId) {
-          c.className = 'human-avatar-card p-2 rounded-2xl border-2 border-paw-teal bg-paw-mintSoft/40 flex flex-col items-center text-center transition cursor-pointer relative group';
-        } else {
-          c.className = 'human-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group';
-        }
-      });
-      renderPickAvatarStage();
-    }
-
-    function populateHumanThumbnails() {
-      const grid = document.getElementById('humanAvatarGrid');
-      const humanPhotos = getHumanPhotoAvatars();
-      if (!grid || Object.keys(humanPhotos).length === 0) return;
-      const activeHumanId = (activeStudioConfig && activeStudioConfig.human && activeStudioConfig.human.avatarId) || 'human_hero_blonde';
-      
-      grid.innerHTML = HUMAN_AVATARS_LIST.map(h => {
-        const isSelected = h.id === activeHumanId;
-        const borderCls = isSelected ? 'border-paw-teal bg-paw-mintSoft/40' : 'border-slate-200 hover:border-paw-teal/50 bg-white';
-        const imgUrl = humanPhotos[h.id] || '';
-        return `
-          <button type="button" onclick="selectHumanAvatarPreset('${h.id}')" data-human="${h.id}" class="human-avatar-card p-2 rounded-2xl border-2 ${borderCls} flex flex-col items-center text-center transition cursor-pointer relative group">
-            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-slate-50 overflow-hidden mb-1.5 border border-slate-100 flex items-center justify-center">
-              ${imgUrl ? `<img src="${imgUrl}" alt="${h.name}" class="w-full h-full object-cover pointer-events-none">` : `<span class="text-xs font-bold text-paw-teal">${h.name[0]}</span>`}
-            </div>
-            <span class="text-xs font-bold text-paw-charcoal leading-tight">${h.name}</span>
-            <span class="text-[10px] text-paw-muted leading-tight">${h.style}</span>
-          </button>
-        `;
-      }).join('');
-    }
-
-    function renderPickAvatarStage() {
-      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
-      const container = document.getElementById('avatarPickStageContainer');
-      const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
-      const humanId = activeStudioConfig.human.avatarId || 'human_hero_blonde';
-      const dogBreed = d.breed || 'golden';
-
-      const humanPhotos = getHumanPhotoAvatars();
-      const dogPhotos = getDogPhotoAvatars();
-      const humanImg = humanPhotos[humanId] || '';
-      const dogImg = dogPhotos[dogBreed] || '';
-
-      if (container) {
-        if (humanImg && dogImg) {
-          container.innerHTML = `
-            <div class="flex items-center justify-center gap-3 py-1">
-              <!-- Person Card -->
-              <div class="flex flex-col items-center">
-                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white border-2 border-paw-teal/40 shadow-sm overflow-hidden p-1 relative">
-                  <img src="${humanImg}" alt="Person" class="w-full h-full object-cover rounded-xl pointer-events-none">
-                </div>
-                <span class="text-xs font-bold text-paw-charcoal mt-1">${activeStudioConfig.human.name || 'Alex'}</span>
-              </div>
-
-              <!-- Duo Heart Connector with invisible SVG for test compatibility -->
-              <div class="flex flex-col items-center justify-center -mt-3">
-                <div class="w-8 h-8 rounded-full bg-paw-mint flex items-center justify-center text-paw-teal font-bold shadow-xs">
-                  ❤️
-                </div>
-                <svg width="1" height="1" class="opacity-0 pointer-events-none"><rect width="1" height="1"/></svg>
-              </div>
-
-              <!-- Dog Card -->
-              <div class="flex flex-col items-center">
-                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white border-2 border-paw-teal/40 shadow-sm overflow-hidden p-1 relative">
-                  <img src="${dogImg}" alt="Dog" class="w-full h-full object-cover rounded-xl pointer-events-none">
-                </div>
-                <span class="text-xs font-bold text-paw-charcoal mt-1">${d.name || 'Barnaby'}</span>
-              </div>
-            </div>
-          `;
-        } else {
-          container.innerHTML = PawSpaceAvatarEngine.renderSceneSvg(activeStudioConfig, 'idle', { width: 280, height: 160 });
-        }
-      }
-
-      const duoLabel = document.getElementById('avatarPickDuoLabel');
-      if (duoLabel) {
-        duoLabel.innerText = `${activeStudioConfig.human.name || 'Anthony'} & ${d.name || 'Barnaby'}`;
-      }
-    }
-
-    function populateDogThumbnails() {
-      if (!window.PawSpaceAvatarEngine) return;
-      const breeds = ['bernese', 'golden', 'greyhound', 'bully', 'cockapoo', 'terrier', 'frenchie', 'cocker', 'mixed', 'shepherd', 'dachshund'];
-      breeds.forEach(b => {
-        const el = document.getElementById(`thumb-${b}`);
-        if (el) {
-          el.innerHTML = PawSpaceAvatarEngine.renderDogFaceSvg(b);
-        }
-      });
-    }
-
     function syncBookingDuoHeader() {
       if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
       const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
