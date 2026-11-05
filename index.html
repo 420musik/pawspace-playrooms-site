@@ -378,6 +378,84 @@
           </div>
         </div>
 
+        <!-- PAYMENT METHOD SELECTION (Monzo Free Bank Transfer & Stripe Card) -->
+        <div class="border border-slate-200 rounded-2xl p-4 bg-slate-50/80 space-y-3 text-xs">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-paw-charcoal text-[11px] uppercase tracking-wider flex items-center gap-1.5">
+              <i data-lucide="credit-card" class="w-3.5 h-3.5 text-paw-teal"></i>
+              Payment &amp; Booking Settlement
+            </span>
+            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full">
+              Deposit / Full Payment
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="paymentMethodGrid">
+            <!-- Monzo Easy Bank Transfer (0% Fee) -->
+            <label id="labelPayMonzo" class="relative flex flex-col p-3 rounded-xl border-2 border-paw-teal bg-white cursor-pointer transition shadow-sm">
+              <input type="radio" name="payMethod" value="monzo" checked onchange="onPaymentMethodChange('monzo')" class="sr-only">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-paw-charcoal text-xs flex items-center gap-1.5">
+                  <span id="dotPayMonzo" class="w-2.5 h-2.5 rounded-full bg-paw-teal inline-block"></span>
+                  Monzo Bank Transfer
+                </span>
+                <span class="text-[10px] font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded">0% FEES</span>
+              </div>
+              <p class="text-[10px] text-paw-muted mt-1 leading-tight">Instant UK easy bank transfer via Monzo / mobile banking app or QR code.</p>
+            </label>
+
+            <!-- Stripe Card Payment -->
+            <label id="labelPayStripe" class="relative flex flex-col p-3 rounded-xl border border-slate-200 bg-white cursor-pointer hover:border-paw-teal transition">
+              <input type="radio" name="payMethod" value="stripe" onchange="onPaymentMethodChange('stripe')" class="sr-only">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-paw-charcoal text-xs flex items-center gap-1.5">
+                  <span id="dotPayStripe" class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block"></span>
+                  Card / Apple Pay
+                </span>
+                <span class="text-[10px] text-indigo-700 font-bold bg-indigo-50 border border-indigo-200 px-1.5 py-0.5 rounded">STRIPE</span>
+              </div>
+              <p class="text-[10px] text-paw-muted mt-1 leading-tight">Instant checkout with Visa, Mastercard, Apple Pay, or Google Pay.</p>
+            </label>
+          </div>
+
+          <!-- Monzo QR & Instant Link Box -->
+          <div id="monzoPaymentBox" class="p-3.5 bg-paw-mintSoft/90 rounded-xl border border-paw-teal/30 flex items-center justify-between gap-3">
+            <div class="space-y-1">
+              <span class="font-bold text-paw-tealDark text-xs block">Instant Bank Transfer (Free &amp; Direct)</span>
+              <p class="text-[10px] text-paw-muted leading-tight">Use reference: <b id="payRefCode" class="font-mono text-paw-charcoal bg-white px-1.5 py-0.5 rounded border border-paw-teal/30">PS-BOOKING</b></p>
+              <div class="pt-1 flex items-center gap-2">
+                <a id="monzoPayLinkBtn" href="https://monzo.me/" target="_blank" class="inline-flex items-center gap-1 bg-paw-teal hover:bg-paw-tealDark text-white text-[11px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">
+                  <span>Open Monzo Link</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+                <span class="text-[10px] text-paw-muted font-medium">or scan QR on phone &rarr;</span>
+              </div>
+            </div>
+            <!-- Dynamic QR Code Container -->
+            <div class="bg-white p-1.5 rounded-xl border border-slate-200 shadow-sm flex-shrink-0 text-center">
+              <img id="monzoQrImg" src="https://api.qrserver.com/v1/create-qr-code/?size=84x84&data=https%3A%2F%2Fmonzo.me%2F" alt="Monzo QR" class="w-16 h-16 object-contain rounded">
+              <span class="text-[8px] font-bold text-slate-400 block mt-0.5">SCAN TO PAY</span>
+            </div>
+          </div>
+
+          <!-- Stripe Card Link Box -->
+          <div id="stripePaymentBox" class="p-3.5 bg-indigo-50/70 rounded-xl border border-indigo-200 hidden flex items-center justify-between gap-3">
+            <div class="space-y-1">
+              <span class="font-bold text-indigo-900 text-xs block">Stripe Secure Card Checkout</span>
+              <p class="text-[10px] text-paw-muted leading-tight">Standard UK card processing (1.5% + 20p). Instant booking hold.</p>
+              <div class="pt-1">
+                <a id="stripePayLinkBtn" href="https://buy.stripe.com/" target="_blank" class="inline-flex items-center gap-1 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg shadow-sm transition">
+                  <span>Pay with Card via Stripe</span>
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-white border border-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600 shadow-sm">
+              <i data-lucide="shield-check" class="w-7 h-7"></i>
+            </div>
+          </div>
+        </div>
+
         <!-- Confirm & Pay -->
         <div class="flex gap-2.5 pt-1">
           <button type="button" onclick="goToStep(2)" class="w-1/3 bg-slate-100 hover:bg-slate-200 text-paw-charcoal font-brand text-sm font-bold py-3.5 rounded-2xl transition">
@@ -414,6 +492,146 @@
       </button>
     </div>
   </footer>
+
+  <!-- FLOATING AI CONCIERGE BUTTON -->
+  <div id="aiConciergeTrigger" class="fixed bottom-20 right-4 z-40 sm:bottom-24 sm:right-6">
+    <button onclick="toggleAiConcierge()" class="group relative flex items-center gap-2.5 bg-paw-charcoal hover:bg-paw-teal text-white pl-2 pr-4 py-2 rounded-full shadow-float transition-all duration-300 transform hover:scale-105 border border-white/20">
+      <div class="relative w-9 h-9 rounded-full bg-paw-mint flex items-center justify-center p-0.5 overflow-hidden border border-paw-teal">
+        <img src="data:image/webp;base64,UklGRo49AABXRUJQVlA4III9AADw1ACdASqQAZABPlEokEWjoqGSisS8OAUEsrd+OAK+NRibphxXGmyH8e/p+eZy33ofRcpff72F5iXQXnh/2/qh/qn+y9g79cvO7/ZX3WfuZ6iv6l/j//F/xveA/5/7oe8z+7/772Bf7x/retg9A79yfWA/8n7w/DD/Xf+Z+4vtP///2AP//7dXTP9l/7v+QHgP/if7h+0Pn7+NfNP27+5/4f/Uf3H2zf6Xxl9Q/9j0I/j/2n/K/239wv8B7af7r8tvNP4mf3v3I/IF+Jfyj/Ff3b9xf7B+6/HHWj/3XqC+yX1D/Uf4H/Jf9f/FfCR8T/pPQz7Af8L/D/kZ9gH87/on+r/vf7x/4T//+934N/pfsA/zn+1/9H/Ffuz/n/pq/o//F/m/zE9tH6L/j/+9/m/9X8hH8v/rf/C/xP+g/9P+Z////q+8X/2e4/9y///7qH7O//P/gj+BzlZX/zPB/iOSNfBsplVHqja8QxbdS4VuUizPGYQw9vQMxrPe8/8xS5mtACHjNGkrAClA1e0bPr0YAAyz04FA0eT/L+mFQkeGNDKfGFsc2nzREmBuA8LqYqbV1VHTcVU0XyqWL+IbVecyggSHU/MR3ZqmxZB593n8iViCBB8dn0+H4DpAywK8No5CF4/8z9kKO3sHcnhNEVjIH5dmq+S440xZD65a7tSOCBHBjDMWytgf0pf9bsUiJn1NMK15PfledQQo8qocrN1n+gUFDsmdhNNouljdK0bNqqkJeS3OkGBT3grU4hK1ucq3yIRApeStUfmAsL/xFJ5PQ5HXuMAeFKhATdfc8s1+TKzQZVh1blqi+zb7A/8t3klvTHPyFIDJFkx9RNhR9vuqxArpc6+LTLlcU+pK9p/2oztMcMtNUT3stMQvljqOGNQp53mHKBf68a29jruIubA7OZAuUswuIbwL04r3r8IzHhdcjjgJmZmkEWD9g3FNoeF6RTrSZMxmzLq2qBc/O3eB58So2/EtERP7z7kyrBETeomTyak+x4RvXH2OHvbGOC0kWC/Ndk6fFbTEK8ygGMDwdNw0jpp1wBFtxiCARh4utTe6KNaop+/x1v5WtTCJnS5ao+jXlclCtgfbNicPJgsORFCMwe0EuGj9V4ZdZ7udTWqvf2HXruC44/pP/oXqlrfMioZxquBGn0eEVQhlnOW+tRaOw0iK2pAWVPbNFEBiojcg0RUyoZwvbkQjyxGso8tkSShRR6UaISawA1dRErk6QeTdMNKCXYtv3tKOJbdP46zjObenNqDyHfMbNcUQbaVgOLWN+I+HImA8kilny99e8X9TNaAHwdhnlgcDrpO/OXkixpHMLNjdooUHew06Jz0iaCkbDnsFnvSgP9A0pDVlBDlatDTQ10MO9DGDlw7nUwono0pVu4LqS4u0hOxNl1o08EXLEOW/YZzNZ64TQNbvAL8oSaQ4NLbn+JU6XuRbyW98PXNRdKQFz94/Pu+u1TtK8Z7eZLmvW08i4PYSSfxEznV5Q3FOZizYfZMa/xn6b5+NsRp9tTzzyR/1rHyn3QwCbPMcp5rWdYfOPJz7yKCAIt3Vjr+WnHRNjr3BJYGHSkQppQJDAhYrx1Cy2sxiFDltWMN8OLjs0SeocXP0Kf3S23BcRsuqy182MdsQ20rCG7/rYFSZnSI504u7F9G1bYz40FQOjZHbfK6PBjsP7prXAPAqYAL5EcydtIvuNGF6hN+cOwwb/ye3kn8G1Dvcm+GCjHUy2euD8WRX93/ksskQMlzriTwVPnNxz9QjkVnTH1A2MwAVIsbT4/Qs61WiEbRvT6cyK2YOxqSyjVwTDoD2auN/dBCwpwsiQmSFrW9TFmAkAj081QzzKXrQ/+BW+ngi+7TwRhPAVqFLtKec5YD7xntF37Hurl4VdlJpaFkRYQTzRa7+X1HXS2Xs11pq5DZujDqATDVdBE8nYBf+4+eeXAeHW2t0W9pDu+o==" alt="AI Receptionist" class="w-full h-full object-contain">
+        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 border-2 border-paw-charcoal rounded-full animate-ping"></span>
+        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 border-2 border-paw-charcoal rounded-full"></span>
+      </div>
+      <div class="text-left">
+        <div class="text-[11px] font-bold tracking-wide flex items-center gap-1.5">
+          <span>AI Receptionist</span>
+          <span class="text-[9px] bg-paw-mint text-paw-charcoal px-1.5 py-0.2 rounded-full font-extrabold uppercase">Voice &amp; Text</span>
+        </div>
+        <p class="text-[9px] text-slate-300 leading-none">Speak or type 24/7</p>
+      </div>
+    </button>
+  </div>
+
+  <!-- AI CONCIERGE DRAWER & CALL MODAL -->
+  <div id="aiConciergeModal" class="fixed inset-0 z-50 bg-paw-charcoal/70 backdrop-blur-sm hidden flex items-end sm:items-center justify-center p-0 sm:p-4 transition-opacity duration-300">
+    <div class="bg-white rounded-t-3xl sm:rounded-3xl max-w-lg w-full h-[90vh] sm:h-[650px] shadow-float flex flex-col overflow-hidden animate-slideUp">
+      
+      <!-- Top Header -->
+      <div class="p-4 bg-paw-charcoal text-white flex items-center justify-between border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="relative w-10 h-10 rounded-full bg-paw-mintSoft p-0.5 border border-paw-teal flex items-center justify-center">
+            <img src="data:image/webp;base64,UklGRo49AABXRUJQVlA4III9AADw1ACdASqQAZABPlEokEWjoqGSisS8OAUEsrd+OAK+NRibphxXGmyH8e/p+eZy33ofRcpff72F5iXQXnh/2/qh/qn+y9g79cvO7/ZX3WfuZ6iv6l/j//F/xveA/5/7oe8z+7/772Bf7x/retg9A79yfWA/8n7w/DD/Xf+Z+4vtP///2AP//7dXTP9l/7v+QHgP/if7h+0Pn7+NfNP27+5/4f/Uf3H2zf6Xxl9Q/9j0I/j/2n/K/239wv8B7af7r8tvNP4mf3v3I/IF+Jfyj/Ff3b9xf7B+6/HHWj/3XqC+yX1D/Uf4H/Jf9f/FfCR8T/pPQz7Af8L/D/kZ9gH87/on+r/vf7x/4T//+934N/pfsA/zn+1/9H/Ffuz/n/pq/o//F/m/zE9tH6L/j/+9/m/9X8hH8v/rf/C/xP+g/9P+Z////q+8X/2e4/9y///7qH7O//P/gj+BzlZX/zPB/iOSNfBsplVHqja8QxbdS4VuUizPGYQw9vQMxrPe8/8xS5mtACHjNGkrAClA1e0bPr0YAAyz04FA0eT/L+mFQkeGNDKfGFsc2nzREmBuA8LqYqbV1VHTcVU0XyqWL+IbVecyggSHU/MR3ZqmxZB593n8iViCBB8dn0+H4DpAywK8No5CF4/8z9kKO3sHcnhNEVjIH5dmq+S440xZD65a7tSOCBHBjDMWytgf0pf9bsUiJn1NMK15PfledQQo8qocrN1n+gUFDsmdhNNouljdK0bNqqkJeS3OkGBT3grU4hK1ucq3yIRApeStUfmAsL/xFJ5PQ5HXuMAeFKhATdfc8s1+TKzQZVh1blqi+zb7A/8t3klvTHPyFIDJFkx9RNhR9vuqxArpc6+LTLlcU+pK9p/2oztMcMtNUT3stMQvljqOGNQp53mHKBf68a29jruIubA7OZAuUswuIbwL04r3r8IzHhdcjjgJmZmkEWD9g3FNoeF6RTrSZMxmzLq2qBc/O3eB58So2/EtERP7z7kyrBETeomTyak+x4RvXH2OHvbGOC0kWC/Ndk6fFbTEK8ygGMDwdNw0jpp1wBFtxiCARh4utTe6KNaop+/x1v5WtTCJnS5ao+jXlclCtgfbNicPJgsORFCMwe0EuGj9V4ZdZ7udTWqvf2HXruC44/pP/oXqlrfMioZxquBGn0eEVQhlnOW+tRaOw0iK2pAWVPbNFEBiojcg0RUyoZwvbkQjyxGso8tkSShRR6UaISawA1dRErk6QeTdMNKCXYtv3tKOJbdP46zjObenNqDyHfMbNcUQbaVgOLWN+I+HImA8kilny99e8X9TNaAHwdhnlgcDrpO/OXkixpHMLNjdooUHew06Jz0iaCkbDnsFnvSgP9A0pDVlBDlatDTQ10MO9DGDlw7nUwono0pVu4LqS4u0hOxNl1o08EXLEOW/YZzNZ64TQNbvAL8oSaQ4NLbn+JU6XuRbyW98PXNRdKQFz94/Pu+u1TtK8Z7eZLmvW08i4PYSSfxEznV5Q3FOZizYfZMa/xn6b5+NsRp9tTzzyR/1rHyn3QwCbPMcp5rWdYfOPJz7yKCAIt3Vjr+WnHRNjr3BJYGHSkQppQJDAhYrx1Cy2sxiFDltWMN8OLjs0SeocXP0Kf3S23BcRsuqy182MdsQ20rCG7/rYFSZnSI504u7F9G1bYz40FQOjZHbfK6PBjsP7prXAPAqYAL5EcydtIvuNGF6hN+cOwwb/ye3kn8G1Dvcm+GCjHUy2euD8WRX93/ksskQMlzriTwVPnNxz9QjkVnTH1A2MwAVIsbT4/Qs61WiEbRvT6cyK2YOxqSyjVwTDoD2auN/dBCwpwsiQmSFrW9TFmAkAj081QzzKXrQ/+BW+ngi+7TwRhPAVqFLtKec5YD7xntF37Hurl4VdlJpaFkRYQTzRa7+X1HXS2Xs11pq5DZujDqATDVdBE8nYBf+4+eeXAeHW2t0W9pDu+o==" alt="Mascot" class="w-full h-full object-contain">
+            <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-400 border-2 border-paw-charcoal rounded-full"></span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h4 class="font-brand text-sm font-bold text-white">PawSpace Concierge</h4>
+              <span id="aiVoiceStatusPill" class="text-[9px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-1.5 py-0.5 rounded-full font-bold">Live AI</span>
+            </div>
+            <p class="text-[10px] text-slate-300">Text &amp; Voice Receptionist</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-1.5">
+          <!-- Voice Mode Toggle Button -->
+          <button id="toggleVoiceModeBtn" onclick="toggleVoiceCallMode()" class="px-2.5 py-1.5 rounded-xl bg-white/10 hover:bg-paw-teal text-white text-[11px] font-bold flex items-center gap-1.5 transition">
+            <i data-lucide="mic" class="w-3.5 h-3.5 text-paw-mint"></i>
+            <span id="voiceBtnLabel">Voice Call</span>
+          </button>
+          <!-- Speech Mute Toggle -->
+          <button onclick="toggleAudioMute()" id="muteAudioBtn" class="p-1.5 rounded-xl hover:bg-white/10 text-slate-300 hover:text-white transition" title="Toggle Voice Response Audio">
+            <i data-lucide="volume-2" id="muteIcon" class="w-4 h-4"></i>
+          </button>
+          <!-- Close -->
+          <button onclick="toggleAiConcierge()" class="p-1.5 rounded-xl hover:bg-white/10 text-slate-300 hover:text-white transition">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- VIEW 1: TEXT CHAT STREAM -->
+      <div id="aiChatView" class="flex-1 flex flex-col overflow-hidden bg-slate-50">
+        
+        <!-- Messages Area -->
+        <div id="aiMessagesContainer" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs">
+          <!-- Initial Assistant Greeting -->
+          <div class="flex items-start gap-2.5 max-w-[85%]">
+            <div class="w-7 h-7 rounded-full bg-paw-mint flex-shrink-0 flex items-center justify-center border border-paw-teal text-xs">🐾</div>
+            <div class="bg-white p-3 rounded-2xl rounded-tl-sm border border-slate-200 shadow-sm space-y-1.5 text-paw-charcoal leading-relaxed">
+              <p><b>Hello! Welcome to PawSpace.</b></p>
+              <p>I'm your 24/7 AI Receptionist. I can answer questions about gate keypad codes, XL Bully / safety rules, session prices, or automatically reserve your time slot for you.</p>
+              <p class="text-[10px] text-paw-muted font-medium">💡 You can type below or tap <b>Voice Call</b> above to speak with me directly!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Prompt Chips -->
+        <div class="px-3 py-2 bg-white border-t border-slate-200 flex items-center gap-1.5 overflow-x-auto text-[11px] whitespace-nowrap scrollbar-none">
+          <button onclick="sendQuickPrompt('What are your session prices and duration?')" class="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-paw-mintSoft hover:text-paw-teal border border-slate-200 font-medium transition">💰 Prices &amp; Promo</button>
+          <button onclick="sendQuickPrompt('How does the electronic gate code work?')" class="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-paw-mintSoft hover:text-paw-teal border border-slate-200 font-medium transition">🔑 Gate PIN</button>
+          <button onclick="sendQuickPrompt('Are XL Bullies and exemption dogs allowed?')" class="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-paw-mintSoft hover:text-paw-teal border border-slate-200 font-medium transition">🛡️ XL Bully Policy</button>
+          <button onclick="sendQuickPrompt('How do I pay with Monzo bank transfer?')" class="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-paw-mintSoft hover:text-paw-teal border border-slate-200 font-medium transition">💳 Monzo &amp; Stripe</button>
+        </div>
+
+        <!-- Input Bar -->
+        <form onsubmit="handleAiChatSubmit(event)" class="p-3 bg-white border-t border-slate-200 flex items-center gap-2">
+          <!-- Mic push-to-type -->
+          <button type="button" onclick="startSpeechToText()" id="chatMicBtn" class="p-2.5 rounded-xl bg-slate-100 hover:bg-paw-mint text-paw-charcoal hover:text-paw-teal transition" title="Dictate with voice">
+            <i data-lucide="mic" class="w-4 h-4"></i>
+          </button>
+          <input type="text" id="aiChatInput" placeholder="Ask anything or say 'Book 2pm tomorrow'..." class="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-paw-charcoal focus:bg-white focus:outline-none focus:border-paw-teal transition">
+          <button type="submit" id="aiSendBtn" class="p-2.5 rounded-xl bg-paw-teal hover:bg-paw-tealDark text-white transition shadow-sm">
+            <i data-lucide="send" class="w-4 h-4"></i>
+          </button>
+        </form>
+
+      </div>
+
+      <!-- VIEW 2: VOICE CALL INTERFACE (Hands-Free Speech Call) -->
+      <div id="aiVoiceView" class="flex-1 flex flex-col items-center justify-between p-6 bg-gradient-to-b from-paw-charcoal to-paw-tealDark text-white hidden">
+        
+        <div class="text-center space-y-1 mt-2">
+          <span class="text-[10px] font-extrabold uppercase tracking-widest text-paw-mint" id="voiceCallTimer">00:00</span>
+          <h3 class="font-brand text-lg font-bold text-white">Live Voice Call</h3>
+          <p class="text-xs text-slate-300" id="voiceCallSubtitle">Speak clearly into your microphone</p>
+        </div>
+
+        <!-- Animated Mascot Visualizer Orb -->
+        <div class="relative my-6 flex items-center justify-center">
+          <div id="voicePulsingRing1" class="absolute w-44 h-44 rounded-full bg-paw-teal/20 animate-ping"></div>
+          <div id="voicePulsingRing2" class="absolute w-36 h-36 rounded-full bg-paw-teal/40 animate-pulse"></div>
+          <div class="relative w-28 h-28 rounded-full bg-paw-mint p-1.5 border-4 border-paw-teal shadow-2xl flex items-center justify-center overflow-hidden">
+            <img src="data:image/webp;base64,UklGRo49AABXRUJQVlA4III9AADw1ACdASqQAZABPlEokEWjoqGSisS8OAUEsrd+OAK+NRibphxXGmyH8e/p+eZy33ofRcpff72F5iXQXnh/2/qh/qn+y9g79cvO7/ZX3WfuZ6iv6l/j//F/xveA/5/7oe8z+7/772Bf7x/retg9A79yfWA/8n7w/DD/Xf+Z+4vtP///2AP//7dXTP9l/7v+QHgP/if7h+0Pn7+NfNP27+5/4f/Uf3H2zf6Xxl9Q/9j0I/j/2n/K/239wv8B7af7r8tvNP4mf3v3I/IF+Jfyj/Ff3b9xf7B+6/HHWj/3XqC+yX1D/Uf4H/Jf9f/FfCR8T/pPQz7Af8L/D/kZ9gH87/on+r/vf7x/4T//+934N/pfsA/zn+1/9H/Ffuz/n/pq/o//F/m/zE9tH6L/j/+9/m/9X8hH8v/rf/C/xP+g/9P+Z////q+8X/2e4/9y///7qH7O//P/gj+BzlZX/zPB/iOSNfBsplVHqja8QxbdS4VuUizPGYQw9vQMxrPe8/8xS5mtACHjNGkrAClA1e0bPr0YAAyz04FA0eT/L+mFQkeGNDKfGFsc2nzREmBuA8LqYqbV1VHTcVU0XyqWL+IbVecyggSHU/MR3ZqmxZB593n8iViCBB8dn0+H4DpAywK8No5CF4/8z9kKO3sHcnhNEVjIH5dmq+S440xZD65a7tSOCBHBjDMWytgf0pf9bsUiJn1NMK15PfledQQo8qocrN1n+gUFDsmdhNNouljdK0bNqqkJeS3OkGBT3grU4hK1ucq3yIRApeStUfmAsL/xFJ5PQ5HXuMAeFKhATdfc8s1+TKzQZVh1blqi+zb7A/8t3klvTHPyFIDJFkx9RNhR9vuqxArpc6+LTLlcU+pK9p/2oztMcMtNUT3stMQvljqOGNQp53mHKBf68a29jruIubA7OZAuUswuIbwL04r3r8IzHhdcjjgJmZmkEWD9g3FNoeF6RTrSZMxmzLq2qBc/O3eB58So2/EtERP7z7kyrBETeomTyak+x4RvXH2OHvbGOC0kWC/Ndk6fFbTEK8ygGMDwdNw0jpp1wBFtxiCARh4utTe6KNaop+/x1v5WtTCJnS5ao+jXlclCtgfbNicPJgsORFCMwe0EuGj9V4ZdZ7udTWqvf2HXruC44/pP/oXqlrfMioZxquBGn0eEVQhlnOW+tRaOw0iK2pAWVPbNFEBiojcg0RUyoZwvbkQjyxGso8tkSShRR6UaISawA1dRErk6QeTdMNKCXYtv3tKOJbdP46zjObenNqDyHfMbNcUQbaVgOLWN+I+HImA8kilny99e8X9TNaAHwdhnlgcDrpO/OXkixpHMLNjdooUHew06Jz0iaCkbDnsFnvSgP9A0pDVlBDlatDTQ10MO9DGDlw7nUwono0pVu4LqS4u0hOxNl1o08EXLEOW/YZzNZ64TQNbvAL8oSaQ4NLbn+JU6XuRbyW98PXNRdKQFz94/Pu+u1TtK8Z7eZLmvW08i4PYSSfxEznV5Q3FOZizYfZMa/xn6b5+NsRp9tTzzyR/1rHyn3QwCbPMcp5rWdYfOPJz7yKCAIt3Vjr+WnHRNjr3BJYGHSkQppQJDAhYrx1Cy2sxiFDltWMN8OLjs0SeocXP0Kf3S23BcRsuqy182MdsQ20rCG7/rYFSZnSI504u7F9G1bYz40FQOjZHbfK6PBjsP7prXAPAqYAL5EcydtIvuNGF6hN+cOwwb/ye3kn8G1Dvcm+GCjHUy2euD8WRX93/ksskQMlzriTwVPnNxz9QjkVnTH1A2MwAVIsbT4/Qs61WiEbRvT6cyK2YOxqSyjVwTDoD2auN/dBCwpwsiQmSFrW9TFmAkAj081QzzKXrQ/+BW+ngi+7TwRhPAVqFLtKec5YD7xntF37Hurl4VdlJpaFkRYQTzRa7+X1HXS2Xs11pq5DZujDqATDVdBE8nYBf+4+eeXAeHW2t0W9pDu+o==" alt="PawSpace" class="w-full h-full object-contain">
+          </div>
+        </div>
+
+        <!-- Spoken Live Subtitles / Feedback -->
+        <div class="w-full max-w-sm bg-black/30 backdrop-blur-md rounded-2xl p-4 border border-white/10 text-center space-y-2">
+          <div class="flex items-center justify-center gap-2">
+            <span id="voiceStatusDot" class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+            <span class="text-xs font-bold text-paw-mint uppercase tracking-wider" id="voiceStatusText">Listening...</span>
+          </div>
+          <p class="text-xs text-white leading-relaxed italic" id="voiceTranscriptText">"I'm listening, go ahead..."</p>
+        </div>
+
+        <!-- Voice Call Action Buttons -->
+        <div class="flex items-center gap-4 mt-4">
+          <button onclick="toggleVoiceMuteMic()" id="voiceMicMuteBtn" class="w-12 h-12 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center transition">
+            <i data-lucide="mic" id="voiceMicMuteIcon" class="w-5 h-5"></i>
+          </button>
+          <button onclick="endVoiceCall()" class="px-6 py-3 rounded-full bg-red-500 hover:bg-red-600 text-white font-bold text-xs flex items-center gap-2 shadow-lg transition">
+            <i data-lucide="phone-off" class="w-4 h-4"></i>
+            <span>End Call</span>
+          </button>
+          <button onclick="switchToTextChat()" class="w-12 h-12 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center transition" title="Switch to Text">
+            <i data-lucide="message-square" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
 
   <!-- ZONE DETAILS MODAL (Pop-up sheet for the 3 zones) -->
   <div id="zoneModal" class="fixed inset-0 z-50 bg-paw-charcoal/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
@@ -487,6 +705,35 @@
             3. In Cloudflare/Netlify, click <b>Custom Domains</b> and type your domain (e.g. <code>pawspace.co.uk</code> or <code>app.pawspace.co.uk</code>).<br>
             4. Add the CNAME or A record provided into your domain registrar (GoDaddy, Namecheap, 123 Reg, etc.). It goes live with free SSL in 5 minutes!
           </p>
+        </div>
+
+        <!-- Payment Links Configuration (Monzo & Stripe) -->
+        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-paw-charcoal uppercase tracking-wider block">Payment Links &amp; QR Settings</span>
+            <span class="text-[10px] text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">£0 Setup Fee</span>
+          </div>
+          
+          <div class="space-y-2">
+            <div>
+              <label class="block font-bold text-paw-charcoal text-[11px] mb-1">Monzo Me / Business Transfer URL (0% fees):</label>
+              <input type="url" id="adminMonzoUrl" placeholder="https://monzo.me/pawspace" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs font-mono">
+              <span class="text-[10px] text-paw-muted">Allows customers to pay via free UK bank transfer or scanning the QR code on mobile.</span>
+            </div>
+
+            <div>
+              <label class="block font-bold text-paw-charcoal text-[11px] mb-1">Stripe Payment Link URL (Card / Apple Pay):</label>
+              <input type="url" id="adminStripeUrl" placeholder="https://buy.stripe.com/..." class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs font-mono">
+              <span class="text-[10px] text-paw-muted">Create a Payment Link in your Stripe Dashboard with £0 monthly subscription (1.5% + 20p per UK transaction).</span>
+            </div>
+
+            <div class="pt-1 flex justify-end">
+              <button onclick="savePaymentSettings()" class="bg-paw-teal hover:bg-paw-tealDark text-white px-4 py-2 rounded-xl font-bold transition flex items-center gap-1.5">
+                <i data-lucide="save" class="w-3.5 h-3.5"></i>
+                <span>Save Payment Links</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- Webhook Configuration -->
@@ -656,11 +903,88 @@
       }
     }
 
+    const LS_MONZO_URL = 'pawspace_monzo_url';
+    const LS_STRIPE_URL = 'pawspace_stripe_url';
+    let currentPayMethod = 'monzo';
+    let currentPendingRef = 'PS-' + Math.floor(1000 + Math.random() * 9000);
+
+    function onPaymentMethodChange(method) {
+      currentPayMethod = method;
+      const isMonzo = method === 'monzo';
+
+      const labelMonzo = document.getElementById('labelPayMonzo');
+      const labelStripe = document.getElementById('labelPayStripe');
+      const dotMonzo = document.getElementById('dotPayMonzo');
+      const dotStripe = document.getElementById('dotPayStripe');
+      const boxMonzo = document.getElementById('monzoPaymentBox');
+      const boxStripe = document.getElementById('stripePaymentBox');
+
+      if (isMonzo) {
+        labelMonzo.className = 'relative flex flex-col p-3 rounded-xl border-2 border-paw-teal bg-white cursor-pointer transition shadow-sm';
+        labelStripe.className = 'relative flex flex-col p-3 rounded-xl border border-slate-200 bg-white cursor-pointer hover:border-paw-teal transition';
+        dotMonzo.className = 'w-2.5 h-2.5 rounded-full bg-paw-teal inline-block';
+        dotStripe.className = 'w-2.5 h-2.5 rounded-full bg-slate-300 inline-block';
+        boxMonzo.classList.remove('hidden');
+        boxStripe.classList.add('hidden');
+      } else {
+        labelStripe.className = 'relative flex flex-col p-3 rounded-xl border-2 border-indigo-600 bg-white cursor-pointer transition shadow-sm';
+        labelMonzo.className = 'relative flex flex-col p-3 rounded-xl border border-slate-200 bg-white cursor-pointer hover:border-paw-teal transition';
+        dotStripe.className = 'w-2.5 h-2.5 rounded-full bg-indigo-600 inline-block';
+        dotMonzo.className = 'w-2.5 h-2.5 rounded-full bg-slate-300 inline-block';
+        boxStripe.classList.remove('hidden');
+        boxMonzo.classList.add('hidden');
+      }
+      refreshPaymentLinks();
+    }
+
+    function refreshPaymentLinks() {
+      const priceText = document.getElementById('priceDisplay').innerText.replace('£', '').trim();
+      const numPrice = parseFloat(priceText) || 23.00;
+      
+      const monzoBase = localStorage.getItem(LS_MONZO_URL) || 'https://monzo.me/pawspaceplayroom';
+      const stripeBase = localStorage.getItem(LS_STRIPE_URL) || 'https://buy.stripe.com/pawspace-booking';
+
+      const monzoUrlWithParams = monzoBase.replace(/\/+$/, '') + '/' + numPrice.toFixed(2) + '?d=' + encodeURIComponent(currentPendingRef);
+      
+      const monzoLinkBtn = document.getElementById('monzoPayLinkBtn');
+      if (monzoLinkBtn) monzoLinkBtn.href = monzoUrlWithParams;
+
+      const stripeLinkBtn = document.getElementById('stripePayLinkBtn');
+      if (stripeLinkBtn) stripeLinkBtn.href = stripeBase;
+
+      const monzoQr = document.getElementById('monzoQrImg');
+      if (monzoQr) {
+        monzoQr.src = 'https://api.qrserver.com/v1/create-qr-code/?size=84x84&data=' + encodeURIComponent(monzoUrlWithParams);
+      }
+
+      const refEl = document.getElementById('payRefCode');
+      if (refEl) refEl.innerText = currentPendingRef;
+    }
+
+    function savePaymentSettings() {
+      const monzo = document.getElementById('adminMonzoUrl').value.trim();
+      const stripe = document.getElementById('adminStripeUrl').value.trim();
+      if (monzo) localStorage.setItem(LS_MONZO_URL, monzo);
+      if (stripe) localStorage.setItem(LS_STRIPE_URL, stripe);
+      refreshPaymentLinks();
+      showToast('Payment links saved!');
+    }
+
+    function loadPaymentSettings() {
+      const monzo = localStorage.getItem(LS_MONZO_URL) || 'https://monzo.me/pawspaceplayroom';
+      const stripe = localStorage.getItem(LS_STRIPE_URL) || 'https://buy.stripe.com/pawspace-booking';
+      const mInput = document.getElementById('adminMonzoUrl');
+      const sInput = document.getElementById('adminStripeUrl');
+      if (mInput) mInput.value = monzo;
+      if (sInput) sInput.value = stripe;
+    }
+
     function updateReviewSnapshot() {
       document.getElementById('reviewDateTime').innerText = `${selectedDate} · ${selectedSlot}`;
       document.getElementById('reviewDuration').innerText = `${selectedDuration} Mins`;
       document.getElementById('reviewGuest').innerText = document.getElementById('inputGuestName').value || 'Anthony';
       document.getElementById('reviewDog').innerText = document.getElementById('inputDogName').value || 'Your Pup';
+      refreshPaymentLinks();
     }
 
     // Legal Accordion
@@ -1101,6 +1425,384 @@
     }
     function closeInstallModal() {
       document.getElementById('installModal').classList.add('hidden');
+    }
+
+
+    // ==========================================
+    // PAWSPACE AI CONCIERGE & VOICE RECEPTIONIST
+    // ==========================================
+    let aiConciergeOpen = false;
+    let voiceModeActive = false;
+    let isSpeechMuted = false;
+    let recognition = null;
+    let isListening = false;
+    let voiceCallTimerInterval = null;
+    let voiceCallSeconds = 0;
+
+    function toggleAiConcierge() {
+      aiConciergeOpen = !aiConciergeOpen;
+      const modal = document.getElementById('aiConciergeModal');
+      modal.classList.toggle('hidden', !aiConciergeOpen);
+      if (aiConciergeOpen) {
+        document.getElementById('aiChatInput').focus();
+        lucide.createIcons();
+      } else {
+        if (voiceModeActive) endVoiceCall();
+        if (window.speechSynthesis) window.speechSynthesis.cancel();
+      }
+    }
+
+    function toggleAudioMute() {
+      isSpeechMuted = !isSpeechMuted;
+      const icon = document.getElementById('muteIcon');
+      if (isSpeechMuted) {
+        if (window.speechSynthesis) window.speechSynthesis.cancel();
+        icon.setAttribute('data-lucide', 'volume-x');
+        showToast('AI Voice Speech Muted');
+      } else {
+        icon.setAttribute('data-lucide', 'volume-2');
+        showToast('AI Voice Speech Unmuted');
+      }
+      lucide.createIcons();
+    }
+
+    function toggleVoiceCallMode() {
+      if (voiceModeActive) {
+        switchToTextChat();
+      } else {
+        startVoiceCall();
+      }
+    }
+
+    function startVoiceCall() {
+      voiceModeActive = true;
+      document.getElementById('aiChatView').classList.add('hidden');
+      document.getElementById('aiVoiceView').classList.remove('hidden');
+      document.getElementById('voiceBtnLabel').innerText = 'Text Chat';
+      document.getElementById('toggleVoiceModeBtn').classList.add('bg-paw-teal');
+      
+      voiceCallSeconds = 0;
+      clearInterval(voiceCallTimerInterval);
+      voiceCallTimerInterval = setInterval(() => {
+        voiceCallSeconds++;
+        const mins = String(Math.floor(voiceCallSeconds / 60)).padStart(2, '0');
+        const secs = String(voiceCallSeconds % 60).padStart(2, '0');
+        const timerEl = document.getElementById('voiceCallTimer');
+        if (timerEl) timerEl.innerText = `${mins}:${secs}`;
+      }, 1000);
+
+      speakResponse("Hello, I'm listening. Ask me anything about PawSpace or tell me what slot you'd like to book.", () => {
+        initSpeechRecognition(true);
+      });
+      lucide.createIcons();
+    }
+
+    function endVoiceCall() {
+      voiceModeActive = false;
+      clearInterval(voiceCallTimerInterval);
+      if (recognition) {
+        try { recognition.stop(); } catch(e){}
+      }
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+      switchToTextChat();
+    }
+
+    function switchToTextChat() {
+      voiceModeActive = false;
+      clearInterval(voiceCallTimerInterval);
+      document.getElementById('aiVoiceView').classList.add('hidden');
+      document.getElementById('aiChatView').classList.remove('hidden');
+      document.getElementById('voiceBtnLabel').innerText = 'Voice Call';
+      document.getElementById('toggleVoiceModeBtn').classList.remove('bg-paw-teal');
+      lucide.createIcons();
+    }
+
+    function toggleVoiceMuteMic() {
+      if (isListening && recognition) {
+        recognition.stop();
+        isListening = false;
+        document.getElementById('voiceStatusText').innerText = 'Mic Muted';
+        document.getElementById('voiceStatusDot').className = 'w-2.5 h-2.5 rounded-full bg-amber-400';
+        document.getElementById('voiceMicMuteIcon').setAttribute('data-lucide', 'mic-off');
+      } else {
+        initSpeechRecognition(true);
+        document.getElementById('voiceMicMuteIcon').setAttribute('data-lucide', 'mic');
+      }
+      lucide.createIcons();
+    }
+
+    // Speech-to-Text Setup
+    function initSpeechRecognition(isContinuous) {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        alert("Voice speech recognition is not supported in this browser. Please use Chrome, Edge, or Safari.");
+        return;
+      }
+
+      if (recognition) {
+        try { recognition.stop(); } catch(e){}
+      }
+
+      recognition = new SpeechRecognition();
+      recognition.lang = 'en-GB';
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.onstart = function() {
+        isListening = true;
+        const statusText = document.getElementById('voiceStatusText');
+        if (statusText) statusText.innerText = 'Listening to you...';
+        const dot = document.getElementById('voiceStatusDot');
+        if (dot) dot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping';
+        const micBtn = document.getElementById('chatMicBtn');
+        if (micBtn) micBtn.classList.add('bg-red-100', 'text-red-500');
+      };
+
+      recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        const transcriptEl = document.getElementById('voiceTranscriptText');
+        if (transcriptEl) transcriptEl.innerText = `"${transcript}"`;
+
+        if (voiceModeActive) {
+          processConciergeMessage(transcript, true);
+        } else {
+          document.getElementById('aiChatInput').value = transcript;
+          processConciergeMessage(transcript, false);
+        }
+      };
+
+      recognition.onerror = function(err) {
+        console.warn("Speech recognition error:", err);
+        isListening = false;
+        const statusText = document.getElementById('voiceStatusText');
+        if (statusText) statusText.innerText = 'Ready (Tap mic to speak)';
+        const dot = document.getElementById('voiceStatusDot');
+        if (dot) dot.className = 'w-2.5 h-2.5 rounded-full bg-slate-400';
+        const micBtn = document.getElementById('chatMicBtn');
+        if (micBtn) micBtn.classList.remove('bg-red-100', 'text-red-500');
+      };
+
+      recognition.onend = function() {
+        isListening = false;
+        const micBtn = document.getElementById('chatMicBtn');
+        if (micBtn) micBtn.classList.remove('bg-red-100', 'text-red-500');
+      };
+
+      try {
+        recognition.start();
+      } catch(e) {
+        console.error("Recognition start failed:", e);
+      }
+    }
+
+    function startSpeechToText() {
+      initSpeechRecognition(false);
+    }
+
+    // Text-to-Speech Output
+    function speakResponse(text, callback) {
+      if (isSpeechMuted || !('speechSynthesis' in window)) {
+        if (callback) callback();
+        return;
+      }
+
+      window.speechSynthesis.cancel();
+      const cleanText = text.replace(/[🐾💰🔑🛡️☕💳✨💡•*#]/g, '').trim();
+      const utterance = new SpeechSynthesisUtterance(cleanText);
+      utterance.lang = 'en-GB';
+      utterance.rate = 1.05;
+      utterance.pitch = 1.0;
+
+      const voices = window.speechSynthesis.getVoices();
+      const ukVoice = voices.find(v => v.lang.includes('en-GB') || v.name.includes('UK') || v.name.includes('British'));
+      if (ukVoice) utterance.voice = ukVoice;
+
+      utterance.onstart = function() {
+        const statusText = document.getElementById('voiceStatusText');
+        if (statusText && voiceModeActive) statusText.innerText = 'PawSpace is speaking...';
+        const dot = document.getElementById('voiceStatusDot');
+        if (dot && voiceModeActive) dot.className = 'w-2.5 h-2.5 rounded-full bg-paw-mint animate-pulse';
+      };
+
+      utterance.onend = function() {
+        if (voiceModeActive) {
+          const statusText = document.getElementById('voiceStatusText');
+          if (statusText) statusText.innerText = 'Listening to you...';
+          const dot = document.getElementById('voiceStatusDot');
+          if (dot) dot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping';
+          if (callback) callback();
+          else setTimeout(() => { if (voiceModeActive) initSpeechRecognition(true); }, 500);
+        } else if (callback) {
+          callback();
+        }
+      };
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function sendQuickPrompt(text) {
+      processConciergeMessage(text, false);
+    }
+
+    function handleAiChatSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('aiChatInput');
+      const val = input.value.trim();
+      if (!val) return;
+      input.value = '';
+      processConciergeMessage(val, false);
+    }
+
+    function appendChatMessage(sender, text) {
+      const container = document.getElementById('aiMessagesContainer');
+      const isUser = sender === 'user';
+
+      const row = document.createElement('div');
+      row.className = isUser ? 'flex items-start justify-end gap-2.5' : 'flex items-start gap-2.5 max-w-[88%] animate-fadeIn';
+
+      if (isUser) {
+        row.innerHTML = `
+          <div class="bg-paw-teal text-white p-3 rounded-2xl rounded-tr-sm text-xs shadow-sm leading-relaxed max-w-[80%]">
+            ${escapeHtml(text)}
+          </div>
+          <div class="w-7 h-7 rounded-full bg-paw-charcoal text-white flex-shrink-0 flex items-center justify-center text-[10px] font-bold">ME</div>
+        `;
+      } else {
+        row.innerHTML = `
+          <div class="w-7 h-7 rounded-full bg-paw-mint flex-shrink-0 flex items-center justify-center border border-paw-teal text-xs">🐾</div>
+          <div class="bg-white p-3 rounded-2xl rounded-tl-sm border border-slate-200 shadow-sm space-y-1.5 text-paw-charcoal leading-relaxed">
+            ${text}
+          </div>
+        `;
+      }
+
+      container.appendChild(row);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function escapeHtml(string) {
+      return String(string).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    // Core AI Receptionist Intelligence & Action Routing
+    function processConciergeMessage(userText, isVoice) {
+      appendChatMessage('user', userText);
+
+      const q = userText.toLowerCase().trim();
+      let reply = "";
+      let spokeText = "";
+
+      // 1. Booking Action Intent
+      if (q.includes('book') || q.includes('reserve') || q.includes('slot') || q.includes('appointment')) {
+        let matchedDuration = 60;
+        if (q.includes('30') || q.includes('half')) matchedDuration = 30;
+
+        selectedDuration = matchedDuration;
+        document.getElementById('btnDur60').classList.toggle('border-paw-teal', matchedDuration === 60);
+        document.getElementById('btnDur60').classList.toggle('bg-paw-mintSoft', matchedDuration === 60);
+        document.getElementById('btnDur30').classList.toggle('border-paw-teal', matchedDuration === 30);
+        document.getElementById('btnDur30').classList.toggle('bg-paw-mintSoft', matchedDuration === 30);
+
+        if (q.includes('2') || q.includes('14:00') || q.includes('two')) {
+          selectedSlot = '02:00 PM – 03:00 PM';
+        } else if (q.includes('11') || q.includes('morning')) {
+          selectedSlot = '11:00 AM – 12:00 PM';
+        } else if (q.includes('5') || q.includes('17:00') || q.includes('five') || q.includes('evening')) {
+          selectedSlot = '05:00 PM – 06:00 PM';
+        } else {
+          selectedSlot = '02:00 PM – 03:00 PM';
+        }
+
+        const dogMatch = q.match(/dog(?:'s)? (?:is|called|named)?\s*([a-zA-Z]+)/i) || q.match(/(?:with|for)\s+([a-zA-Z]+)/i);
+        if (dogMatch && dogMatch[1] && !['the','an','a','my','tomorrow','today','hour'].includes(dogMatch[1].toLowerCase())) {
+          document.getElementById('inputDogName').value = dogMatch[1].charAt(0).toUpperCase() + dogMatch[1].slice(1);
+        }
+
+        updatePrice();
+        goToStep(3);
+
+        reply = `
+          <p><b>🎉 I have reserved your slot!</b></p>
+          <p>• <b>Slot:</b> ${selectedDate} · ${selectedSlot} (${selectedDuration}m)<br>
+          • <b>Total:</b> ${document.getElementById('priceDisplay').innerText}</p>
+          <p class="mt-1">I've navigated you to <b>Step 3</b> on screen. Please choose between <b>Monzo Bank Transfer (0% fees)</b> or <b>Card (Stripe)</b> to unlock your gate PIN!</p>
+        `;
+        spokeText = `I have reserved your slot for ${selectedDate} at ${selectedSlot.split('–')[0]}. I've opened Step 3 on your screen so you can choose Monzo or Card payment to unlock your gate PIN.`;
+
+      // 2. Gate Code / Keypad / Access
+      } else if (q.includes('gate') || q.includes('code') || q.includes('pin') || q.includes('keypad') || q.includes('unlock') || q.includes('enter') || q.includes('entry')) {
+        const activeBooking = getActiveBooking();
+        const pinMsg = activeBooking ? `<br>🔑 <b>Your current session gate PIN is:</b> <span class="font-mono bg-paw-mint px-2 py-0.5 rounded font-bold text-paw-charcoal">${activeBooking.pin}</span> (Bay 02)` : '';
+        reply = `
+          <p><b>Contactless Electric Gate Access:</b></p>
+          <p>Our sanctuary entrance features an electronic numeric keypad. When you arrive at your allocated bay, enter your 4-digit PIN followed by the hash symbol (<b>#</b>).${pinMsg}</p>
+          <p class="text-[10px] text-paw-muted mt-1">⚠️ <i>Important rule:</i> Please vacate your bay 5 minutes before your time slot ends to maintain our zero-dog-encounter policy.</p>
+        `;
+        spokeText = "Our gate is 100% contactless. When you arrive, enter your four-digit PIN followed by the hash symbol. Please vacate 5 minutes before your slot ends to keep our zero dog encounter guarantee.";
+
+      // 3. XL Bully / Dangerous Dogs Act 1991 / Banned Breeds
+      } else if (q.includes('bully') || q.includes('xl') || q.includes('dangerous') || q.includes('breed') || q.includes('exemption') || q.includes('muzzle') || q.includes('insurance')) {
+        reply = `
+          <p><b>🛡️ XL Bully &amp; Legal Compliance:</b></p>
+          <p><b>Yes, XL Bullies and exempt breeds are warmly welcomed!</b> Because PawSpace is a completely private solo venue with 6ft anti-jump fencing and double-gated airlock entry, your dog can run 100% off-lead once securely inside.</p>
+          <p><b>Requirements:</b><br>
+          1. Valid UK Certificate of Exemption.<br>
+          2. Third-party public liability insurance.<br>
+          3. Kept on lead and muzzled until safely inside the locked private enclosure.</p>
+        `;
+        spokeText = "Yes, XL Bullies and exempt breeds are warmly welcomed at PawSpace. Because we are a private solo venue with six-foot secure fencing and airlock entry, your dog can run off-lead once safely locked inside. You just need your Certificate of Exemption and third-party insurance.";
+
+      // 4. Prices, Costs, & Discounts
+      } else if (q.includes('price') || q.includes('cost') || q.includes('how much') || q.includes('fee') || q.includes('promo') || q.includes('discount')) {
+        reply = `
+          <p><b>💰 Session Pricing:</b></p>
+          <p>• <b>60 Minutes Solo Sanctuary:</b> £23.00<br>
+          • <b>30 Minutes Solo Quick Run:</b> £14.00</p>
+          <p class="mt-1 text-emerald-700 font-bold bg-emerald-50 p-2 rounded-xl border border-emerald-200">
+            🎁 Use promo code <b>PAWSPACE</b> for £5.00 off your session!
+          </p>
+          <p class="text-[10px] text-paw-muted mt-1">Includes private heated work lounge, 500Mbps Wi-Fi, agility turf, and complimentary artisan coffee.</p>
+        `;
+        spokeText = "Standard sessions are £23 for 60 minutes, or £14 for 30 minutes. Use promo code PAWSPACE to get £5 off! All sessions include our private heated work lounge, 500Mbps Wi-Fi, agility turf, and free artisan coffee.";
+
+      // 5. Payment Methods (Monzo & Stripe)
+      } else if (q.includes('pay') || q.includes('monzo') || q.includes('stripe') || q.includes('card') || q.includes('bank') || q.includes('transfer')) {
+        reply = `
+          <p><b>💳 Payment Options:</b></p>
+          <p>• <b>Monzo Easy Bank Transfer (Recommended):</b> 0% fees! Pay directly using your mobile banking app or by scanning the instant QR code in Step 3.<br>
+          • <b>Stripe Card Checkout:</b> Pay instantly with Visa, Mastercard, Apple Pay, or Google Pay.</p>
+          <p class="text-[10px] text-paw-muted mt-1">Both methods provide instant automated booking confirmation and gate PIN issuance.</p>
+        `;
+        spokeText = "You can pay via Monzo Easy Bank Transfer with 0% fees and an instant QR code, or by debit and credit card through Stripe with Apple Pay and Google Pay.";
+
+      // 6. Amenities & Facilities
+      } else if (q.includes('amenit') || q.includes('facilit') || q.includes('wifi') || q.includes('coffee') || q.includes('work') || q.includes('agility') || q.includes('fence')) {
+        reply = `
+          <p><b>🌟 Sanctuary Amenities Included:</b></p>
+          <p>• <b>Work Lounge:</b> 500Mbps Wi-Fi, ergonomic standing desks, memory foam dog beds, acoustic pods.<br>
+          • <b>Autonomous Cafe:</b> Free bean-to-cup artisan espresso, hot chocolate &amp; organic teas.<br>
+          • <b>Agility &amp; Play:</b> High-traction turf, agility tunnels, ramps, balls, and warm water dog wash.<br>
+          • <b>Security:</b> 6ft heavy-duty anti-dig fencing with double-gated airlock entry.</p>
+        `;
+        spokeText = "We offer a heated work lounge with 500Mbps Wi-Fi, free artisan bean-to-cup coffee, high-traction agility turf, warm water dog wash, and six-foot secure anti-dig fencing.";
+
+      // 7. General / Friendly Fallback
+      } else {
+        reply = `
+          <p>I can help you with that! At PawSpace, we provide a 100% private solo dog sanctuary in Chorley / South Ribble with zero dog encounters, heated work lounge, and agility turf.</p>
+          <p class="mt-1">Would you like me to <b>book a session for you</b>, explain our <b>gate code access</b>, or answer questions about <b>pricing</b> and <b>XL Bully policies</b>?</p>
+        `;
+        spokeText = "I can help with that. At PawSpace, we provide a 100% private solo dog sanctuary with zero dog encounters. Would you like me to reserve a session for you, or explain our gate code and pricing?";
+      }
+
+      setTimeout(() => {
+        appendChatMessage('assistant', reply);
+        if (voiceModeActive) {
+          const transcriptEl = document.getElementById('voiceTranscriptText');
+          if (transcriptEl) transcriptEl.innerText = spokeText;
+        }
+        speakResponse(spokeText);
+      }, 350);
     }
 
     // Init
