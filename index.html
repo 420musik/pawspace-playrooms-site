@@ -368,6 +368,45 @@
           <span id="headerLoyaltyPill" class="bg-amber-500 text-white rounded-full text-[9px] px-1.5 font-bold" title="Completed bookings / 6 toward 30% off">🐾 4/6</span>
         </button>
 
+        <!-- Socials Menu Dropdown Button -->
+        <div class="relative">
+          <button id="headerSocialsBtn" onclick="toggleSocialsMenu()" class="px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-amber-500/10 hover:from-pink-500/20 hover:via-purple-500/20 hover:to-amber-500/20 text-paw-charcoal font-bold text-xs flex items-center gap-1.5 transition border border-pink-500/20 shadow-2xs" title="Socials · Instagram @pawspaceplayroom">
+            <i data-lucide="instagram" class="w-3.5 h-3.5 text-pink-600"></i>
+            <span class="hidden sm:inline font-bold">Socials</span>
+          </button>
+
+          <!-- Socials Flyout Card -->
+          <div id="socialsDropdownMenu" class="hidden absolute right-0 mt-2 w-64 bg-white rounded-2xl shadow-float border border-slate-100 p-3 z-50 animate-fadeIn">
+            <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-paw-muted flex items-center gap-1.5">
+                <i data-lucide="share-2" class="w-3 h-3 text-paw-teal"></i> Socials
+              </span>
+              <span class="text-[9px] bg-pink-100 text-pink-700 px-1.5 py-0.5 rounded-full font-bold">Official</span>
+            </div>
+            
+            <a href="https://www.instagram.com/pawspaceplayroom/" target="_blank" rel="noopener noreferrer" id="socialsInstaDropdownLink" class="group flex items-center gap-3 p-2 rounded-xl hover:bg-pink-50/60 transition border border-transparent hover:border-pink-200">
+              <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-400 via-rose-500 to-purple-600 flex items-center justify-center text-white shadow-xs group-hover:scale-105 transition-transform flex-shrink-0">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="text-xs font-bold text-paw-charcoal flex items-center gap-1 group-hover:text-pink-600 transition-colors">
+                  <span>@pawspaceplayroom</span>
+                  <i data-lucide="external-link" class="w-3 h-3 opacity-60"></i>
+                </div>
+                <p class="text-[10px] text-paw-muted truncate">Daily playrooms, pups &amp; clips</p>
+              </div>
+            </a>
+            
+            <div class="mt-2.5 pt-2 border-t border-slate-100">
+              <a href="https://www.instagram.com/pawspaceplayroom/" target="_blank" rel="noopener noreferrer" id="socialsClickToGoBtn" class="w-full py-1.5 px-3 rounded-xl bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 text-white text-center font-bold text-[11px] flex items-center justify-center gap-1.5 transition shadow-xs">
+                <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+                <span>Open Instagram</span>
+                <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
         <button onclick="toggleMyBookingsModal()" class="px-2.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-paw-charcoal font-bold text-xs flex items-center gap-1.5 transition">
           <i data-lucide="calendar" class="w-3.5 h-3.5 text-paw-teal"></i>
           <span class="hidden sm:inline">My Key</span>
@@ -389,48 +428,537 @@
   <!-- MAIN CONTAINER (Centered, Calm & Focused) -->
   <main class="max-w-3xl mx-auto px-4 pt-5 space-y-5">
 
-    <!-- HERO COMPACT BANNER (With Quick Zone Preview Pills) -->
-    <section class="bg-gradient-to-br from-white via-paw-mintSoft to-white rounded-3xl border border-paw-teal/20 p-5 shadow-soft relative overflow-hidden">
-      <div class="flex items-center justify-between gap-4">
-        <div class="space-y-1.5">
-          <span class="inline-flex items-center gap-1 text-[11px] font-bold text-paw-teal uppercase tracking-wider">
-            <i data-lucide="shield-check" class="w-3 h-3"></i>
-            100% Private Solo Sanctuary
+    <!-- ========================================================================= -->
+    <!-- SCREEN 1: WELCOME TO PAWSPACE (Pokémon GO / Pixar Style - Image 2) -->
+    <!-- ========================================================================= -->
+    <section id="onboardingStep-1" class="space-y-4">
+      <!-- Mint Hero Card -->
+      <div class="bg-gradient-to-br from-[#eaf7f6] via-[#dff2f0] to-[#eaf7f6] rounded-3xl border border-paw-teal/20 p-5 sm:p-6 shadow-soft space-y-4 relative overflow-hidden">
+        <div class="space-y-1">
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-widest text-paw-teal">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            WELCOME TO YOUR HAPPY PLACE
           </span>
-          <h2 class="font-brand text-2xl sm:text-3xl font-bold text-paw-charcoal leading-tight">
-            Zero Dogs. Zero Mud. <span class="text-paw-teal">Total Peace.</span>
-          </h2>
+          <h1 class="font-brand text-2xl sm:text-3xl font-extrabold text-paw-charcoal leading-tight">
+            Your dog's next adventure starts here!
+          </h1>
           <p class="text-xs text-paw-muted max-w-md">
-            Dedicated parking, heated work lounge, autonomous cafe, and medical sports turf.
+            100% private solo dog sanctuary with zero other dogs, zero mud, dedicated parking, autonomous cafe, and instant keypad access.
           </p>
+        </div>
 
-          <!-- 3 Interactive Zone Pills (Tap to inspect) -->
-          <div class="flex flex-wrap gap-1.5 pt-1">
-            <button onclick="openZoneModal('work')" class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-white text-paw-teal border border-paw-teal/20 hover:bg-paw-mint transition flex items-center gap-1 shadow-sm">
-              <i data-lucide="laptop" class="w-3 h-3"></i>
-              <span>Work Lounge</span>
+        <!-- Pixar 3D Hero Mascot Stage (Image 2) -->
+        <div class="relative w-full h-56 sm:h-64 rounded-2xl bg-gradient-to-b from-sky-100 via-emerald-50 to-amber-50/50 border border-paw-teal/15 overflow-hidden flex items-center justify-center shadow-inner">
+          <div class="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-200 via-emerald-100 to-transparent"></div>
+          <div class="relative z-10 flex items-end justify-center w-full h-full pb-2">
+            <div id="welcomeHeroStage" class="w-full max-w-xs h-52 flex items-center justify-center"></div>
+          </div>
+          <div class="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm border border-paw-teal/20 text-[10px] font-bold text-paw-teal shadow-xs">
+            <i data-lucide="shield-check" class="w-3 h-3 text-emerald-600"></i>
+            <span>100% Private</span>
+          </div>
+        </div>
+
+        <!-- Primary Action: Get started -->
+        <div class="space-y-2 pt-1">
+          <button id="btnGetStarted" onclick="goToJourneyStep(2)" class="w-full bg-[#1A1A1A] hover:bg-paw-charcoal active:scale-[0.99] text-white font-brand text-base font-bold py-4 px-6 rounded-2xl shadow-float transition flex items-center justify-center gap-2 group cursor-pointer">
+            <span>Get started</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+          </button>
+          <p class="text-center text-xs font-semibold text-paw-tealDark/70">
+            Create your characters or skip straight to booking
+          </p>
+        </div>
+      </div>
+
+      <!-- 2 Quick Action Cards (Image 2) -->
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Card 1: My characters -->
+        <button onclick="goToJourneyStep(2)" class="bg-white hover:bg-paw-mintSoft/30 active:scale-[0.99] p-4 rounded-2xl border border-slate-200 hover:border-paw-teal/30 shadow-xs flex flex-col items-start gap-1 text-left transition cursor-pointer">
+          <div class="w-9 h-9 rounded-xl bg-paw-mint flex items-center justify-center text-paw-teal mb-1">
+            <i data-lucide="user" class="w-4 h-4"></i>
+          </div>
+          <div class="font-brand font-bold text-sm text-paw-charcoal">My characters</div>
+          <div class="text-[11px] text-paw-muted">Customise your look</div>
+        </button>
+
+        <!-- Card 2: Book a session -->
+        <button id="quickBookBtn" onclick="skipToBooking()" class="bg-white hover:bg-amber-50/40 active:scale-[0.99] p-4 rounded-2xl border border-slate-200 hover:border-amber-300 shadow-xs flex flex-col items-start gap-1 text-left transition cursor-pointer">
+          <div class="w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center text-amber-700 mb-1">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+          </div>
+          <div class="font-brand font-bold text-sm text-paw-charcoal">Book a session</div>
+          <div class="text-[11px] text-paw-muted">Find your perfect time</div>
+        </button>
+      </div>
+
+      <!-- Active Pass Compact Card (if active PIN exists) -->
+      <div id="welcomePassCard" class="bg-white rounded-2xl border-2 border-paw-teal/30 p-3.5 shadow-xs flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-paw-mint flex items-center justify-center text-paw-teal">
+            <i data-lucide="key" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-[10px] font-extrabold uppercase tracking-wider text-paw-teal">Active Gate Pass</div>
+            <div class="text-sm font-brand font-bold text-paw-charcoal flex items-center gap-2">
+              <span>PIN: <strong id="welcomePassPin" class="font-mono text-paw-teal">5294#</strong></span>
+            </div>
+          </div>
+        </div>
+        <button onclick="goToJourneyStep(4)" class="px-3 py-1.5 rounded-xl bg-paw-mint text-paw-tealDark hover:bg-paw-teal hover:text-white font-bold text-xs transition">
+          View Key 🔑
+        </button>
+      </div>
+
+      <!-- PawSpace Rewards Strip (Image 2) -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs space-y-2">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="text-base">🐾</span>
+            <span class="font-brand font-bold text-xs text-paw-charcoal">PawSpace Rewards</span>
+          </div>
+          <span id="welcomeLoyaltyBadge" class="text-[11px] font-extrabold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+            🐾 5/6 Bookings
+          </span>
+        </div>
+        <div class="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden">
+          <div id="welcomeLoyaltyBar" class="bg-gradient-to-r from-amber-400 to-amber-500 h-2.5 rounded-full transition-all duration-500" style="width: 83%"></div>
+        </div>
+        <p class="text-[11px] text-paw-muted">
+          Complete 6 bookings to unlock <strong class="text-paw-teal">30% OFF</strong> your next visit!
+        </p>
+      </div>
+
+      <!-- Click-to-Go Socials & Instagram Card -->
+      <a href="https://www.instagram.com/pawspaceplayroom/" target="_blank" rel="noopener noreferrer" id="welcomeInstagramCard" class="group bg-gradient-to-r from-[#fdf2f8] via-[#f5f3ff] to-[#fffbeb] hover:from-[#fce7f3] hover:via-[#ede9fe] hover:to-[#fef3c7] rounded-2xl border border-pink-300/40 p-3.5 shadow-xs flex items-center justify-between transition cursor-pointer">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-400 via-rose-500 to-purple-600 flex items-center justify-center text-white shadow-xs group-hover:scale-105 transition-transform flex-shrink-0">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-[10px] font-extrabold uppercase tracking-wider text-pink-600 flex items-center gap-1">
+              <span>Follow Our Playrooms</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-pink-500 animate-pulse"></span>
+            </div>
+            <div class="text-xs font-brand font-bold text-paw-charcoal flex items-center gap-1.5">
+              <span>@pawspaceplayroom</span>
+              <span class="text-[10px] font-normal text-paw-muted hidden sm:inline">· Real pups, playrooms &amp; daily stories</span>
+            </div>
+          </div>
+        </div>
+        <div class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-rose-500 to-purple-600 group-hover:from-rose-600 group-hover:to-purple-700 text-white font-bold text-xs flex items-center gap-1 shadow-xs transition flex-shrink-0">
+          <span>Visit</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </div>
+      </a>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SCREEN 2: PICK YOUR AVATAR & CREATE A DOG (Image 1 + Mix & Match Mode) -->
+    <!-- ========================================================================= -->
+    <section id="onboardingStep-2" class="space-y-4 hidden">
+      <!-- Top Navigation & Progress -->
+      <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+        <button onclick="goToJourneyStep(1)" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-paw-charcoal transition" title="Back to Welcome">
+          <i data-lucide="chevron-left" class="w-4 h-4"></i>
+        </button>
+        <div class="text-center">
+          <span class="text-[10px] font-extrabold uppercase tracking-widest text-paw-teal">Step 2 of 4</span>
+          <h2 class="font-brand text-lg font-bold text-paw-charcoal">Pick your avatar</h2>
+        </div>
+        <button onclick="skipAvatarToDetails()" class="text-xs font-bold text-paw-teal hover:underline px-2 py-1">
+          Skip
+        </button>
+      </div>
+
+      <!-- Duo Stage Live Preview Box -->
+      <div class="bg-gradient-to-b from-paw-mintSoft via-white to-paw-mintSoft/30 rounded-2xl border border-paw-teal/20 p-3 flex flex-col items-center justify-center relative overflow-hidden">
+        <div id="avatarPickStageContainer" class="w-full h-40 flex items-center justify-center"></div>
+        <div class="flex items-center gap-2 mt-1">
+          <span id="avatarPickDuoLabel" class="text-xs font-bold text-paw-charcoal font-brand">Anthony & Barnaby</span>
+          <span class="text-[10px] font-semibold text-paw-teal bg-paw-mint px-2 py-0.5 rounded-full">Duo Preview</span>
+        </div>
+      </div>
+
+      <!-- Segmented Tabs: Dogs vs Human -->
+      <div class="grid grid-cols-2 p-1 bg-slate-100 rounded-2xl">
+        <button type="button" id="tabBtnDog" onclick="switchAvatarTab('dog')" class="py-2.5 text-xs font-bold rounded-xl transition bg-white text-paw-teal shadow-xs flex items-center justify-center gap-1.5">
+          <span>🐕 Dog Companion</span>
+        </button>
+        <button type="button" id="tabBtnHuman" onclick="switchAvatarTab('human')" class="py-2.5 text-xs font-bold rounded-xl transition text-paw-muted hover:text-paw-charcoal flex items-center justify-center gap-1.5">
+          <span>👤 Human Guardian</span>
+        </button>
+      </div>
+
+      <!-- DOG CUSTOMISATION VIEW (Image 1 3x3 Grid + Create a Dog Mode) -->
+      <div id="avatarViewDog" class="space-y-4">
+        <!-- Sub-Mode Pills -->
+        <div class="flex items-center justify-between gap-2 bg-slate-50 p-1.5 rounded-2xl border border-slate-200">
+          <button type="button" id="btnDogModeQuick" onclick="switchDogMode('quick')" class="flex-1 py-1.5 rounded-xl text-xs font-bold transition bg-paw-teal text-white shadow-xs text-center">
+            🐾 Quick Breed Pick
+          </button>
+          <button type="button" id="btnDogModeCreate" onclick="switchDogMode('create')" class="flex-1 py-1.5 rounded-xl text-xs font-bold transition bg-slate-100 text-paw-charcoal hover:bg-slate-200 text-center">
+            🎨 Create a Dog (Mix & Match)
+          </button>
+        </div>
+
+        <!-- 1. QUICK BREED PICK (Image 1 3x3 Grid) -->
+        <div id="dogModeQuick" class="space-y-3">
+          <div class="grid grid-cols-3 gap-2.5" id="dogAvatarGrid">
+            <!-- 1. Bernese -->
+            <button type="button" onclick="selectDogBreedPreset('bernese')" data-breed="bernese" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
+              <div class="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center p-1 mb-1" id="thumb-bernese"></div>
+              <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Bernese</span>
             </button>
-            <button onclick="openZoneModal('cafe')" class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-white text-paw-tan border border-paw-tan/30 hover:bg-paw-tan/10 transition flex items-center gap-1 shadow-sm">
-              <i data-lucide="coffee" class="w-3 h-3"></i>
-              <span>Free Cafe</span>
+            <!-- 2. Golden -->
+            <button type="button" onclick="selectDogBreedPreset('golden')" data-breed="golden" class="dog-avatar-card p-2 rounded-2xl border-2 border-paw-teal bg-paw-mintSoft/40 flex flex-col items-center text-center transition cursor-pointer relative group">
+              <div class="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center p-1 mb-1" id="thumb-golden"></div>
+              <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Golden</span>
             </button>
-            <button onclick="openZoneModal('turf')" class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-white text-emerald-700 border border-emerald-300 hover:bg-emerald-50 transition flex items-center gap-1 shadow-sm">
-              <i data-lucide="activity" class="w-3 h-3"></i>
-              <span>Agility Turf</span>
+            <!-- 3. Greyhound -->
+            <button type="button" onclick="selectDogBreedPreset('greyhound')" data-breed="greyhound" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
+              <div class="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center p-1 mb-1" id="thumb-greyhound"></div>
+              <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Greyhound</span>
+            </button>
+            <!-- 4. Bully -->
+            <button type="button" onclick="selectDogBreedPreset('bully')" data-breed="bully" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
+              <div class="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center p-1 mb-1" id="thumb-bully"></div>
+              <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Bully / Boxer</span>
+            </button>
+            <!-- 5. Cockapoo -->
+            <button type="button" onclick="selectDogBreedPreset('cockapoo')" data-breed="cockapoo" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
+              <div class="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center p-1 mb-1" id="thumb-cockapoo"></div>
+              <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Cockapoo</span>
+            </button>
+            <!-- 6. Terrier -->
+            <button type="button" onclick="selectDogBreedPreset('terrier')" data-breed="terrier" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
+              <div class="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center p-1 mb-1" id="thumb-terrier"></div>
+              <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Terrier</span>
+            </button>
+            <!-- 7. Frenchie -->
+            <button type="button" onclick="selectDogBreedPreset('frenchie')" data-breed="frenchie" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
+              <div class="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center p-1 mb-1" id="thumb-frenchie"></div>
+              <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Frenchie</span>
+            </button>
+            <!-- 8. Cocker -->
+            <button type="button" onclick="selectDogBreedPreset('cocker')" data-breed="cocker" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
+              <div class="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center p-1 mb-1" id="thumb-cocker"></div>
+              <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Spaniel</span>
+            </button>
+            <!-- 9. Mixed -->
+            <button type="button" onclick="selectDogBreedPreset('mixed')" data-breed="mixed" class="dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group">
+              <div class="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center p-1 mb-1" id="thumb-mixed"></div>
+              <span class="text-[10px] font-bold text-paw-charcoal leading-tight">Mixed 🐾</span>
+            </button>
+          </div>
+
+          <!-- Extra Few Breed Chips (User request) -->
+          <div class="space-y-1 pt-1">
+            <span class="text-[11px] font-bold text-paw-muted block">More Popular Breeds:</span>
+            <div class="flex gap-1.5 flex-wrap">
+              <button type="button" onclick="selectDogBreedPreset('shepherd')" class="px-2.5 py-1 rounded-xl bg-white border border-slate-200 hover:border-paw-teal text-xs font-bold text-paw-charcoal transition">🐺 German Shepherd</button>
+              <button type="button" onclick="selectDogBreedPreset('dachshund')" class="px-2.5 py-1 rounded-xl bg-white border border-slate-200 hover:border-paw-teal text-xs font-bold text-paw-charcoal transition">🌭 Dachshund</button>
+              <button type="button" onclick="selectDogBreedPreset('schnauzer')" class="px-2.5 py-1 rounded-xl bg-white border border-slate-200 hover:border-paw-teal text-xs font-bold text-paw-charcoal transition">🧔 Schnauzer</button>
+              <button type="button" onclick="selectDogBreedPreset('dalmatian')" class="px-2.5 py-1 rounded-xl bg-white border border-slate-200 hover:border-paw-teal text-xs font-bold text-paw-charcoal transition">⚪ Dalmatian</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. CREATE A DOG MODE (Mix & Match Heads & Bodies from any breed + extra few!) -->
+        <div id="dogModeCreate" class="space-y-3.5 hidden bg-slate-50 p-4 rounded-2xl border border-slate-200">
+          <!-- Head / Face Morphology -->
+          <div>
+            <label class="text-xs font-bold text-paw-charcoal block mb-1">Head & Face Breed Shape</label>
+            <select id="selectDogHeadBreed" onchange="setDogHead(this.value)" class="w-full bg-white border border-slate-200 rounded-xl p-2.5 text-xs font-semibold">
+              <option value="golden">Golden / Labrador Face</option>
+              <option value="bully">XL Bully / Boxer Muscular Head</option>
+              <option value="frenchie">French Bulldog Flat Snout & Bat Ears</option>
+              <option value="greyhound">Greyhound Aerodynamic Snout & Rose Ears</option>
+              <option value="bernese">Bernese Mountain Dog Tri-Color Head</option>
+              <option value="cockapoo">Cockapoo Teddy Bear Curls Head</option>
+              <option value="terrier">Terrier V-Ears & Patch Face</option>
+              <option value="cocker">Cocker Spaniel Droop Wavy Ears</option>
+              <option value="shepherd">German Shepherd Wolfish Mask & Pricked Ears</option>
+              <option value="dachshund">Dachshund Long Tapered Snout</option>
+              <option value="schnauzer">Schnauzer Distinctive Beard & Brows</option>
+              <option value="dalmatian">Dalmatian Polka Spotted Head</option>
+              <option value="mixed">Mixed Breed Unique Rescue Head</option>
+            </select>
+          </div>
+
+          <!-- Body Morphology -->
+          <div>
+            <label class="text-xs font-bold text-paw-charcoal block mb-1">Body Type & Morphology</label>
+            <select id="selectDogBodyShape" onchange="setDogBody(this.value)" class="w-full bg-white border border-slate-200 rounded-xl p-2.5 text-xs font-semibold">
+              <option value="athletic">Athletic (Labrador / Balanced)</option>
+              <option value="muscular_bully">Muscular Bully (Broad Chest & Powerful Legs)</option>
+              <option value="slender_greyhound">Slender Aerodynamic (Deep Chest & High Tuck)</option>
+              <option value="lowrider_dachshund">Low-Rider Sausage (Elongated Torso & Short Paws)</option>
+              <option value="robust_fluffy">Robust Fluffy (Dense Silhouette & Strong Paws)</option>
+              <option value="compact_cobby">Compact Cobby (Square Frenchie Torso)</option>
+              <option value="agility_shepherd">Agility Herding (Sloping Back & Agile Stride)</option>
+              <option value="scruffy_terrier">Scruffy Terrier (Perky Active Frame)</option>
+            </select>
+          </div>
+
+          <!-- Ears & Tail Mix -->
+          <div class="grid grid-cols-2 gap-2.5">
+            <div>
+              <label class="text-[11px] font-bold text-paw-charcoal block mb-1">Ear Style</label>
+              <select id="selectDogEarType" onchange="setDogEar(this.value)" class="w-full bg-white border border-slate-200 rounded-xl p-2 text-xs font-semibold">
+                <option value="floppy">Floppy Droop</option>
+                <option value="bat">Bat Ears</option>
+                <option value="upright">Upright Pricked</option>
+                <option value="button">Button Folded</option>
+                <option value="rose">Rose Folded</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-[11px] font-bold text-paw-charcoal block mb-1">Tail Style</label>
+              <select id="selectDogTailType" onchange="setDogTail(this.value)" class="w-full bg-white border border-slate-200 rounded-xl p-2 text-xs font-semibold">
+                <option value="saber">Saber Curve</option>
+                <option value="plume">Curly Plume</option>
+                <option value="bob">Bobtail</option>
+                <option value="bushy">Bushy Tail</option>
+                <option value="curly_ring">Curly Ring</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Generic Dog Size Selector (Prompt requirement) -->
+        <div class="space-y-1.5">
+          <label class="text-xs font-bold text-paw-charcoal">Generic Dog Size</label>
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" onclick="selectDogGenericSize('small')" id="sizeBtn-small" class="dog-size-btn p-2.5 rounded-xl border-2 border-slate-200 bg-white text-center transition">
+              <div class="text-xs font-bold text-paw-charcoal">Small</div>
+              <div class="text-[10px] text-paw-muted">&lt; 10kg</div>
+            </button>
+            <button type="button" onclick="selectDogGenericSize('medium')" id="sizeBtn-medium" class="dog-size-btn p-2.5 rounded-xl border-2 border-paw-teal bg-paw-mint text-center transition">
+              <div class="text-xs font-bold text-paw-tealDark">Medium</div>
+              <div class="text-[10px] text-paw-muted">10–25kg</div>
+            </button>
+            <button type="button" onclick="selectDogGenericSize('large')" id="sizeBtn-large" class="dog-size-btn p-2.5 rounded-xl border-2 border-slate-200 bg-white text-center transition">
+              <div class="text-xs font-bold text-paw-charcoal">Large</div>
+              <div class="text-[10px] text-paw-muted">25kg+</div>
             </button>
           </div>
         </div>
 
-        <div class="shrink-0 hidden sm:block">
-          <div class="w-20 h-20 rounded-full border-2 border-paw-teal bg-white p-1 shadow-soft overflow-hidden">
-            <img src="data:image/webp;base64,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" alt="PawSpace Mascot" class="w-full h-full object-contain">
+        <!-- Coat Color & Accessories Selector -->
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="text-[11px] font-bold text-paw-charcoal block mb-1">Coat Colour</label>
+            <div class="flex gap-1.5 flex-wrap" id="dogCoatSwatches"></div>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold text-paw-charcoal block mb-1">Accessory</label>
+            <select id="dogAccessorySelect" onchange="selectDogAccessory(this.value)" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2 text-xs font-semibold">
+              <option value="none">None</option>
+              <option value="bandana" selected>Mint Bandana</option>
+              <option value="collar">Neon Teal Collar</option>
+              <option value="harness">Agility Harness</option>
+              <option value="bowtie">Dapper Bowtie</option>
+            </select>
           </div>
         </div>
       </div>
+
+      <!-- HUMAN CUSTOMISATION VIEW -->
+      <div id="avatarViewHuman" class="space-y-4 hidden">
+        <div class="space-y-1">
+          <label class="text-xs font-bold text-paw-charcoal">Skin Tone</label>
+          <div class="flex gap-2" id="humanSkinSwatches"></div>
+        </div>
+
+        <div class="space-y-1">
+          <label class="text-xs font-bold text-paw-charcoal">Body Shape</label>
+          <div class="grid grid-cols-4 gap-1.5">
+            <button type="button" onclick="selectHumanBodyShape('athletic')" class="human-body-btn p-2 text-[10px] font-bold rounded-xl border-2 border-paw-teal bg-paw-mint text-paw-tealDark text-center">Athletic</button>
+            <button type="button" onclick="selectHumanBodyShape('slender')" class="human-body-btn p-2 text-[10px] font-bold rounded-xl border-2 border-slate-200 bg-white text-paw-charcoal text-center">Slender</button>
+            <button type="button" onclick="selectHumanBodyShape('curvy')" class="human-body-btn p-2 text-[10px] font-bold rounded-xl border-2 border-slate-200 bg-white text-paw-charcoal text-center">Curvy</button>
+            <button type="button" onclick="selectHumanBodyShape('sturdy')" class="human-body-btn p-2 text-[10px] font-bold rounded-xl border-2 border-slate-200 bg-white text-paw-charcoal text-center">Sturdy</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="text-[11px] font-bold text-paw-charcoal block mb-1">Hairstyle</label>
+            <select id="humanHairSelect" onchange="selectHumanHair(this.value)" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2 text-xs font-semibold">
+              <option value="curly_fade">Curly Fade</option>
+              <option value="short_wavy">Short Wavy</option>
+              <option value="medium_bob">Classic Bob</option>
+              <option value="afro">Afro Curls</option>
+              <option value="long_straight">Long Locks</option>
+              <option value="topknot">Topknot Bun</option>
+              <option value="ponytail">Sporty Ponytail</option>
+              <option value="buzz">Buzz Crew</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold text-paw-charcoal block mb-1">Hair Colour</label>
+            <div class="flex gap-1.5 flex-wrap" id="humanHairColorSwatches"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="text-[11px] font-bold text-paw-charcoal block mb-1">Clothing</label>
+            <select id="humanOutfitSelect" onchange="selectHumanOutfit(this.value)" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2 text-xs font-semibold">
+              <option value="hoodie">Sanctuary Hoodie</option>
+              <option value="jacket">Trail Jacket</option>
+              <option value="vest">Trainer Vest</option>
+              <option value="tee">Casual Tee</option>
+              <option value="sweater">Knit Sweater</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold text-paw-charcoal block mb-1">Outfit Colour</label>
+            <div class="flex gap-1.5 flex-wrap" id="humanOutfitColorSwatches"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Navigation Bar (Image 1 Bottom Controls) -->
+      <div class="pt-2 flex items-center justify-between gap-3 border-t border-slate-100">
+        <button onclick="goToJourneyStep(1)" class="w-12 h-12 rounded-full border border-slate-200 hover:bg-slate-50 flex items-center justify-center text-paw-charcoal transition shrink-0" title="Back">
+          <i data-lucide="chevron-left" class="w-5 h-5"></i>
+        </button>
+        
+        <!-- Prominent "Skip for now" Button (Never blocks booking) -->
+        <button type="button" onclick="skipAvatarToDetails()" class="px-4 py-3 rounded-2xl border border-slate-300 hover:bg-slate-100 text-paw-muted hover:text-paw-charcoal text-xs font-bold transition flex items-center gap-1.5">
+          <span>Skip for now</span>
+          <i data-lucide="chevrons-right" class="w-3.5 h-3.5"></i>
+        </button>
+
+        <!-- Primary Action: Continue -->
+        <button type="button" onclick="saveAvatarAndGoToDetails()" class="flex-1 bg-paw-teal hover:bg-paw-tealDark text-white font-brand text-sm font-bold py-3.5 px-4 rounded-2xl shadow-float transition flex items-center justify-center gap-2">
+          <span>Continue to Details</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </div>
     </section>
 
-    <!-- LIVE ACTIVE KEYPAD PASS ACCORDION (If active booking exists) -->
-    <section id="activePassCard" class="bg-white rounded-3xl border-2 border-paw-teal p-5 shadow-float space-y-4">
+    <!-- ========================================================================= -->
+    <!-- SCREEN 3: QUICK CUSTOMER AND DOG DETAILS -->
+    <!-- ========================================================================= -->
+    <section id="onboardingStep-3" class="space-y-4 hidden">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+        <button onclick="goToJourneyStep(2)" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-paw-charcoal transition" title="Back to Avatars">
+          <i data-lucide="chevron-left" class="w-4 h-4"></i>
+        </button>
+        <div class="text-center">
+          <span class="text-[10px] font-extrabold uppercase tracking-widest text-paw-teal">Step 3 of 4</span>
+          <h2 class="font-brand text-lg font-bold text-paw-charcoal">Quick Details</h2>
+        </div>
+        <div class="w-8"></div>
+      </div>
+
+      <!-- Reassuring Notice Box (Exact prompt requirement) -->
+      <div class="bg-gradient-to-r from-paw-mintSoft via-[#e2f5f4] to-paw-mintSoft p-4 rounded-2xl border-2 border-paw-teal/30 shadow-xs flex items-start gap-3">
+        <div class="text-2xl shrink-0 mt-0.5">🐾</div>
+        <div class="text-xs sm:text-sm font-semibold text-paw-charcoal leading-snug">
+          Don't worry! We'll take you straight to booking next. We just need a few quick details about you and your dog first. 🐾
+        </div>
+      </div>
+
+      <!-- Quick Details Form (Large, tactile, mobile-game styled) -->
+      <div class="space-y-3.5 bg-white p-5 rounded-3xl border border-slate-200 shadow-soft">
+        <div>
+          <label class="text-xs font-bold text-paw-charcoal block mb-1">Your Name</label>
+          <input type="text" id="inputGuestName" value="Anthony" placeholder="e.g. Sarah Jenkins" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-paw-teal focus:bg-white rounded-2xl p-3.5 text-sm font-semibold text-paw-charcoal outline-none transition">
+        </div>
+
+        <div>
+          <label class="text-xs font-bold text-paw-charcoal block mb-1">Dog's Name</label>
+          <input type="text" id="inputDogName" value="Barnaby" placeholder="e.g. Milo" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-paw-teal focus:bg-white rounded-2xl p-3.5 text-sm font-semibold text-paw-charcoal outline-none transition">
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between mb-1">
+            <label class="text-xs font-bold text-paw-charcoal">Dog Breed</label>
+            <button type="button" onclick="setMixedBreedUnknown()" class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-paw-mint text-paw-tealDark border border-paw-teal/20 hover:bg-paw-teal hover:text-white transition">
+              🐾 Mixed Breed / Unknown
+            </button>
+          </div>
+          <input type="text" id="inputDogBreed" value="Golden Retriever" placeholder="e.g. Cockapoo, Labrador, Mixed Breed" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-paw-teal focus:bg-white rounded-2xl p-3.5 text-sm font-semibold text-paw-charcoal outline-none transition">
+        </div>
+
+        <div>
+          <label class="text-xs font-bold text-paw-charcoal block mb-1.5">Dog Age</label>
+          <div class="grid grid-cols-4 gap-1.5" id="dogAgeChips">
+            <button type="button" onclick="selectDogAge('puppy')" class="dog-age-btn p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-center text-xs font-bold text-paw-charcoal transition">Puppy<br><span class="text-[9px] text-paw-muted font-normal">&lt;1 yr</span></button>
+            <button type="button" onclick="selectDogAge('young')" class="dog-age-btn p-2.5 rounded-xl border-2 border-paw-teal bg-paw-mint text-center text-xs font-bold text-paw-tealDark transition">Young<br><span class="text-[9px] text-paw-muted font-normal">1–3 yrs</span></button>
+            <button type="button" onclick="selectDogAge('adult')" class="dog-age-btn p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-center text-xs font-bold text-paw-charcoal transition">Adult<br><span class="text-[9px] text-paw-muted font-normal">4–7 yrs</span></button>
+            <button type="button" onclick="selectDogAge('senior')" class="dog-age-btn p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-center text-xs font-bold text-paw-charcoal transition">Senior<br><span class="text-[9px] text-paw-muted font-normal">8+ yrs</span></button>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-xs font-bold text-paw-charcoal block mb-1.5">Dog Size</label>
+          <div class="grid grid-cols-3 gap-2" id="detailsSizeCards">
+            <button type="button" onclick="selectDetailsDogSize('small')" id="detSize-small" class="p-3 rounded-2xl border-2 border-slate-200 bg-slate-50 hover:border-paw-teal/40 text-center transition">
+              <div class="text-xs font-bold text-paw-charcoal">Small</div>
+              <div class="text-[10px] text-paw-muted">&lt; 10kg</div>
+            </button>
+            <button type="button" onclick="selectDetailsDogSize('medium')" id="detSize-medium" class="p-3 rounded-2xl border-2 border-paw-teal bg-paw-mint text-center transition">
+              <div class="text-xs font-bold text-paw-tealDark">Medium</div>
+              <div class="text-[10px] text-paw-muted">10–25kg</div>
+            </button>
+            <button type="button" onclick="selectDetailsDogSize('large')" id="detSize-large" class="p-3 rounded-2xl border-2 border-slate-200 bg-slate-50 hover:border-paw-teal/40 text-center transition">
+              <div class="text-xs font-bold text-paw-charcoal">Large</div>
+              <div class="text-[10px] text-paw-muted">25kg+</div>
+            </button>
+          </div>
+        </div>
+
+              </div>
+
+      <div class="pt-2 flex items-center justify-between gap-3 border-t border-slate-100">
+        <button onclick="goToJourneyStep(2)" class="w-12 h-12 rounded-full border border-slate-200 hover:bg-slate-50 flex items-center justify-center text-paw-charcoal transition shrink-0" title="Back">
+          <i data-lucide="chevron-left" class="w-5 h-5"></i>
+        </button>
+        <button type="button" onclick="saveDetailsAndGoToBooking()" class="flex-1 bg-paw-teal hover:bg-paw-tealDark text-white font-brand text-base font-bold py-4 px-6 rounded-2xl shadow-float transition flex items-center justify-center gap-2">
+          <span>Continue to Booking 📅</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SCREEN 4: BOOKING ENGINE & GATE PASS (Step 4 of 4) -->
+    <!-- ========================================================================= -->
+    <section id="onboardingStep-4" class="space-y-4 hidden">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+        <button onclick="goToJourneyStep(3)" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-paw-charcoal transition" title="Back to Details">
+          <i data-lucide="chevron-left" class="w-4 h-4"></i>
+        </button>
+        <div class="text-center">
+          <span class="text-[10px] font-extrabold uppercase tracking-widest text-paw-teal">Step 4 of 4: Booking</span>
+          <h2 class="font-brand text-lg font-bold text-paw-charcoal">When are you visiting?</h2>
+        </div>
+        <button onclick="goToJourneyStep(1)" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-paw-charcoal transition" title="Home">
+          <i data-lucide="home" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Dynamic Duo Greeting Card -->
+      <div class="bg-gradient-to-r from-paw-mintSoft via-white to-paw-mintSoft p-3.5 rounded-2xl border border-paw-teal/20 flex items-center justify-between gap-3 shadow-xs">
+        <div class="flex items-center gap-3">
+          <div id="bookingDuoAvatarContainer" class="w-16 h-12 rounded-xl bg-white border border-paw-teal/20 overflow-hidden flex items-center justify-center shrink-0 shadow-xs cursor-pointer" onclick="goToJourneyStep(2)" title="Edit Avatars"></div>
+          <div>
+            <div class="text-[10px] font-extrabold uppercase text-paw-teal tracking-wider">Booking Sanctuary For</div>
+            <div id="bookingDuoNameTitle" class="text-sm font-bold text-paw-charcoal font-brand">Anthony & Barnaby</div>
+            <div id="bookingDuoBreedSize" class="text-[10px] text-paw-muted">Golden Retriever · Medium (10–25kg)</div>
+          </div>
+        </div>
+        <button type="button" onclick="goToJourneyStep(2)" class="px-2.5 py-1 rounded-xl bg-white border border-paw-teal/30 text-paw-teal text-xs font-bold hover:bg-paw-mint transition">
+          Edit
+        </button>
+      </div>
+
+      <!-- The Active Pass Card (If active PIN exists) -->
+      <section id="activePassCard" class="bg-white rounded-3xl border-2 border-paw-teal p-5 shadow-float space-y-4">
       <div id="passStatusBanner" class="hidden"></div>
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-2">
@@ -499,7 +1027,10 @@
     </section>
 
     <!-- PROGRESSIVE BOOKING WIZARD (One Clean Decision at a Time) -->
-    <section class="bg-white rounded-3xl border border-slate-200 p-5 sm:p-7 shadow-soft space-y-5">
+    
+
+      <!-- The Full Booking Wizard -->
+      <section class="bg-white rounded-3xl border border-slate-200 p-5 sm:p-7 shadow-soft space-y-5">
       
       <!-- STEP INDICATOR BAR -->
       <div class="flex items-center justify-between pb-3 border-b border-slate-100">
@@ -807,6 +1338,10 @@
 
     </section>
 
+  
+
+    </section>
+
   </main>
 
   <!-- FLOATING BOTTOM SMART BAR (Airbnb / Uber Style) -->
@@ -1002,6 +1537,22 @@
       </div>
 
       <div class="flex-1 overflow-y-auto space-y-3 pr-1" id="bookingsListContainer"></div>
+
+      <!-- Instagram Community Card in My Bookings -->
+      <a href="https://www.instagram.com/pawspaceplayroom/" target="_blank" rel="noopener noreferrer" class="p-3 rounded-2xl bg-gradient-to-r from-pink-50 to-purple-50 border border-pink-200/60 flex items-center justify-between hover:border-pink-300 transition">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-400 via-rose-500 to-purple-600 flex items-center justify-center text-white text-xs">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="text-[11px] font-bold text-paw-charcoal">Tag us on Instagram</div>
+            <div class="text-[10px] text-pink-600 font-semibold">@pawspaceplayroom #PawSpacePups</div>
+          </div>
+        </div>
+        <span class="text-[10px] font-bold bg-pink-600 text-white px-2 py-1 rounded-lg flex items-center gap-1">
+          Open <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+        </span>
+      </a>
 
       <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
         <button onclick="clearPastBookings()" class="text-xs text-red-500 hover:text-red-700 font-semibold">
@@ -1479,13 +2030,29 @@
     },
     dog: {
       breeds: [
-        { id: 'cockapoo', label: 'Cockapoo / Doodle (Curly & Teddy)', size: 'medium', ear: 'floppy', muzzle: 'medium', tail: 'plume' },
-        { id: 'golden', label: 'Golden / Labrador (Friendly Athletic)', size: 'large', ear: 'floppy', muzzle: 'medium', tail: 'saber' },
-        { id: 'frenchie', label: 'French Bulldog (Compact & Bat Ears)', size: 'small', ear: 'bat', muzzle: 'short', tail: 'bob' },
-        { id: 'collie', label: 'Border Collie / Shepherd (Agile & Alert)', size: 'large', ear: 'upright', muzzle: 'long', tail: 'bushy' },
-        { id: 'dachshund', label: 'Dachshund / Terrier (Long & Playful)', size: 'small', ear: 'floppy', muzzle: 'long', tail: 'saber' },
-        { id: 'bully', label: 'XL Bully / Boxer (Muscular & Welcomed!)', size: 'large', ear: 'button', muzzle: 'broad', tail: 'saber' },
-        { id: 'hound', label: 'Beagle / Hound (Curious & Sleek)', size: 'medium', ear: 'floppy', muzzle: 'long', tail: 'saber' }
+        { id: 'bernese', label: 'Bernese Mountain Dog (Tri-Color Gentle Giant)', size: 'large', ear: 'floppy', muzzle: 'medium', tail: 'bushy', body: 'robust_fluffy', head: 'bernese' },
+        { id: 'golden', label: 'Golden / Labrador (Friendly & Athletic)', size: 'large', ear: 'floppy', muzzle: 'medium', tail: 'saber', body: 'athletic', head: 'golden' },
+        { id: 'greyhound', label: 'Greyhound / Whippet (Aerodynamic & Slender)', size: 'medium', ear: 'rose', muzzle: 'long', tail: 'saber', body: 'slender_greyhound', head: 'greyhound' },
+        { id: 'bully', label: 'XL Bully / Boxer (Muscular, Broad Smile & Welcomed!)', size: 'large', ear: 'button', muzzle: 'broad', tail: 'saber', body: 'muscular_bully', head: 'bully' },
+        { id: 'cockapoo', label: 'Cockapoo / Doodle / Poodle (Curly & Teddy Bear)', size: 'medium', ear: 'floppy', muzzle: 'medium', tail: 'plume', body: 'athletic', head: 'cockapoo' },
+        { id: 'terrier', label: 'Jack Russell / Fox Terrier (Perky & Energetic)', size: 'small', ear: 'button', muzzle: 'medium', tail: 'saber', body: 'scruffy_terrier', head: 'terrier' },
+        { id: 'frenchie', label: 'French Bulldog (Compact, Bat Ears & Cobby)', size: 'small', ear: 'bat', muzzle: 'short', tail: 'bob', body: 'compact_cobby', head: 'frenchie' },
+        { id: 'cocker', label: 'Cocker Spaniel (Long Silky Wavy Ears)', size: 'medium', ear: 'floppy', muzzle: 'medium', tail: 'saber', body: 'athletic', head: 'cocker' },
+        { id: 'shepherd', label: 'German Shepherd / Wolfdog (Alert, Noble & Agile)', size: 'large', ear: 'upright', muzzle: 'long', tail: 'bushy', body: 'agility_shepherd', head: 'shepherd' },
+        { id: 'dachshund', label: 'Dachshund / Sausage Dog (Low-Rider & Playful)', size: 'small', ear: 'floppy', muzzle: 'long', tail: 'saber', body: 'lowrider_dachshund', head: 'dachshund' },
+        { id: 'schnauzer', label: 'Schnauzer / Scruffy (Distinctive Beard & Brows)', size: 'medium', ear: 'button', muzzle: 'bearded', tail: 'bob', body: 'scruffy_terrier', head: 'schnauzer' },
+        { id: 'dalmatian', label: 'Dalmatian / Pointer (Spotted & High-Energy)', size: 'large', ear: 'floppy', muzzle: 'medium', tail: 'saber', body: 'athletic', head: 'dalmatian' },
+        { id: 'mixed', label: 'Mixed Breed / Rescue (One-of-a-Kind Champion)', size: 'medium', ear: 'floppy', muzzle: 'medium', tail: 'saber', body: 'athletic', head: 'mixed' }
+      ],
+      bodyShapes: [
+        { id: 'athletic', label: 'Athletic (Labrador / Collie)' },
+        { id: 'muscular_bully', label: 'Muscular Bully (Boxer / Staffy)' },
+        { id: 'slender_greyhound', label: 'Slender Aerodynamic (Greyhound)' },
+        { id: 'lowrider_dachshund', label: 'Low-Rider Sausage (Dachshund)' },
+        { id: 'robust_fluffy', label: 'Robust Fluffy (Bernese / Golden)' },
+        { id: 'compact_cobby', label: 'Compact Cobby (Frenchie / Pug)' },
+        { id: 'agility_shepherd', label: 'Agility Herding (Shepherd)' },
+        { id: 'scruffy_terrier', label: 'Scruffy Terrier (Jack Russell)' }
       ],
       sizes: [
         { id: 'small', label: 'Small (Under 10kg)' },
@@ -1873,69 +2440,74 @@
     const coat = d.coatColor || '#C89B6C';
     const pattern = d.coatPattern || 'solid';
     const patternColor = d.patternColor || '#FFFFFF';
-    const breed = d.breed || 'cockapoo';
+    const breed = d.breed || 'golden';
+    const headBreed = d.headBreed || d.breed || 'golden';
+    const bodyShape = d.bodyShape || 'athletic';
     const earType = d.earType || 'floppy';
-    const tailType = d.tailType || 'plume';
+    const tailType = d.tailType || 'saber';
     const muzzleType = d.muzzleType || 'medium';
     const accessory = d.accessory || 'bandana';
 
-    // Size Scaling & Positioning
+    // Size Scaling & Positioning (Generic sizes: small, medium, large)
     let scale = 1.0;
     let offsetY = 0;
-    if (d.size === 'small') { scale = 0.82; offsetY = 20; }
-    else if (d.size === 'large') { scale = 1.15; offsetY = -8; }
+    if (d.size === 'small') { scale = 0.82; offsetY = 18; }
+    else if (d.size === 'large') { scale = 1.18; offsetY = -10; }
 
     // Tail SVG path
     let tailSvg = "";
     if (tailType === 'saber') {
       tailSvg = `<path d="M5,25 Q-12,18 -18,-2 Q-10,4 3,18 Z" fill="${coat}"/>`;
     } else if (tailType === 'plume') {
-      tailSvg = `<path d="M5,25 Q-15,10 -12,-8 Q-4,-14 2,-2 Q4,10 5,25 Z" fill="${coat}"/>
-                 <circle cx="-6" cy="-4" r="7" fill="${coat}" opacity="0.9"/>`;
+      tailSvg = `<path d="M5,25 Q-15,10 -12,-8 Q-4,-14 2,-2 Q4,10 5,25 Z" fill="${coat}"/><circle cx="-6" cy="-4" r="7" fill="${coat}" opacity="0.9"/>`;
     } else if (tailType === 'bob') {
       tailSvg = `<ellipse cx="-2" cy="22" rx="5" ry="4" fill="${coat}"/>`;
+    } else if (tailType === 'curly_ring') {
+      tailSvg = `<path d="M5,25 Q-8,14 -4,-2 Q4,-12 12,-4 Q16,8 5,25 Z" fill="${coat}"/>`;
     } else { // bushy
-      tailSvg = `<path d="M5,25 Q-18,22 -22,0 Q-10,-5 3,18 Z" fill="${coat}"/>
-                 <path d="M-10,12 L-16,4 L-8,2 Z" fill="${coat}"/>`;
+      tailSvg = `<path d="M5,25 Q-18,22 -22,0 Q-10,-5 3,18 Z" fill="${coat}"/><path d="M-10,12 L-16,4 L-8,2 Z" fill="${coat}"/>`;
     }
 
     // Ear SVG Paths
     let earLeftSvg = "";
     let earRightSvg = "";
-    if (earType === 'floppy') {
+    if (earType === 'floppy' || headBreed === 'golden' || headBreed === 'cocker' || headBreed === 'dachshund' || headBreed === 'bernese') {
       earLeftSvg = `<path d="M54,20 C46,24 45,46 51,52 C56,48 57,30 55,20 Z" fill="${coat}" filter="brightness(0.9)"/>`;
       earRightSvg = `<path d="M72,20 C80,24 81,46 75,52 C70,48 69,30 71,20 Z" fill="${coat}"/>`;
-    } else if (earType === 'upright') {
-      earLeftSvg = `<polygon points="52,22 47,-2 62,14" fill="${coat}" filter="brightness(0.9)"/>
-                    <polygon points="53,19 49,3 59,15" fill="#F8B4B4"/>`;
-      earRightSvg = `<polygon points="68,14 83,-2 78,22" fill="${coat}"/>
-                     <polygon points="71,15 81,3 77,19" fill="#F8B4B4"/>`;
-    } else if (earType === 'bat') {
-      earLeftSvg = `<path d="M52,20 C42,-2 60,-6 64,15 Z" fill="${coat}" filter="brightness(0.9)"/>
-                    <path d="M53,16 C47,3 57,0 61,14 Z" fill="#F8B4B4"/>`;
-      earRightSvg = `<path d="M66,15 C70,-6 88,-2 78,20 Z" fill="${coat}"/>
-                     <path d="M69,14 C73,0 83,3 77,16 Z" fill="#F8B4B4"/>`;
-    } else { // button
+    } else if (earType === 'upright' || headBreed === 'shepherd') {
+      earLeftSvg = `<polygon points="52,22 47,-2 62,14" fill="${coat}" filter="brightness(0.9)"/><polygon points="53,19 49,3 59,15" fill="#F8B4B4"/>`;
+      earRightSvg = `<polygon points="68,14 83,-2 78,22" fill="${coat}"/><polygon points="71,15 81,3 77,19" fill="#F8B4B4"/>`;
+    } else if (earType === 'bat' || headBreed === 'frenchie') {
+      earLeftSvg = `<path d="M52,20 C42,-2 60,-6 64,15 Z" fill="${coat}" filter="brightness(0.9)"/><path d="M53,16 C47,3 57,0 61,14 Z" fill="#F8B4B4"/>`;
+      earRightSvg = `<path d="M66,15 C70,-6 88,-2 78,20 Z" fill="${coat}"/><path d="M69,14 C73,0 83,3 77,16 Z" fill="#F8B4B4"/>`;
+    } else if (earType === 'rose' || headBreed === 'greyhound') {
+      earLeftSvg = `<path d="M54,20 Q44,14 48,8 Q54,12 56,18 Z" fill="${coat}" filter="brightness(0.9)"/>`;
+      earRightSvg = `<path d="M72,18 Q74,12 80,8 Q84,14 74,20 Z" fill="${coat}"/>`;
+    } else { // button / bully
       earLeftSvg = `<path d="M52,18 C48,10 56,6 62,12 C58,18 54,22 52,18 Z" fill="${coat}" filter="brightness(0.9)"/>`;
       earRightSvg = `<path d="M78,18 C82,10 74,6 68,12 C72,18 76,22 78,18 Z" fill="${coat}"/>`;
     }
 
     // Muzzle SVG
     let muzzleSvg = "";
-    if (muzzleType === 'broad') { // XL Bully / Boxer style
+    if (muzzleType === 'broad' || headBreed === 'bully') { // XL Bully / Boxer style
       muzzleSvg = `
         <rect x="58" y="28" width="22" height="18" rx="6" fill="${coat}" filter="brightness(0.96)"/>
-        <!-- Broad Nose -->
         <path d="M64,30 Q69,28 74,30 Q69,35 64,30 Z" fill="#1A1A1A"/>
         <path d="M66,35 Q69,38 72,35" stroke="#1A1A1A" stroke-width="1.2" fill="none"/>
         <path d="M69,36 L69,40 Q69,43 72,43" stroke="#1A1A1A" stroke-width="1.2" fill="none"/>
         <ellipse cx="69" cy="42" rx="2.5" ry="3.5" fill="#FF8A8A"/>`;
-    } else if (muzzleType === 'short') { // Frenchie style
+    } else if (muzzleType === 'short' || headBreed === 'frenchie') { // Frenchie style
       muzzleSvg = `
         <ellipse cx="67" cy="32" rx="9" ry="8" fill="#1A1A1A" opacity="0.85"/>
         <path d="M63,30 Q67,28 71,30 Q67,33 63,30 Z" fill="#000000"/>
         <ellipse cx="67" cy="36" rx="2" ry="2.5" fill="#FF8A8A"/>`;
-    } else if (muzzleType === 'long') { // Hound / Collie style
+    } else if (muzzleType === 'bearded' || headBreed === 'schnauzer') { // Schnauzer style
+      muzzleSvg = `
+        <path d="M60,28 L76,32 L72,44 Q66,48 58,42 Z" fill="#E8ECEF"/>
+        <circle cx="74" cy="32" r="3" fill="#1A1A1A"/>
+        <path d="M64,36 Q70,38 72,36" stroke="#1A1A1A" stroke-width="1.2" fill="none"/>`;
+    } else if (muzzleType === 'long' || headBreed === 'greyhound' || headBreed === 'dachshund') { // Hound style
       muzzleSvg = `
         <path d="M60,26 L78,30 Q82,32 78,34 L60,38 Z" fill="${coat}"/>
         <circle cx="78" cy="32" r="3" fill="#1A1A1A"/>
@@ -1950,25 +2522,25 @@
 
     // Pattern Overlays
     let patternSvg = "";
-    if (pattern === 'chest_patch') {
+    if (pattern === 'chest_patch' || headBreed === 'bernese') {
       patternSvg = `<path d="M38,40 Q48,32 54,42 Q48,60 38,40 Z" fill="${patternColor}"/>
                     <circle cx="16" cy="72" r="3.5" fill="${patternColor}"/>
                     <circle cx="34" cy="72" r="3.5" fill="${patternColor}"/>
                     <circle cx="56" cy="72" r="3.5" fill="${patternColor}"/>
                     <circle cx="72" cy="72" r="3.5" fill="${patternColor}"/>`;
-    } else if (pattern === 'spotted') {
+    } else if (pattern === 'spotted' || headBreed === 'dalmatian') {
       patternSvg = `
-        <circle cx="28" cy="42" r="3.5" fill="${patternColor}"/>
-        <circle cx="36" cy="50" r="4.5" fill="${patternColor}"/>
-        <circle cx="48" cy="40" r="3" fill="${patternColor}"/>
-        <circle cx="22" cy="48" r="2.5" fill="${patternColor}"/>
-        <circle cx="42" cy="30" r="3.5" fill="${patternColor}"/>`;
+        <circle cx="28" cy="42" r="3.5" fill="#1A1A1A"/>
+        <circle cx="36" cy="50" r="4.5" fill="#1A1A1A"/>
+        <circle cx="48" cy="40" r="3" fill="#1A1A1A"/>
+        <circle cx="22" cy="48" r="2.5" fill="#1A1A1A"/>
+        <circle cx="42" cy="30" r="3.5" fill="#1A1A1A"/>`;
     } else if (pattern === 'merle') {
       patternSvg = `
         <path d="M22,35 Q30,30 35,38 Q32,48 24,44 Z" fill="${patternColor}" opacity="0.6"/>
         <path d="M40,42 Q48,38 52,48 Q42,54 38,46 Z" fill="${patternColor}" opacity="0.6"/>
         <circle cx="68" cy="20" r="5" fill="${patternColor}" opacity="0.6"/>`;
-    } else if (pattern === 'mask') {
+    } else if (pattern === 'mask' || headBreed === 'shepherd') {
       patternSvg = `<circle cx="68" cy="25" r="9" fill="#1A1A1A" opacity="0.45"/>`;
     }
 
@@ -1995,9 +2567,39 @@
         <circle cx="54" cy="34" r="1.5" fill="#D99B26"/>`;
     }
 
+    // Dynamic Body Path based on bodyShape (Mix & Match support)
+    let bodyPathSvg = "";
+    let legStrokeWidth = 6;
+    let legBottomY = 72;
+
+    if (bodyShape === 'muscular_bully') {
+      legStrokeWidth = 7.5;
+      bodyPathSvg = `<path d="M10,32 C10,20 48,18 62,28 C68,40 62,60 48,60 C30,60 10,50 10,32 Z" fill="${coat}"/>
+                     <path d="M26,30 Q38,26 50,34" stroke="${coat}" stroke-width="4" filter="brightness(0.92)" fill="none"/>`;
+    } else if (bodyShape === 'slender_greyhound') {
+      legStrokeWidth = 4.5;
+      bodyPathSvg = `<path d="M12,30 C16,18 42,16 56,26 C64,36 50,54 44,46 C38,38 24,42 12,30 Z" fill="${coat}"/>`;
+    } else if (bodyShape === 'lowrider_dachshund') {
+      legBottomY = 62;
+      bodyPathSvg = `<path d="M2,34 C2,25 56,24 64,32 C68,44 60,54 42,54 C20,54 2,46 2,34 Z" fill="${coat}"/>`;
+    } else if (bodyShape === 'robust_fluffy') {
+      legStrokeWidth = 7.5;
+      bodyPathSvg = `<path d="M10,34 C10,20 52,18 64,30 C70,42 64,62 48,62 C26,62 10,52 10,34 Z" fill="${coat}"/>
+                     <circle cx="20" cy="30" r="10" fill="${coat}"/>
+                     <circle cx="48" cy="26" r="12" fill="${coat}"/>`;
+    } else if (bodyShape === 'compact_cobby') {
+      bodyPathSvg = `<path d="M18,34 C18,22 46,20 54,30 C60,40 56,56 44,56 C30,56 18,48 18,34 Z" fill="${coat}"/>`;
+    } else if (bodyShape === 'agility_shepherd') {
+      bodyPathSvg = `<path d="M12,34 C14,20 48,20 58,28 C64,38 56,54 44,54 C28,54 12,48 12,34 Z" fill="${coat}"/>`;
+    } else if (bodyShape === 'scruffy_terrier') {
+      bodyPathSvg = `<path d="M14,35 C14,24 48,22 56,32 C60,42 54,56 42,56 C28,56 14,48 14,35 Z" fill="${coat}"/>`;
+    } else {
+      // standard athletic
+      bodyPathSvg = `<path d="M14,35 C14,24 50,22 58,32 C62,42 56,58 45,58 C30,58 14,50 14,35 Z" fill="${coat}"/>`;
+    }
+
     return `
       <g id="dogRig" class="dog-rig" transform="translate(165, ${95 + offsetY}) scale(${scale})">
-        
         <!-- Dog Tail (Joint Pivot at 12, 35) -->
         <g id="dogTail" class="dog-joint-tail" style="transform-origin: 12px 35px;">
           ${tailSvg}
@@ -2006,53 +2608,56 @@
         <!-- Back Legs -->
         <g id="dogLegsBack">
           <g id="dogLegBL" class="dog-joint-leg-bl" style="transform-origin: 20px 48px;">
-            <path d="M16,44 Q14,60 16,72" stroke="${coat}" stroke-width="6" stroke-linecap="round" fill="none" filter="brightness(0.85)"/>
+            <path d="M16,44 Q14,60 16,${legBottomY}" stroke="${coat}" stroke-width="${legStrokeWidth}" stroke-linecap="round" fill="none" filter="brightness(0.85)"/>
           </g>
           <g id="dogLegBR" class="dog-joint-leg-br" style="transform-origin: 28px 48px;">
-            <path d="M26,44 Q24,60 26,72" stroke="${coat}" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <path d="M26,44 Q24,60 26,${legBottomY}" stroke="${coat}" stroke-width="${legStrokeWidth}" stroke-linecap="round" fill="none"/>
           </g>
         </g>
 
         <!-- Dog Torso -->
         <g id="dogBody" class="dog-joint-body" style="transform-origin: 40px 45px;">
-          <!-- Torso silhouette -->
-          <path d="M14,35 C14,24 50,22 58,32 C62,42 56,58 45,58 C30,58 14,50 14,35 Z" fill="${coat}"/>
+          ${bodyPathSvg}
           ${patternSvg}
         </g>
 
         <!-- Front Legs -->
         <g id="dogLegsFront">
           <g id="dogLegFL" class="dog-joint-leg-fl" style="transform-origin: 48px 45px;">
-            <path d="M46,42 Q46,58 48,72" stroke="${coat}" stroke-width="6" stroke-linecap="round" fill="none" filter="brightness(0.85)"/>
+            <path d="M46,42 Q46,58 48,${legBottomY}" stroke="${coat}" stroke-width="${legStrokeWidth}" stroke-linecap="round" fill="none" filter="brightness(0.88)"/>
           </g>
           <g id="dogLegFR" class="dog-joint-leg-fr" style="transform-origin: 56px 45px;">
-            <path d="M54,40 Q55,58 56,72" stroke="${coat}" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <path d="M56,42 Q56,58 58,${legBottomY}" stroke="${coat}" stroke-width="${legStrokeWidth}" stroke-linecap="round" fill="none"/>
           </g>
         </g>
 
-        <!-- Dog Accessory (Harness / Collar / Bandana) -->
-        ${dogAccSvg}
-
-        <!-- Dog Head (Joint Pivot at 54, 30) -->
-        <g id="dogHead" class="dog-joint-head" style="transform-origin: 54px 30px;">
-          <!-- Ear Left (Behind) -->
+        <!-- Dog Head & Neck (Joint Pivot at 62, 28) -->
+        <g id="dogHead" class="dog-joint-head" style="transform-origin: 62px 28px;">
+          <!-- Left Ear (Back) -->
           ${earLeftSvg}
-          <!-- Head Base -->
-          <circle cx="62" cy="24" r="14" fill="${coat}"/>
-          <!-- Muzzle & Nose -->
-          ${muzzleSvg}
-          <!-- Eyes -->
-          <circle cx="59" cy="20" r="2.2" fill="#1A1A1A"/>
-          <circle cx="58.3" cy="19.3" r="0.7" fill="#FFFFFF"/>
-          <circle cx="68" cy="21" r="2.2" fill="#1A1A1A"/>
-          <circle cx="67.3" cy="20.3" r="0.7" fill="#FFFFFF"/>
-          <!-- Ear Right (Front) -->
-          ${earRightSvg}
-        </g>
 
+          <!-- Head Shape -->
+          <ellipse cx="64" cy="24" rx="14" ry="13" fill="${coat}"/>
+
+          <!-- Muzzle Layer -->
+          ${muzzleSvg}
+
+          <!-- Right Ear (Front) -->
+          ${earRightSvg}
+
+          <!-- Dog Eye with Catchlight (Blink animation) -->
+          <g id="dogEye" class="dog-joint-eye" style="transform-origin: 63px 19px;">
+            <circle cx="63" cy="19" r="3.2" fill="#1A1A1A"/>
+            <circle cx="64" cy="18" r="1.1" fill="#FFFFFF"/>
+          </g>
+
+          <!-- Accessory -->
+          ${dogAccSvg}
+        </g>
       </g>
     `;
   }
+
 
   function renderSceneSvg(cfg, animState, options) {
     const state = animState || 'idle';
@@ -2101,6 +2706,111 @@
       </svg>
     `;
   }
+
+  
+  function renderDogFaceSvg(breedId, coatColor) {
+    var c = coatColor;
+    if (breedId === "bernese") {
+      return `<svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm"><ellipse cx="50" cy="52" rx="34" ry="32" fill="#1E1E1E"/><path d="M22,30 C12,38 10,65 24,72 C28,68 28,45 25,32 Z" fill="#141414"/><path d="M78,30 C88,38 90,65 76,72 C72,68 72,45 75,32 Z" fill="#141414"/><ellipse cx="36" cy="36" rx="5" ry="3.5" fill="#C87A38"/><ellipse cx="64" cy="36" rx="5" ry="3.5" fill="#C87A38"/><circle cx="28" cy="56" r="8" fill="#C87A38"/><circle cx="72" cy="56" r="8" fill="#C87A38"/><path d="M47,24 Q50,22 53,24 L56,48 Q64,50 64,62 Q64,72 50,74 Q36,72 36,62 Q36,50 44,48 Z" fill="#FFFFFF"/><path d="M44,54 Q50,51 56,54 Q50,60 44,54 Z" fill="#1E1E1E"/><path d="M46,62 Q50,66 54,62" stroke="#1E1E1E" stroke-width="1.8" fill="none"/><path d="M48,63 Q50,71 52,67 Q54,71 52,63" fill="#FF8A8A"/><circle cx="38" cy="44" r="5" fill="#3D261A"/><circle cx="39.5" cy="42.5" r="1.8" fill="#FFFFFF"/><circle cx="62" cy="44" r="5" fill="#3D261A"/><circle cx="63.5" cy="42.5" r="1.8" fill="#FFFFFF"/></svg>`;
+    } else if (breedId === "golden") {
+      var coat = c || "#F0B86E";
+      return `<svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm"><ellipse cx="50" cy="52" rx="34" ry="32" fill="${coat}"/><path d="M22,28 C10,36 10,65 24,70 C28,66 28,42 25,30 Z" fill="${coat}" filter="brightness(0.9)"/><path d="M78,28 C90,36 90,65 76,70 C72,66 72,42 75,30 Z" fill="${coat}" filter="brightness(0.9)"/><ellipse cx="50" cy="60" rx="16" ry="12" fill="${coat}" filter="brightness(1.06)"/><path d="M44,52 Q50,49 56,52 Q50,58 44,52 Z" fill="#1E1E1E"/><path d="M44,60 Q50,65 56,60" stroke="#1E1E1E" stroke-width="2" fill="none"/><path d="M46,62 Q50,74 54,62" fill="#FF8A8A"/><path d="M50,62 L50,69" stroke="#E26D6D" stroke-width="1.2"/><circle cx="37" cy="43" r="5.5" fill="#2E1B0E"/><circle cx="39" cy="41" r="2" fill="#FFFFFF"/><circle cx="63" cy="43" r="5.5" fill="#2E1B0E"/><circle cx="65" cy="41" r="2" fill="#FFFFFF"/></svg>`;
+    } else if (breedId === "greyhound") {
+      var coat = c || "#8B959E";
+      return `<svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm"><polygon points="50,18 64,52 50,78 36,52" fill="${coat}"/><path d="M38,28 Q24,22 30,14 Q38,18 40,26 Z" fill="${coat}" filter="brightness(0.85)"/><path d="M62,28 Q76,22 70,14 Q62,18 60,26 Z" fill="${coat}" filter="brightness(0.85)"/><ellipse cx="50" cy="50" rx="20" ry="24" fill="${coat}"/><ellipse cx="50" cy="68" rx="7" ry="9" fill="${coat}" filter="brightness(0.95)"/><path d="M46,72 Q50,70 54,72 Q50,76 46,72 Z" fill="#1A1A1A"/><circle cx="42" cy="46" r="4.5" fill="#1E1E1E"/><circle cx="43.5" cy="44.5" r="1.5" fill="#FFFFFF"/><circle cx="58" cy="46" r="4.5" fill="#1E1E1E"/><circle cx="59.5" cy="44.5" r="1.5" fill="#FFFFFF"/></svg>`;
+    } else if (breedId === "bully") {
+      var coat = c || "#A06B43";
+      return `<svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm"><ellipse cx="50" cy="50" rx="36" ry="30" fill="${coat}"/><path d="M20,24 C14,14 26,12 32,22 Z" fill="${coat}" filter="brightness(0.85)"/><path d="M80,24 C86,14 74,12 68,22 Z" fill="${coat}" filter="brightness(0.85)"/><rect x="36" y="44" width="28" height="24" rx="8" fill="${coat}" filter="brightness(0.95)"/><path d="M44,48 Q50,45 56,48 Q50,54 44,48 Z" fill="#1A1A1A"/><path d="M40,58 Q50,68 60,58" stroke="#1A1A1A" stroke-width="2.5" fill="none"/><ellipse cx="50" cy="65" rx="4" ry="5.5" fill="#FF8A8A"/><circle cx="34" cy="40" r="5" fill="#2E1B0E"/><circle cx="35.5" cy="38.5" r="1.5" fill="#FFFFFF"/><circle cx="66" cy="40" r="5" fill="#2E1B0E"/><circle cx="67.5" cy="38.5" r="1.5" fill="#FFFFFF"/></svg>`;
+    } else if (breedId === "cockapoo") {
+      var coat = c || "#D89A58";
+      return `<svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm"><ellipse cx="50" cy="50" rx="33" ry="31" fill="${coat}"/><circle cx="30" cy="30" r="10" fill="${coat}"/><circle cx="50" cy="24" r="11" fill="${coat}"/><circle cx="70" cy="30" r="10" fill="${coat}"/><circle cx="20" cy="50" r="10" fill="${coat}"/><circle cx="80" cy="50" r="10" fill="${coat}"/><path d="M22,30 C12,40 12,65 24,70 Z" fill="${coat}" filter="brightness(0.9)"/><path d="M78,30 C88,40 88,65 76,70 Z" fill="${coat}" filter="brightness(0.9)"/><ellipse cx="50" cy="60" rx="14" ry="11" fill="${coat}" filter="brightness(1.05)"/><circle cx="50" cy="55" r="5" fill="#1A1A1A"/><path d="M46,62 Q50,66 54,62" stroke="#1A1A1A" stroke-width="2" fill="none"/><ellipse cx="50" cy="67" rx="3" ry="4" fill="#FF8A8A"/><circle cx="38" cy="42" r="5" fill="#2E1B0E"/><circle cx="39.5" cy="40.5" r="1.5" fill="#FFFFFF"/><circle cx="62" cy="42" r="5" fill="#2E1B0E"/><circle cx="63.5" cy="40.5" r="1.5" fill="#FFFFFF"/></svg>`;
+    } else if (breedId === "terrier") {
+      return `<svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm"><ellipse cx="50" cy="52" rx="30" ry="28" fill="#F8F8F8"/><path d="M24,28 L34,16 L40,30 Z" fill="#9E5D2A"/><path d="M76,28 L66,16 L60,30 Z" fill="#9E5D2A"/><path d="M52,30 C68,30 76,46 72,56 C66,62 54,60 52,48 Z" fill="#9E5D2A"/><ellipse cx="50" cy="60" rx="12" ry="10" fill="#FFFFFF"/><path d="M45,55 Q50,52 55,55 Q50,60 45,55 Z" fill="#1A1A1A"/><path d="M47,62 Q50,66 53,62" stroke="#1A1A1A" stroke-width="1.8" fill="none"/><circle cx="38" cy="44" r="4.5" fill="#2E1B0E"/><circle cx="39.5" cy="42.5" r="1.5" fill="#FFFFFF"/><circle cx="62" cy="44" r="4.5" fill="#2E1B0E"/><circle cx="63.5" cy="42.5" r="1.5" fill="#FFFFFF"/></svg>`;
+    } else if (breedId === "frenchie") {
+      return `<svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm"><path d="M26,38 C14,4 38,0 44,28 Z" fill="#1E1E1E"/><path d="M28,34 C18,8 36,6 40,26 Z" fill="#FFB4B4"/><path d="M74,38 C86,4 62,0 56,28 Z" fill="#1E1E1E"/><path d="M72,34 C82,8 64,6 60,26 Z" fill="#FFB4B4"/><ellipse cx="50" cy="54" rx="32" ry="26" fill="#F4EDE4"/><ellipse cx="36" cy="46" rx="12" ry="14" fill="#1E1E1E"/><ellipse cx="50" cy="62" rx="16" ry="11" fill="#1E1E1E"/><path d="M44,56 Q50,53 56,56 Q50,60 44,56 Z" fill="#000000"/><path d="M46,65 Q50,68 54,65" stroke="#333333" stroke-width="1.8" fill="none"/><ellipse cx="50" cy="69" rx="3" ry="4" fill="#FF8A8A"/><circle cx="36" cy="44" r="5" fill="#2E1B0E"/><circle cx="37.5" cy="42.5" r="1.5" fill="#FFFFFF"/><circle cx="64" cy="44" r="5" fill="#2E1B0E"/><circle cx="65.5" cy="42.5" r="1.5" fill="#FFFFFF"/></svg>`;
+    } else if (breedId === "cocker") {
+      var coat = c || "#8B4D28";
+      return `<svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm"><ellipse cx="50" cy="50" rx="30" ry="28" fill="${coat}"/><path d="M24,24 C8,34 4,75 20,84 C26,80 26,45 28,28 Z" fill="${coat}" filter="brightness(0.9)"/><path d="M76,24 C92,34 96,75 80,84 C74,80 74,45 72,28 Z" fill="${coat}" filter="brightness(0.9)"/><ellipse cx="50" cy="58" rx="14" ry="12" fill="${coat}" filter="brightness(1.05)"/><path d="M44,52 Q50,49 56,52 Q50,58 44,52 Z" fill="#1A1A1A"/><path d="M46,60 Q50,65 54,60" stroke="#1A1A1A" stroke-width="1.8" fill="none"/><ellipse cx="50" cy="66" rx="3.5" ry="4.5" fill="#FF8A8A"/><circle cx="38" cy="42" r="5" fill="#2E1B0E"/><circle cx="39.5" cy="40.5" r="1.5" fill="#FFFFFF"/><circle cx="62" cy="42" r="5" fill="#2E1B0E"/><circle cx="63.5" cy="40.5" r="1.5" fill="#FFFFFF"/></svg>`;
+    } else if (breedId === "shepherd") {
+      return `<svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm"><polygon points="30,36 18,2 40,24" fill="#1E1E1E"/><polygon points="30,33 22,8 37,24" fill="#C87A38"/><polygon points="70,36 82,2 60,24" fill="#1E1E1E"/><polygon points="70,33 78,8 63,24" fill="#C87A38"/><ellipse cx="50" cy="52" rx="28" ry="30" fill="#C87A38"/><ellipse cx="50" cy="56" rx="16" ry="16" fill="#1E1E1E"/><ellipse cx="50" cy="66" rx="10" ry="10" fill="#1E1E1E"/><path d="M44,62 Q50,59 56,62 Q50,67 44,62 Z" fill="#000000"/><path d="M46,70 Q50,74 54,70" stroke="#333333" stroke-width="1.5" fill="none"/><ellipse cx="50" cy="74" rx="3" ry="4" fill="#FF8A8A"/><circle cx="38" cy="44" r="5" fill="#5E3816"/><circle cx="39.5" cy="42.5" r="1.5" fill="#FFFFFF"/><circle cx="62" cy="44" r="5" fill="#5E3816"/><circle cx="63.5" cy="42.5" r="1.5" fill="#FFFFFF"/></svg>`;
+    } else if (breedId === "dachshund") {
+      var coat = c || "#7A3D1E";
+      return `<svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm"><ellipse cx="50" cy="50" rx="28" ry="26" fill="${coat}"/><path d="M26,30 C12,40 10,72 24,76 C28,72 28,45 28,32 Z" fill="${coat}" filter="brightness(0.85)"/><path d="M74,30 C88,40 90,72 76,76 C72,72 72,45 72,32 Z" fill="${coat}" filter="brightness(0.85)"/><path d="M42,48 L50,72 L58,48 Z" fill="${coat}" filter="brightness(0.96)"/><circle cx="50" cy="68" r="4.5" fill="#1A1A1A"/><path d="M46,74 Q50,78 54,74" stroke="#1A1A1A" stroke-width="1.5" fill="none"/><circle cx="38" cy="42" r="4.5" fill="#2E1B0E"/><circle cx="39.5" cy="40.5" r="1.5" fill="#FFFFFF"/><circle cx="62" cy="42" r="4.5" fill="#2E1B0E"/><circle cx="63.5" cy="40.5" r="1.5" fill="#FFFFFF"/></svg>`;
+    } else if (breedId === "schnauzer") {
+      return `<svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm"><ellipse cx="50" cy="50" rx="30" ry="28" fill="#7A8086"/><path d="M24,24 L34,14 L38,26 Z" fill="#63696F"/><path d="M76,24 L66,14 L62,26 Z" fill="#63696F"/><path d="M30,36 Q38,32 46,38 Q38,42 30,36 Z" fill="#E8ECEF"/><path d="M70,36 Q62,32 54,38 Q62,42 70,36 Z" fill="#E8ECEF"/><path d="M36,54 Q50,48 64,54 L62,76 Q50,84 38,76 Z" fill="#E8ECEF"/><circle cx="50" cy="54" r="5" fill="#1A1A1A"/><circle cx="40" cy="42" r="4" fill="#1A1A1A"/><circle cx="41.5" cy="40.5" r="1.2" fill="#FFFFFF"/><circle cx="60" cy="42" r="4" fill="#1A1A1A"/><circle cx="61.5" cy="40.5" r="1.2" fill="#FFFFFF"/></svg>`;
+    } else if (breedId === "dalmatian") {
+      return `<svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm"><ellipse cx="50" cy="50" rx="30" ry="28" fill="#FFFFFF"/><path d="M24,28 C12,36 12,65 24,70 Z" fill="#1E1E1E"/><path d="M76,28 C88,36 88,65 76,70 Z" fill="#FFFFFF" stroke="#E2E8F0"/><circle cx="38" cy="32" r="4" fill="#1E1E1E"/><circle cx="68" cy="42" r="3.5" fill="#1E1E1E"/><circle cx="58" cy="30" r="3" fill="#1E1E1E"/><circle cx="40" cy="62" r="3" fill="#1E1E1E"/><ellipse cx="50" cy="58" rx="14" ry="11" fill="#FFFFFF"/><path d="M44,52 Q50,49 56,52 Q50,58 44,52 Z" fill="#1E1E1E"/><path d="M46,62 Q50,67 54,62" stroke="#1E1E1E" stroke-width="1.8" fill="none"/><ellipse cx="50" cy="68" rx="3" ry="4" fill="#FF8A8A"/><circle cx="38" cy="43" r="5" fill="#2E1B0E"/><circle cx="39.5" cy="41.5" r="1.5" fill="#FFFFFF"/><circle cx="62" cy="43" r="5" fill="#2E1B0E"/><circle cx="63.5" cy="41.5" r="1.5" fill="#FFFFFF"/></svg>`;
+    } else { // mixed
+      var coat = c || "#D19758";
+      return `<svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm"><ellipse cx="50" cy="50" rx="32" ry="30" fill="${coat}"/><polygon points="26,30 18,10 36,24" fill="${coat}" filter="brightness(0.9)"/><polygon points="74,30 82,10 64,24" fill="${coat}" filter="brightness(0.9)"/><circle cx="50" cy="32" r="5" fill="#FFFFFF"/><ellipse cx="50" cy="58" rx="14" ry="11" fill="${coat}" filter="brightness(1.05)"/><circle cx="50" cy="53" r="5" fill="#1A1A1A"/><path d="M46,61 Q50,66 54,61" stroke="#1A1A1A" stroke-width="1.8" fill="none"/><ellipse cx="50" cy="67" rx="3.5" ry="4.5" fill="#FF8A8A"/><circle cx="38" cy="42" r="5" fill="#2E1B0E"/><circle cx="39.5" cy="40.5" r="1.5" fill="#FFFFFF"/><circle cx="62" cy="42" r="5" fill="#2E1B0E"/><circle cx="63.5" cy="40.5" r="1.5" fill="#FFFFFF"/></svg>`;
+    }
+  }
+
+  function renderHeroSceneSvg(cfg) {
+    return `
+      <svg viewBox="0 0 360 220" class="w-full h-full" style="overflow:visible">
+        <defs>
+          <radialGradient id="sunGlow" cx="50%" cy="40%" r="50%">
+            <stop offset="0%" stop-color="#FEF08A" stop-opacity="0.8"/>
+            <stop offset="60%" stop-color="#BBF7D0" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#E0F2FE" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="180" cy="110" r="130" fill="url(#sunGlow)"/>
+        <g opacity="0.35">
+          <circle cx="60" cy="70" r="45" fill="#86EFAC"/>
+          <circle cx="300" cy="80" r="55" fill="#86EFAC"/>
+          <circle cx="180" cy="50" r="40" fill="#BBF7D0"/>
+          <path d="M20,160 L340,160 M20,175 L340,175" stroke="#FFFFFF" stroke-width="3"/>
+          <rect x="40" y="145" width="8" height="40" rx="3" fill="#FFFFFF"/>
+          <rect x="70" y="145" width="8" height="40" rx="3" fill="#FFFFFF"/>
+          <rect x="280" y="145" width="8" height="40" rx="3" fill="#FFFFFF"/>
+          <rect x="310" y="145" width="8" height="40" rx="3" fill="#FFFFFF"/>
+        </g>
+        <g id="heroHuman" transform="translate(130, 20)">
+          <path d="M22,90 Q15,110 20,135" stroke="#C89B6C" stroke-width="6" stroke-linecap="round" fill="none"/>
+          <path d="M78,90 Q85,110 80,135" stroke="#C89B6C" stroke-width="6" stroke-linecap="round" fill="none"/>
+          <path d="M22,95 C22,80 78,80 78,95 L84,155 C84,165 16,165 16,155 Z" fill="#288b89"/>
+          <path d="M16,105 C14,92 28,82 36,88 L30,120 Z" fill="#EA580C"/>
+          <path d="M84,105 C86,92 72,82 64,88 L70,120 Z" fill="#EA580C"/>
+          <rect x="42" y="70" width="16" height="20" rx="6" fill="#F5D0B5"/>
+          <ellipse cx="50" cy="46" rx="24" ry="26" fill="#F5D0B5"/>
+          <circle cx="26" cy="48" r="7" fill="#F5D0B5"/>
+          <circle cx="26" cy="48" r="4" fill="#E2B191"/>
+          <circle cx="74" cy="48" r="7" fill="#F5D0B5"/>
+          <circle cx="74" cy="48" r="4" fill="#E2B191"/>
+          <path d="M36,54 Q50,68 64,54 Z" fill="#FFFFFF" stroke="#8D5524" stroke-width="1.2"/>
+          <path d="M38,55 Q50,66 62,55" fill="#FF8A8A"/>
+          <circle cx="38" cy="40" r="5" fill="#3D261A"/>
+          <circle cx="39.5" cy="38.5" r="1.8" fill="#FFFFFF"/>
+          <circle cx="62" cy="40" r="5" fill="#3D261A"/>
+          <circle cx="63.5" cy="38.5" r="1.8" fill="#FFFFFF"/>
+          <path d="M32,32 Q40,28 46,33" stroke="#3D261A" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M68,32 Q60,28 54,33" stroke="#3D261A" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M24,40 C20,20 32,8 50,8 C68,8 80,20 76,40 C72,22 62,16 50,16 C36,16 26,26 24,40 Z" fill="#543825"/>
+          <circle cx="48" cy="12" r="10" fill="#543825"/>
+          <circle cx="62" cy="16" r="9" fill="#543825"/>
+          <circle cx="36" cy="18" r="8" fill="#543825"/>
+        </g>
+        <g id="heroPuppy" transform="translate(142, 115)" class="dog-joint-head" style="transform-origin: 38px 35px;">
+          <ellipse cx="20" cy="52" rx="7" ry="6" fill="#F0B86E"/>
+          <ellipse cx="56" cy="52" rx="7" ry="6" fill="#F0B86E"/>
+          <ellipse cx="38" cy="30" rx="22" ry="20" fill="#C89B6C"/>
+          <path d="M18,18 C10,24 8,46 16,50 C20,46 20,28 18,18 Z" fill="#A06B43"/>
+          <path d="M58,18 C66,24 68,46 60,50 C56,46 56,28 58,18 Z" fill="#A06B43"/>
+          <ellipse cx="38" cy="36" rx="10" ry="8" fill="#F4EDE4"/>
+          <path d="M34,31 Q38,29 42,31 Q38,35 34,31 Z" fill="#1A1A1A"/>
+          <path d="M34,36 Q38,40 42,36" stroke="#1A1A1A" stroke-width="1.2" fill="none"/>
+          <ellipse cx="38" cy="41" rx="2.5" ry="3.5" fill="#FF8A8A"/>
+          <circle cx="28" cy="24" r="4.5" fill="#1E1E1E"/>
+          <circle cx="29.5" cy="22.5" r="1.5" fill="#FFFFFF"/>
+          <circle cx="48" cy="24" r="4.5" fill="#1E1E1E"/>
+          <circle cx="49.5" cy="22.5" r="1.5" fill="#FFFFFF"/>
+        </g>
+      </svg>
+    `;
+  }
+
 
   function renderMiniAvatarSvg(cfg, size) {
     const s = size || 44;
@@ -2193,6 +2903,8 @@
     renderDogSvg,
     renderSceneSvg,
     renderMiniAvatarSvg,
+    renderDogFaceSvg,
+    renderHeroSceneSvg,
     getLoyaltyStatus,
     setLoyaltyCompletedCount,
     recordBookingCompletion
@@ -3441,6 +4153,30 @@
       reader.readAsDataURL(file);
     }
 
+    // Socials Dropdown Toggle
+    function toggleSocialsMenu(show) {
+      const menu = document.getElementById('socialsDropdownMenu');
+      if (!menu) return;
+      if (typeof show === 'boolean') {
+        menu.classList.toggle('hidden', !show);
+      } else {
+        menu.classList.toggle('hidden');
+      }
+      if (!menu.classList.contains('hidden') && window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    // Close socials dropdown on click outside
+    document.addEventListener('click', function(e) {
+      const btn = document.getElementById('headerSocialsBtn');
+      const menu = document.getElementById('socialsDropdownMenu');
+      if (!btn || !menu || menu.classList.contains('hidden')) return;
+      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.add('hidden');
+      }
+    });
+
     // Modals
     function toggleMyBookingsModal() {
       const m = document.getElementById('myBookingsModal');
@@ -3898,6 +4634,262 @@
     }
 
     // Init
+    
+    // ==============================================================================
+    // POKEMON GO / PIXAR ONBOARDING JOURNEY CONTROLLER
+    // ==============================================================================
+    var activeStudioConfig = null;
+    let currentJourneyStep = 1;
+    let activeAvatarTab = 'dog';
+    let activeDogSubMode = 'quick';
+
+    function goToJourneyStep(step) {
+      currentJourneyStep = step;
+
+      const s1 = document.getElementById('onboardingStep-1');
+      const s2 = document.getElementById('onboardingStep-2');
+      const s3 = document.getElementById('onboardingStep-3');
+      const s4 = document.getElementById('onboardingStep-4');
+
+      if (s1) s1.classList.toggle('hidden', step !== 1);
+      if (s2) s2.classList.toggle('hidden', step !== 2);
+      if (s3) s3.classList.toggle('hidden', step !== 3);
+      if (s4) s4.classList.toggle('hidden', step !== 4);
+
+      if (step === 2) {
+        renderPickAvatarStage();
+        populateDogThumbnails();
+      }
+      if (step === 4) {
+        syncBookingDuoHeader();
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function skipAvatarToDetails() {
+      goToJourneyStep(3);
+    }
+
+    function saveAvatarAndGoToDetails() {
+      if (window.PawSpaceAvatarEngine && activeStudioConfig) {
+        PawSpaceAvatarEngine.saveConfig(activeStudioConfig);
+      }
+      goToJourneyStep(3);
+    }
+
+    function saveDetailsAndGoToBooking() {
+      const guestName = document.getElementById('inputGuestName').value.trim() || 'Anthony';
+      const dogName = document.getElementById('inputDogName').value.trim() || 'Barnaby';
+      const breed = document.getElementById('inputDogBreed') ? document.getElementById('inputDogBreed').value.trim() : 'Golden Retriever';
+
+      if (activeStudioConfig) {
+        activeStudioConfig.human.name = guestName;
+        const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
+        d.name = dogName;
+        d.breed = breed;
+        PawSpaceAvatarEngine.saveConfig(activeStudioConfig);
+      }
+
+      saveGuestProfile();
+      localStorage.setItem('pawspace_onboarded', 'true');
+      goToJourneyStep(4);
+    }
+
+    function skipToBooking() {
+      localStorage.setItem('pawspace_onboarded', 'true');
+      goToJourneyStep(4);
+    }
+
+    function switchAvatarTab(tab) {
+      activeAvatarTab = tab;
+      const tabDog = document.getElementById('tabBtnDog');
+      const tabHuman = document.getElementById('tabBtnHuman');
+      const viewDog = document.getElementById('avatarViewDog');
+      const viewHuman = document.getElementById('avatarViewHuman');
+
+      if (tab === 'dog') {
+        if (tabDog) tabDog.className = 'py-2.5 text-xs font-bold rounded-xl transition bg-white text-paw-teal shadow-xs flex items-center justify-center gap-1.5';
+        if (tabHuman) tabHuman.className = 'py-2.5 text-xs font-bold rounded-xl transition text-paw-muted hover:text-paw-charcoal flex items-center justify-center gap-1.5';
+        if (viewDog) viewDog.classList.remove('hidden');
+        if (viewHuman) viewHuman.classList.add('hidden');
+      } else {
+        if (tabHuman) tabHuman.className = 'py-2.5 text-xs font-bold rounded-xl transition bg-white text-paw-teal shadow-xs flex items-center justify-center gap-1.5';
+        if (tabDog) tabDog.className = 'py-2.5 text-xs font-bold rounded-xl transition text-paw-muted hover:text-paw-charcoal flex items-center justify-center gap-1.5';
+        if (viewHuman) viewHuman.classList.remove('hidden');
+        if (viewDog) viewDog.classList.add('hidden');
+      }
+      lucide.createIcons();
+    }
+
+    function switchDogMode(mode) {
+      activeDogSubMode = mode;
+      const modeQuick = document.getElementById('dogModeQuick');
+      const modeCreate = document.getElementById('dogModeCreate');
+      const btnQuick = document.getElementById('btnDogModeQuick');
+      const btnCreate = document.getElementById('btnDogModeCreate');
+
+      if (mode === 'quick') {
+        if (modeQuick) modeQuick.classList.remove('hidden');
+        if (modeCreate) modeCreate.classList.add('hidden');
+        if (btnQuick) btnQuick.className = 'flex-1 py-1.5 rounded-xl text-xs font-bold transition bg-paw-teal text-white shadow-xs text-center';
+        if (btnCreate) btnCreate.className = 'flex-1 py-1.5 rounded-xl text-xs font-bold transition bg-slate-100 text-paw-charcoal hover:bg-slate-200 text-center';
+      } else {
+        if (modeCreate) modeCreate.classList.remove('hidden');
+        if (modeQuick) modeQuick.classList.add('hidden');
+        if (btnCreate) btnCreate.className = 'flex-1 py-1.5 rounded-xl text-xs font-bold transition bg-paw-teal text-white shadow-xs text-center';
+        if (btnQuick) btnQuick.className = 'flex-1 py-1.5 rounded-xl text-xs font-bold transition bg-slate-100 text-paw-charcoal hover:bg-slate-200 text-center';
+      }
+    }
+
+    function selectDogBreedPreset(breedId) {
+      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
+      const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
+      const preset = PawSpaceAvatarEngine.CATALOG.dog.breeds.find(b => b.id === breedId);
+      if (preset) {
+        d.breed = preset.id;
+        d.headBreed = preset.head || preset.id;
+        d.bodyShape = preset.body || 'athletic';
+        d.earType = preset.ear || 'floppy';
+        d.muzzleType = preset.muzzle || 'medium';
+        d.tailType = preset.tail || 'saber';
+        d.size = preset.size || 'medium';
+
+        const breedInput = document.getElementById('inputDogBreed');
+        if (breedInput) breedInput.value = preset.label.split('(')[0].trim();
+      }
+
+      document.querySelectorAll('.dog-avatar-card').forEach(c => {
+        if (c.getAttribute('data-breed') === breedId) {
+          c.className = 'dog-avatar-card p-2 rounded-2xl border-2 border-paw-teal bg-paw-mintSoft/40 flex flex-col items-center text-center transition cursor-pointer relative group';
+        } else {
+          c.className = 'dog-avatar-card p-2 rounded-2xl border-2 border-slate-200 hover:border-paw-teal/50 bg-white flex flex-col items-center text-center transition cursor-pointer relative group';
+        }
+      });
+
+      selectDogGenericSize(d.size || 'medium');
+      renderPickAvatarStage();
+    }
+
+    function setDogHead(headBreed) {
+      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
+      const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
+      d.headBreed = headBreed;
+      renderPickAvatarStage();
+    }
+
+    function setDogBody(bodyShape) {
+      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
+      const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
+      d.bodyShape = bodyShape;
+      renderPickAvatarStage();
+    }
+
+    function setDogEar(ear) {
+      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
+      const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
+      d.earType = ear;
+      renderPickAvatarStage();
+    }
+
+    function setDogTail(tail) {
+      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
+      const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
+      d.tailType = tail;
+      renderPickAvatarStage();
+    }
+
+    function selectDogGenericSize(size) {
+      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
+      const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
+      d.size = size;
+
+      ['small', 'medium', 'large'].forEach(s => {
+        const btn = document.getElementById(`sizeBtn-${s}`);
+        if (btn) {
+          if (s === size) {
+            btn.className = 'dog-size-btn p-2.5 rounded-xl border-2 border-paw-teal bg-paw-mint text-center transition';
+          } else {
+            btn.className = 'dog-size-btn p-2.5 rounded-xl border-2 border-slate-200 bg-white text-center transition';
+          }
+        }
+        const detBtn = document.getElementById(`detSize-${s}`);
+        if (detBtn) {
+          if (s === size) {
+            detBtn.className = 'p-3 rounded-2xl border-2 border-paw-teal bg-paw-mint text-center transition';
+          } else {
+            detBtn.className = 'p-3 rounded-2xl border-2 border-slate-200 bg-slate-50 hover:border-paw-teal/40 text-center transition';
+          }
+        }
+      });
+
+      renderPickAvatarStage();
+    }
+
+    function selectDetailsDogSize(size) {
+      selectDogGenericSize(size);
+    }
+
+    function selectDogAge(age) {
+      document.querySelectorAll('.dog-age-btn').forEach(btn => {
+        if (btn.innerText.toLowerCase().includes(age)) {
+          btn.className = 'dog-age-btn p-2.5 rounded-xl border-2 border-paw-teal bg-paw-mint text-center text-xs font-bold text-paw-tealDark transition';
+        } else {
+          btn.className = 'dog-age-btn p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-center text-xs font-bold text-paw-charcoal transition';
+        }
+      });
+    }
+
+    function setMixedBreedUnknown() {
+      const breedInput = document.getElementById('inputDogBreed');
+      if (breedInput) breedInput.value = 'Mixed Breed / Rescue 🐾';
+      selectDogBreedPreset('mixed');
+    }
+
+    function renderPickAvatarStage() {
+      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
+      const container = document.getElementById('avatarPickStageContainer');
+      if (container) {
+        container.innerHTML = PawSpaceAvatarEngine.renderSceneSvg(activeStudioConfig, 'idle', { width: 280, height: 160 });
+      }
+      const duoLabel = document.getElementById('avatarPickDuoLabel');
+      if (duoLabel) {
+        const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
+        duoLabel.innerText = `${activeStudioConfig.human.name || 'Anthony'} & ${d.name || 'Barnaby'}`;
+      }
+    }
+
+    function populateDogThumbnails() {
+      if (!window.PawSpaceAvatarEngine) return;
+      const breeds = ['bernese', 'golden', 'greyhound', 'bully', 'cockapoo', 'terrier', 'frenchie', 'cocker', 'mixed'];
+      breeds.forEach(b => {
+        const el = document.getElementById(`thumb-${b}`);
+        if (el && !el.hasChildNodes()) {
+          el.innerHTML = PawSpaceAvatarEngine.renderDogFaceSvg(b);
+        }
+      });
+    }
+
+    function syncBookingDuoHeader() {
+      if (!activeStudioConfig) activeStudioConfig = PawSpaceAvatarEngine.loadConfig();
+      const d = PawSpaceAvatarEngine.getActiveDog(activeStudioConfig);
+      const guestName = (document.getElementById('inputGuestName') ? document.getElementById('inputGuestName').value.trim() : '') || activeStudioConfig.human.name || 'Anthony';
+      const dogName = (document.getElementById('inputDogName') ? document.getElementById('inputDogName').value.trim() : '') || d.name || 'Barnaby';
+      const breed = (document.getElementById('inputDogBreed') ? document.getElementById('inputDogBreed').value.trim() : '') || d.breed || 'Golden Retriever';
+
+      const bookingDuoTitle = document.getElementById('bookingDuoNameTitle');
+      if (bookingDuoTitle) bookingDuoTitle.innerText = `${guestName} & ${dogName}`;
+
+      const bookingDuoBreed = document.getElementById('bookingDuoBreedSize');
+      if (bookingDuoBreed) bookingDuoBreed.innerText = `${breed} · ${(d.size || 'medium').toUpperCase()}`;
+
+      const bookingAvatarBox = document.getElementById('bookingDuoAvatarContainer');
+      if (bookingAvatarBox) {
+        bookingAvatarBox.innerHTML = PawSpaceAvatarEngine.renderMiniAvatarSvg(activeStudioConfig, 36);
+      }
+    }
+
     window.onload = function() {
       loadGuestProfile();
       renderDates();
@@ -3907,6 +4899,26 @@
       if (window.AvatarUI && window.AvatarUI.initAvatarUI) {
         window.AvatarUI.initAvatarUI();
       }
+
+      // Check URL query parameters for journey router (?step=booking or ?step=avatar)
+      const urlParams = new URLSearchParams(window.location.search);
+      const stepParam = urlParams.get('step');
+      if (stepParam === 'booking' || stepParam === '4' || localStorage.getItem('pawspace_onboarded') === 'true') {
+        goToJourneyStep(4);
+      } else if (stepParam === 'avatar' || stepParam === '2') {
+        goToJourneyStep(2);
+      } else if (stepParam === 'details' || stepParam === '3') {
+        goToJourneyStep(3);
+      } else {
+        goToJourneyStep(1);
+      }
+
+      // Render Hero Pixar Mascot Stage on Welcome Screen
+      const heroStage = document.getElementById('welcomeHeroStage');
+      if (heroStage && window.PawSpaceAvatarEngine) {
+        heroStage.innerHTML = PawSpaceAvatarEngine.renderHeroSceneSvg(activeStudioConfig);
+      }
+
       lucide.createIcons();
     };
   </script>
