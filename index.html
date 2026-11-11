@@ -3857,8 +3857,8 @@
         reactive: () => {
           conciergeMemory.lastTopic = 'reactive';
           return {
-            html: `<p><b>🐕‍🦺 100% Safe for Reactive &amp; Anxious Dogs:</b></p><p>PawSpace is built specifically so ${pupLabel} encounters <b>zero other dogs or strangers</b>. Every session includes drive-in bay parking, double-gated airlock unloading, 6ft privacy fencing, and a strict 5-minute buffer between guests.</p>`,
-            spoken: `Yes, PawSpace is designed for reactive dogs with zero other dogs on site, private drive-in airlock unloading, and a 5-minute buffer between bookings.`
+            html: `<p><b>🐕‍🦺 100% Safe for Reactive &amp; Anxious Dogs:</b></p><p>PawSpace is built specifically so ${pupLabel} encounters <b>zero other dogs or strangers</b>. Every session includes double-gated airlock entry, 6ft privacy fencing, zero mud indoor play, and a strict 5-minute buffer between guests.</p>`,
+            spoken: `Yes, PawSpace is designed for reactive dogs with zero other dogs on site, double-gated airlock entry, and a 5-minute buffer between bookings.`
           };
         },
         bully: () => {
@@ -3875,15 +3875,22 @@
             ? `Active gate PIN: <span class="font-mono bg-paw-teal/20 text-paw-tealLight px-2 py-0.5 rounded font-bold">${escapeHtml(activeBooking.pin)}</span> (${escapeHtml(activeBooking.bay)}).`
             : `Once bookings open on Launch Day, your unique time-bound 4-digit PIN arrives by SMS and displays in <b>My Key</b>.`;
           return {
-            html: `<p><b>🔑 Contactless Smart Gate Entry:</b></p><p>Enter your time-bound 4-digit PIN followed by <b>#</b> at your allocated bay keypad. ${pinMsg} Please vacate 5 minutes before the end so the next pup never overlaps.</p>`,
-            spoken: `Entry is 100% contactless with a four-digit PIN followed by hash at your bay keypad, arriving via SMS and My Key on opening day.`
+            html: `<p><b>🔑 Contactless Smart Gate Entry:</b></p><p>Enter your time-bound 4-digit PIN followed by <b>#</b> at your playroom keypad. ${pinMsg} Please vacate 5 minutes before the end so the next pup never overlaps.</p>`,
+            spoken: `Entry is 100% contactless with a four-digit PIN followed by hash at your playroom keypad, arriving via SMS and My Key on opening day.`
           };
         },
-        fencePark: () => {
-          conciergeMemory.lastTopic = 'fencePark';
+        fenceAirlock: () => {
+          conciergeMemory.lastTopic = 'fenceAirlock';
           return {
-            html: `<p><b>🚗 Private Parking, Airlock &amp; 6ft Fencing:</b></p><p>• <b>Drive-In Airlock:</b> Unload straight from your boot behind locked double gates.<br>• <b>Security Perimeter:</b> 6ft heavy-duty anti-dig perimeter fencing with anti-jump bracing and enclosed quiet lounge option.</p>`,
-            spoken: `You get a private drive-in bay with a double-gated airlock to unload straight from your car inside 6-foot anti-dig fencing.`
+            html: `<p><b>🛡️ Double-Gated Airlock &amp; 6ft Security Fencing:</b></p><p>• <b>Secure Solo Entry:</b> Double-gated airlock ensures ${pupLabel} can only enter once the outer gate is latched.<br>• <b>Security Perimeter:</b> 6ft heavy-duty anti-dig, anti-jump fencing and enclosed indoor solo playroom.</p>`,
+            spoken: `You get private solo entry through a double-gated airlock inside 6-foot anti-dig security fencing.`
+          };
+        },
+        parkingInfo: () => {
+          conciergeMemory.lastTopic = 'parkingInfo';
+          return {
+            html: `<p><b>📍 Arrival Details Coming Soon:</b></p><p>Final arrival and parking arrangements have not been confirmed yet ahead of opening day. Follow <a href="https://www.instagram.com/pawspaceplayroom/" target="_blank" class="text-pink-400 underline font-semibold">@pawspaceplayroom</a> for pre-launch updates.</p>`,
+            spoken: `Arrival and parking details haven't been confirmed yet ahead of opening day. Follow pawspaceplayroom on Instagram for launch updates.`
           };
         },
         multiDog: () => {
@@ -3893,11 +3900,11 @@
             spoken: `Multiple dogs and family members from your own household are welcome together in your solo session with zero outside dogs.`
           };
         },
-        workCafeWash: () => {
-          conciergeMemory.lastTopic = 'workCafeWash';
+        amenitiesInfo: () => {
+          conciergeMemory.lastTopic = 'amenitiesInfo';
           return {
-            html: `<p><b>☕ Work Lounge, Free Coffee &amp; Warm Dog Wash:</b></p><p>• <b>Heated Work Lounge:</b> 500Mbps fibre Wi-Fi, standing desk &amp; Zoom-ready acoustic comfort while you supervise ${pupLabel}.<br>• <b>Free Cafe &amp; Wash:</b> Complimentary bean-to-cup coffee/tea, warm-water muddy-paw wash station, fresh bowls, and biodegradable towels included.</p>`,
-            spoken: `Every session includes our heated lounge with 500 megabit Wi-Fi, free bean-to-cup coffee, high-traction agility turf, and a warm-water dog wash.`
+            html: `<p><b>🏠 What Every Private Session Includes:</b></p><p>PawSpace provides <b>100% private, mud-free indoor solo playrooms</b> with zero external dogs, 6ft airlock security, and contactless keypad entry. Unconfirmed extras aren't advertised pre-launch.</p>`,
+            spoken: `PawSpace focuses on private, mud-free indoor solo playrooms with zero outside dogs and contactless keypad access.`
           };
         },
         payments: () => {
@@ -3919,8 +3926,8 @@
         weatherCancel: () => {
           conciergeMemory.lastTopic = 'weatherCancel';
           return {
-            html: `<p><b>☔ Weatherproof Play &amp; Rescheduling:</b></p><p>No mud worries! Enjoy indoor shelter &amp; heated lounge comfort plus drainage-engineered agility turf and a warm dog wash — ideal in UK rain.</p>`,
-            spoken: `You're covered even in rain thanks to our indoor play and heated lounge, drainage turf, and warm water dog wash.`
+            html: `<p><b>☔ Weatherproof Indoor Play:</b></p><p>No mud worries! Enjoy clean, sheltered indoor solo playrooms designed for dry, comfortable visits in UK weather.</p>`,
+            spoken: `You're covered even in UK rain with clean, sheltered indoor solo playrooms and zero mud.`
           };
         },
         profile: () => {
@@ -3948,10 +3955,10 @@
         spokeText = voiceParts.join(' ');
       } else {
         reply = `
-          <p>I can help with <b>session prices &amp; promos</b> (<code class="text-emerald-300">PAWSPACE</code>, <code class="text-emerald-300">FIRSTVISIT</code>, <code class="text-amber-300">LOYALTY30</code>), <b>reactive &amp; XL Bully rules</b>, <b>6ft airlock parking</b>, <b>500Mbps work lounge &amp; free coffee</b>, or <b>slot previews</b>.</p>
+          <p>I can help with <b>session prices &amp; promos</b> (<code class="text-emerald-300">PAWSPACE</code>, <code class="text-emerald-300">FIRSTVISIT</code>, <code class="text-amber-300">LOYALTY30</code>), <b>reactive &amp; XL Bully rules</b>, <b>smart keypad entry</b>, or <b>slot previews</b>.</p>
           <p class="text-[11px] text-amber-300">${isOpen ? 'Tap below or ask me to book a specific time!' : "Pre-launch note: you can't book yet — our booking system will be available soon as we are open."}</p>
         `;
-        spokeText = "I can answer questions on session prices, promo codes, reactive dogs, XL Bullies, parking and smart gates, or set up a slot preview for opening day.";
+        spokeText = "I can answer questions on session prices, promo codes, reactive dogs, XL Bullies, smart gates, or set up a slot preview for opening day.";
       }
 
       setTimeout(() => {
