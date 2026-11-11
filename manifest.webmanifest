@@ -1,0 +1,25 @@
+{
+  "name": "PawSpace · Private Dog Sanctuary",
+  "short_name": "PawSpace",
+  "description": "100% private solo dog sanctuary with zero other dogs, keypad entry, heated work lounge, and agility turf.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1114",
+  "theme_color": "#288b89",
+  "icons": [
+    {
+      "src": "./logo-transparent.png",
+      "sizes": "740x740",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./logo.png",
+      "sizes": "740x740",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
