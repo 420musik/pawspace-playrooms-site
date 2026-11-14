@@ -2519,7 +2519,15 @@
       appendChatMessage('user', rawMessage);
       let reply, spoken;
       if (emergency) {
-        reply = '<p><b>🚨 If this is an immediate emergency, call 999 now.</b></p><p>Ask for ambulance, police, or fire and rescue, give your exact location, and do not wait for this chat.</p><p>If it is safe to do so, contact the PawSpace owner using the number in your booking confirmation or official contact details.</p>';
+        
+    // Keep the dock as the only AI entry point.
+    const hideFloatingAiReceptionist = () => {
+      const floating = document.getElementById('aiConciergeTrigger');
+      if (floating) floating.style.setProperty('display', 'none', 'important');
+    };
+    hideFloatingAiReceptionist();
+    new MutationObserver(hideFloatingAiReceptionist).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style'] });
+reply = '<p><b>🚨 If this is an immediate emergency, call 999 now.</b></p><p>Ask for ambulance, police, or fire and rescue, give your exact location, and do not wait for this chat.</p><p>If it is safe to do so, contact the PawSpace owner using the number in your booking confirmation or official contact details.</p>';
         spoken = 'If this is an immediate emergency, call 999 now. Ask for ambulance, police, or fire and rescue, give your exact location, and do not wait for this chat.';
       } else {
         const bookings = typeof getStoredBookings === 'function' ? getStoredBookings() : [];
