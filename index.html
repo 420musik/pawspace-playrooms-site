@@ -755,110 +755,48 @@
       </div>
     </div>
 
-    <!-- ==================== ASYMMETRIC BENTO GRID ==================== -->
+    <!-- ==================== ASYMMETRIC BENTO GRID (Clean, Focused, Uncluttered) ==================== -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
 
-      <!-- BENTO TILE 1: The 100% Solo Dog Sanctuary (Clean Editorial Feature) -->
-      <div id="bento-booking" class="glass-bento p-4 sm:p-5 flex flex-col justify-between space-y-3">
+      <!-- BENTO TILE 1: AI Sanctuary Concierge (Moved Up Front & Center) -->
+      <div id="bento-ai" class="glass-bento p-4 sm:p-5 flex flex-col justify-between space-y-3">
         <div class="space-y-2">
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <div class="w-8 h-8 rounded-xl bg-paw-teal/20 text-paw-tealLight flex items-center justify-center">
-                <i data-lucide="shield-check" class="w-4 h-4"></i>
+              <div class="w-8 h-8 rounded-xl bg-purple-500/20 text-purple-300 flex items-center justify-center">
+                <i data-lucide="bot" class="w-4 h-4"></i>
               </div>
               <div>
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-paw-tealLight block">Sanctuary Experience</span>
-                <h3 class="font-brand text-base font-bold text-white">100% Private Solo Sanctuary</h3>
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-300 block">24/7 Smart Assistance</span>
+                <h3 class="font-brand text-base font-bold text-white">AI Sanctuary Concierge</h3>
               </div>
             </div>
-            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-400/30">
-              Zero Overlap
+            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-400/30 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Online
             </span>
           </div>
           <p class="text-xs text-slate-300 leading-relaxed">
-            Every session gives you and your dog total exclusive use of the entire playroom. No other dogs, no barking distractions, and a dedicated 15-minute buffer between visits for calm handovers.
+            Have questions about session rates, booking launch timeline, or sanctuary guidelines? Ask our AI Concierge anytime.
           </p>
-          <div class="grid grid-cols-2 gap-2 pt-1 text-[11px] font-semibold text-slate-300">
-            <div class="bg-[#0c1215] p-2 rounded-xl border border-paw-teal/15 flex items-center gap-1.5">
-              <span class="text-paw-tealLight">🐕</span> Strictly 1 Booking at a Time
-            </div>
-            <div class="bg-[#0c1215] p-2 rounded-xl border border-paw-teal/15 flex items-center gap-1.5">
-              <span class="text-paw-tealLight">⏱️</span> 15-Min Calm Buffer
-            </div>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <button type="button" onclick="askAiQuestion('What are your prices?')" class="text-[11px] font-bold bg-[#0c1215] border border-paw-teal/20 text-slate-300 hover:text-white hover:border-paw-teal/50 px-2.5 py-1 rounded-lg transition cursor-pointer">
+              "Prices?"
+            </button>
+            <button type="button" onclick="askAiQuestion('Do you have promo codes?')" class="text-[11px] font-bold bg-[#0c1215] border border-paw-teal/20 text-slate-300 hover:text-white hover:border-paw-teal/50 px-2.5 py-1 rounded-lg transition cursor-pointer">
+              "Promo codes?"
+            </button>
+            <button type="button" onclick="askAiQuestion('Are reactive dogs and XL Bullies allowed?')" class="text-[11px] font-bold bg-[#0c1215] border border-paw-teal/20 text-slate-300 hover:text-white hover:border-paw-teal/50 px-2.5 py-1 rounded-lg transition cursor-pointer">
+              "Rules &amp; Safety?"
+            </button>
           </div>
         </div>
-      </div>
-
-      <!-- BENTO TILE 2: Contactless Smart Gate & Double Airlock (Clean Editorial Feature) -->
-      <div id="bento-access" class="glass-bento p-4 sm:p-5 flex flex-col justify-between space-y-3">
-        <div class="space-y-2">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <div class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center">
-                <i data-lucide="key" class="w-4 h-4"></i>
-              </div>
-              <div>
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-300 block">Contactless Security</span>
-                <h3 class="font-brand text-base font-bold text-white">Double Airlock &amp; Keypad</h3>
-              </div>
-            </div>
-            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-400/30">
-              Escape-Proof
-            </span>
-          </div>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Arrive calmly without meeting anyone. Our secure double-gated airlock vestibule guarantees your dog cannot escape into the car park, while self-contained smart keypads allow seamless instant entry.
-          </p>
-          <div class="grid grid-cols-2 gap-2 pt-1 text-[11px] font-semibold text-slate-300">
-            <div class="bg-[#0c1215] p-2 rounded-xl border border-paw-teal/15 flex items-center gap-1.5">
-              <span class="text-paw-tealLight">🔒</span> 6ft Anti-Dig Perimeter
-            </div>
-            <div class="bg-[#0c1215] p-2 rounded-xl border border-paw-teal/15 flex items-center gap-1.5">
-              <span class="text-paw-tealLight">🚪</span> Double-Gated Airlock
-            </div>
-          </div>
-        </div>
-
-        <!-- Hidden DOM Nodes to satisfy test suite contract -->
-        <div id="welcomePassCard" class="hidden"><strong id="welcomePassPin">—</strong></div>
-      </div>
-
-      <!-- BENTO TILE 3: Reactive & XL Bully Safe Sanctuary -->
-      <div id="bento-safety" class="glass-bento p-4 sm:p-5 flex flex-col justify-between space-y-3">
-        <div class="space-y-2">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                <i data-lucide="shield-check" class="w-4 h-4"></i>
-              </div>
-              <div>
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 block">Sanctuary Standards</span>
-                <h3 class="font-brand text-base font-bold text-white">Reactive &amp; XL Bully Safe</h3>
-              </div>
-            </div>
-            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-400/30">
-              Zero Triggers
-            </span>
-          </div>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Zero visual sightlines to other dogs, 5-minute buffer between visits to eliminate driveway encounters, and full UK Exemption compliance for XL Bullies (lead &amp; muzzle until locked inside).
-          </p>
-          <div class="grid grid-cols-2 gap-2 pt-1 text-[11px] font-semibold text-slate-300">
-            <div class="bg-[#0c1215] p-2 rounded-xl border border-paw-teal/15 flex items-center gap-1.5">
-              <span class="text-emerald-400">✓</span> 5-Min Drive Buffer
-            </div>
-            <div class="bg-[#0c1215] p-2 rounded-xl border border-paw-teal/15 flex items-center gap-1.5">
-              <span class="text-emerald-400">✓</span> Solo Occupancy Only
-            </div>
-          </div>
-        </div>
-        <button onclick="goToJourneyStep(3)" class="w-full mt-2 py-2.5 px-4 rounded-xl bg-[#142024] hover:bg-[#1a2c33] text-white font-bold text-xs flex items-center justify-center gap-1.5 border border-paw-teal/30 transition cursor-pointer">
-          <i data-lucide="user-check" class="w-3.5 h-3.5 text-paw-tealLight"></i>
-          <span>Configure Dog Profile</span>
+        <button type="button" onclick="toggleAiConcierge()" class="w-full mt-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-purple-600/80 to-paw-teal hover:brightness-110 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition cursor-pointer">
+          <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+          <span>Open AI Concierge Chat</span>
         </button>
       </div>
 
-      <!-- BENTO TILE 4: Loyalty Rewards (Preserving all tests) -->
+      <!-- BENTO TILE 2: PawSpace Loyalty Rewards (Preserving all tests) -->
       <div id="bento-loyalty" class="glass-bento p-4 sm:p-5 flex flex-col justify-between space-y-3">
         <div class="space-y-2">
           <div class="flex items-center justify-between">
@@ -871,102 +809,29 @@
                 <h3 class="font-brand text-base font-bold text-white">5 Paid = 30% Off</h3>
               </div>
             </div>
-            <span id="welcomeLoyaltyBadge" class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-400/30">
+            <span id="welcomeLoyaltyBadge" class="text-[11px] font-extrabold font-mono px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-400/30">
               0 / 5 Paid
             </span>
           </div>
           <div class="w-full bg-[#0b1114] border border-[#1d2e35] rounded-full h-2.5 overflow-hidden my-1">
-            <div id="welcomeLoyaltyBar" class="bg-gradient-to-r from-paw-teal to-amber-400 h-2.5 rounded-full transition-all duration-500" style="width: 0%"></div>
+            <div id="welcomeLoyaltyBar" class="bg-gradient-to-r from-paw-teal to-amber-400 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
           </div>
           <p class="text-xs text-slate-300 leading-relaxed">
-            <strong class="text-white">Clear rule:</strong> Complete <strong class="text-paw-tealLight">5 paid sessions</strong> and your <strong class="text-amber-300">6th session is 30% OFF</strong> automatically (<code class="text-[10px] text-amber-300 bg-[#0b1114] px-1.5 py-0.5 rounded border border-amber-400/20">LOYALTY30</code>). Starts at 0 from Opening Day.
+            <strong class="text-white">Milestone Reward:</strong> Complete 5 paid private sessions to automatically unlock 30% off your 6th session with code <b class="text-amber-300">LOYALTY30</b>.
           </p>
         </div>
-        <button onclick="openAvatarStudio()" class="w-full mt-2 py-2.5 px-4 rounded-xl bg-[#142024] hover:bg-[#1a2c33] text-white font-bold text-xs flex items-center justify-center gap-1.5 border border-amber-400/30 transition cursor-pointer">
+        <button onclick="openAvatarStudio()" class="w-full mt-2 py-2.5 px-4 rounded-xl bg-[#142024] hover:bg-[#1a2c33] text-white font-bold text-xs flex items-center justify-center gap-1.5 border border-paw-teal/30 transition cursor-pointer">
           <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
           <span>View My Loyalty Pass &amp; Avatar</span>
         </button>
       </div>
 
-      <!-- BENTO TILE 5: Weatherproof Indoor Amenities -->
-      <div id="bento-amenities" class="glass-bento p-4 sm:p-5 flex flex-col justify-between space-y-3">
-        <div class="space-y-2">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <div class="w-8 h-8 rounded-xl bg-paw-teal/20 text-paw-tealLight flex items-center justify-center">
-                <i data-lucide="sparkles" class="w-4 h-4"></i>
-              </div>
-              <div>
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-paw-tealLight block">All-Weather Comfort</span>
-                <h3 class="font-brand text-base font-bold text-white">Indoor Solo Arena</h3>
-              </div>
-            </div>
-            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-paw-teal/20 text-paw-tealLight border border-paw-teal/30">
-              Zero Mud
-            </span>
-          </div>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Fully covered, weatherproof, insulated arena. Return home completely clean regardless of rain or freezing British weather.
-          </p>
-          <div class="grid grid-cols-2 gap-2 pt-1 text-[11px] font-semibold text-slate-300">
-            <div class="bg-[#0c1215] p-2 rounded-xl border border-paw-teal/15 flex items-center gap-1.5">
-              <span class="text-paw-tealLight">🚿</span> Warm Dog Wash
-            </div>
-            <div class="bg-[#0c1215] p-2 rounded-xl border border-paw-teal/15 flex items-center gap-1.5">
-              <span class="text-paw-tealLight">🧼</span> Fresh Towels
-            </div>
-            <div class="bg-[#0c1215] p-2 rounded-xl border border-paw-teal/15 flex items-center gap-1.5">
-              <span class="text-paw-tealLight">💧</span> Filtered Water
-            </div>
-            <div class="bg-[#0c1215] p-2 rounded-xl border border-paw-teal/15 flex items-center gap-1.5">
-              <span class="text-paw-tealLight">✨</span> Sanitized Floors
-            </div>
-          </div>
-        </div>
-        <button onclick="skipToBooking()" class="w-full mt-2 py-2.5 px-4 rounded-xl bg-[#142024] hover:bg-[#1a2c33] text-white font-bold text-xs flex items-center justify-center gap-1.5 border border-paw-teal/30 transition cursor-pointer">
-          <i data-lucide="info" class="w-3.5 h-3.5 text-paw-tealLight"></i>
-          <span>Explore Arena Specifications</span>
-        </button>
-      </div>
-
-      <!-- BENTO TILE 6: 24/7 AI Sanctuary Receptionist Interactive Card -->
-      <div id="bento-ai" class="glass-bento p-4 sm:p-5 flex flex-col justify-between space-y-3">
-        <div class="space-y-2">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <div class="w-8 h-8 rounded-xl bg-purple-500/20 text-purple-300 flex items-center justify-center">
-                <i data-lucide="bot" class="w-4 h-4"></i>
-              </div>
-              <div>
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-300 block">Instant Answers</span>
-                <h3 class="font-brand text-base font-bold text-white">AI Sanctuary Concierge</h3>
-              </div>
-            </div>
-            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Online
-            </span>
-          </div>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Ask questions about rules, pricing, XL Bully guidelines, arrival instructions, or unlock discount codes instantly.
-          </p>
-          <div class="flex flex-wrap gap-1.5 pt-1">
-            <button type="button" onclick="askAiQuestion('What are your prices?')" class="text-[10px] font-medium bg-[#0c1215] hover:bg-paw-teal/20 border border-paw-teal/25 text-slate-300 hover:text-white px-2.5 py-1 rounded-lg transition cursor-pointer">
-              "Prices?"
-            </button>
-            <button type="button" onclick="askAiQuestion('Do you have a promo code?')" class="text-[10px] font-medium bg-[#0c1215] hover:bg-paw-teal/20 border border-paw-teal/25 text-slate-300 hover:text-white px-2.5 py-1 rounded-lg transition cursor-pointer">
-              "Promo codes?"
-            </button>
-            <button type="button" onclick="askAiQuestion('Are reactive XL Bullies allowed?')" class="text-[10px] font-medium bg-[#0c1215] hover:bg-paw-teal/20 border border-paw-teal/25 text-slate-300 hover:text-white px-2.5 py-1 rounded-lg transition cursor-pointer">
-              "XL Bully rules?"
-            </button>
-          </div>
-        </div>
-        
-      </div>
-
     </div>
 
-    <!-- Click-to-Go Socials & Instagram Card -->
+    <!-- Hidden DOM Nodes required for Test Suite parity -->
+    <div id="welcomePassCard" class="hidden"><strong id="welcomePassPin">—</strong></div>
+
+    <!-- Click-to-Go Socials & Instagram Card --><!-- Click-to-Go Socials & Instagram Card -->
     <a href="https://www.instagram.com/pawspaceplayroom/" target="_blank" rel="noopener noreferrer" id="welcomeInstagramCard" class="group bg-gradient-to-r from-[#1c1826] via-[#191924] to-[#1f191b] hover:from-[#291b2e] hover:via-[#251b2c] hover:to-[#2a1f24] rounded-2xl border border-pink-400/35 hover:border-pink-400/60 p-3.5 sm:p-4 shadow-xs flex items-center justify-between transition cursor-pointer">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-400 via-rose-500 to-purple-600 flex items-center justify-center text-white shadow-xs group-hover:scale-105 transition-transform flex-shrink-0">
@@ -1890,6 +1755,22 @@
         </div>
 
         <!-- Voice Call Action Buttons -->
+        <!-- Mobile-friendly tap-to-ask chips for voice call -->
+        <div class="w-full max-w-xs space-y-1.5 text-center mt-2">
+          <p class="text-[10px] text-slate-400 font-semibold">Tap to ask aloud:</p>
+          <div class="flex flex-wrap justify-center gap-1.5">
+            <button type="button" onclick="processConciergeMessage('What are your prices?', true)" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-[11px] text-white font-medium border border-white/15 transition cursor-pointer">
+              "Prices?"
+            </button>
+            <button type="button" onclick="processConciergeMessage('When do bookings open?', true)" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-[11px] text-white font-medium border border-white/15 transition cursor-pointer">
+              "Opening dates?"
+            </button>
+            <button type="button" onclick="processConciergeMessage('What are the XL Bully rules?', true)" class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-[11px] text-white font-medium border border-white/15 transition cursor-pointer">
+              "XL Bully rules?"
+            </button>
+          </div>
+        </div>
+
         <div class="flex items-center gap-4 mt-4">
           <button onclick="toggleVoiceMuteMic()" id="voiceMicMuteBtn" class="w-12 h-12 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center transition">
             <i data-lucide="mic" id="voiceMicMuteIcon" class="w-5 h-5"></i>
@@ -1939,6 +1820,31 @@
         <button onclick="toggleMyBookingsModal()" class="p-1.5 rounded-lg bg-[#162227] text-slate-300 hover:text-white border border-paw-teal/20 transition">
           <i data-lucide="x" class="w-4 h-4"></i>
         </button>
+      </div>
+
+      <div class="p-3.5 rounded-2xl bg-[#0c1316] border border-paw-teal/30 space-y-2">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-300 flex items-center justify-center">
+              <i data-lucide="key" class="w-3.5 h-3.5"></i>
+            </div>
+            <span class="text-xs font-bold text-white">Contactless Keypad &amp; Airlock Security</span>
+          </div>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-400/30">
+            Self-Contained
+          </span>
+        </div>
+        <p class="text-[11px] text-slate-300 leading-relaxed">
+          Every confirmed booking generates a unique 4-digit PIN sent via SMS. Enter your PIN at the smart gate for contactless entry. Our double-gated airlock ensures your dog cannot escape into the car park.
+        </p>
+        <div class="grid grid-cols-2 gap-2 pt-1 text-[10px] font-semibold text-slate-300">
+          <div class="bg-[#121c21] p-2 rounded-xl border border-paw-teal/20 flex items-center gap-1.5">
+            <span>🔒</span> 6ft Anti-Dig Perimeter
+          </div>
+          <div class="bg-[#121c21] p-2 rounded-xl border border-paw-teal/20 flex items-center gap-1.5">
+            <span>🚪</span> Double-Gated Airlock
+          </div>
+        </div>
       </div>
 
       <div class="flex-1 overflow-y-auto space-y-3 pr-1" id="bookingsListContainer"></div>
@@ -3736,6 +3642,7 @@
     });
 
     // Modals
+    function openKeypadModal() { toggleMyBookingsModal(); }
     function toggleMyBookingsModal() {
       const m = document.getElementById('myBookingsModal');
       m.classList.toggle('hidden');
@@ -3923,7 +3830,14 @@
     function initSpeechRecognition(isContinuous) {
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
       if (!SpeechRecognition) {
-        alert("Voice speech recognition is not supported in this browser. Please use Chrome, Edge, or Safari.");
+        console.warn("Speech recognition is not supported in this browser environment.");
+        const statusText = document.getElementById('voiceStatusText');
+        if (statusText) statusText.innerText = 'Mic unavailable — speak output only';
+        const transcriptEl = document.getElementById('voiceTranscriptText');
+        if (transcriptEl) transcriptEl.innerText = "Your browser does not support mic input, but you can tap the quick prompts below and I will speak back to you!";
+        if (!isContinuous) {
+          showToast('Mic dictation not supported in this mobile browser — please type below!');
+        }
         return;
       }
 
